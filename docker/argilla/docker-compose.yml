@@ -1,0 +1,61 @@
+# Argilla 2.x local stack for Lexior Bench annotation.
+# Start:  docker compose -f docker/argilla/docker-compose.yml up -d
+# UI:     http://localhost:6900  (user: argilla / password: 12345678)
+# API:    ARGILLA_API_URL=http://localhost:6900  ARGILLA_API_KEY=argilla.apikey
+
+services:
+  argilla:
+    image: argilla/argilla-server:latest
+    restart: unless-stopped
+    ports:
+      - "6900:6900"
+    environment:
+      ARGILLA_HOME_PATH: /var/lib/argilla
+      ARGILLA_ELASTICSEARCH: http://elasticsearch:9200
+      ARGILLA_REDIS_URL: redis://redis:6379/0
+      USERNAME: argilla
+      PASSWORD: "12345678"
+      API_KEY: argilla.apikey
+      REINDEX_DATASETS: 1
+    volumes:
+      - argilladata:/var/lib/argilla
+    depends_on:
+      - elasticsearch
+      - redis
+
+  worker:
+    image: argilla/argilla-server:latest
+    restart: unless-stopped
+    environment:
+      ARGILLA_HOME_PATH: /var/lib/argilla
+      ARGILLA_ELASTICSEARCH: http://elasticsearch:9200
+      ARGILLA_REDIS_URL: redis://redis:6379/0
+      BACKGROUND_NUM_WORKERS: 2
+    command: sh -c 'python -m argilla_server worker --num-workers $${BACKGROUND_NUM_WORKERS}'
+    volumes:
+      - argilladata:/var/lib/argilla
+    depends_on:
+      - argilla
+      - elasticsearch
+      - redis
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.17.0
+    restart: unless-stopped
+    environment:
+      node.name: elasticsearch
+      cluster.name: es-argilla-local
+      discovery.type: single-node
+      ES_JAVA_OPTS: -Xms1g -Xmx1g
+      cluster.routing.allocation.disk.threshold_enabled: "false"
+      xpack.security.enabled: "false"
+    volumes:
+      - elasticdata:/usr/share/elasticsearch/data
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+
+volumes:
+  argilladata:
+  elasticdata:

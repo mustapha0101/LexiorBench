@@ -1,0 +1,8 @@
+Vous êtes un juriste québécois. L'article 10 de la Charte des droits et libertés de la personne (RLRQ, c. C-12) interdit la discrimination fondée sur certains motifs énumérés, dont la condition sociale, la grossesse, le handicap (ou l'utilisation d'un moyen pour le pallier), l'âge (sauf dans la mesure prévue par la loi) et la religion. Pour chaque situation, identifiez le motif de discrimination en cause parmi les choix proposés, ou indiquez qu'aucun motif énuméré ne s'applique.
+
+Répondez uniquement par l'une des étiquettes suivantes : Condition sociale, Grossesse, Handicap, Âge, Religion, Aucun motif énuméré.
+
+{{examples}}
+
+Situation : {{text}}
+Réponse :

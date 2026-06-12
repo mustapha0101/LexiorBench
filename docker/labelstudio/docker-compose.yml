@@ -1,0 +1,16 @@
+# Label Studio local stack for Lexior Bench annotation.
+# Start:  docker compose -f docker/labelstudio/docker-compose.yml up -d
+# UI:     http://localhost:8080  (create an account on first visit, then copy
+#         your access token from Account & Settings to LABEL_STUDIO_API_KEY)
+
+services:
+  labelstudio:
+    image: heartexlabs/label-studio:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - labelstudiodata:/label-studio/data
+
+volumes:
+  labelstudiodata:
