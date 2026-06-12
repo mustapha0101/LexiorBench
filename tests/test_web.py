@@ -41,6 +41,17 @@ def test_pages_render_in_both_languages():
     client.cookies.delete("lang")
 
 
+def test_run_page_task_selection_tools():
+    """With the large imported registry, the run page must not default to All."""
+    response = client.get("/run")
+    assert response.status_code == 200
+    assert 'id="select-random"' in response.text
+    assert 'id="select-first"' in response.text
+    # 140+ real tasks → many-mode: All unchecked, boxes enabled for JS preselection
+    assert 'data-many="1"' in response.text
+    assert '<input type="checkbox" id="all-tasks" checked' not in response.text
+
+
 def test_lang_toggle_sets_cookie():
     response = client.get("/lang/en?next=/tasks", follow_redirects=False)
     assert response.status_code == 303

@@ -81,6 +81,33 @@ function pollRunStatus() {
   }).catch(() => setTimeout(pollRunStatus, 2000));
 }
 
+function selectTaskSubset(mode) {
+  const allTasks = document.getElementById("all-tasks");
+  const boxes = [...document.querySelectorAll(".task-check")];
+  const countInput = document.getElementById("select-count");
+  let count = parseInt(countInput.value, 10);
+  if (!Number.isFinite(count) || count < 1) count = 1;
+  count = Math.min(count, boxes.length);
+  countInput.value = count;
+
+  allTasks.checked = false;
+  let picked;
+  if (mode === "random") {
+    const indices = boxes.map((_, i) => i);
+    for (let i = indices.length - 1; i > 0; i--) {  // Fisher-Yates
+      const j = Math.floor(Math.random() * (i + 1));
+      [indices[i], indices[j]] = [indices[j], indices[i]];
+    }
+    picked = new Set(indices.slice(0, count));
+  } else {
+    picked = new Set(boxes.map((_, i) => i).slice(0, count));
+  }
+  boxes.forEach((box, i) => {
+    box.disabled = false;
+    box.checked = picked.has(i);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const allTasks = document.getElementById("all-tasks");
   if (allTasks) {
@@ -90,6 +117,16 @@ document.addEventListener("DOMContentLoaded", () => {
         if (allTasks.checked) box.checked = true;
       });
     });
+  }
+  const selectRandom = document.getElementById("select-random");
+  if (selectRandom) {
+    selectRandom.addEventListener("click", () => selectTaskSubset("random"));
+    document.getElementById("select-first")
+      .addEventListener("click", () => selectTaskSubset("first"));
+    const taskList = document.getElementById("task-list");
+    if (taskList && taskList.dataset.many === "1") {
+      selectTaskSubset("random");  // too many tasks: pre-select a random sample
+    }
   }
   const start = document.getElementById("start-run");
   if (start) {

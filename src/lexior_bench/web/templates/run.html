@@ -22,11 +22,20 @@
     anthropic : <span class="{{ 'ok' if anthropic_key else 'warn' }}">{{ t('run.key.set') if anthropic_key else t('run.key.missing') }}</span></small>
   </p>
 
-  <h2>{{ t('run.tasks') }}</h2>
-  <fieldset>
-    <label class="check"><input type="checkbox" id="all-tasks" checked> <strong>{{ t('run.tasks.all') }}</strong></label>
+  <h2>{{ t('run.tasks') }} <small>({{ tasks | length }})</small></h2>
+  {% set many = tasks | length > 20 %}
+  {% if many %}<p class="warn">{{ t('run.select.notice') }}</p>{% endif %}
+  <div class="select-tools">
+    <label class="check"><input type="checkbox" id="all-tasks" {% if not many %}checked{% endif %}> <strong>{{ t('run.tasks.all') }}</strong></label>
+    <span>
+      <input type="number" id="select-count" value="10" min="1" max="{{ tasks | length }}">
+      <button type="button" id="select-random">{{ t('run.select.random') }}</button>
+      <button type="button" id="select-first">{{ t('run.select.first') }}</button>
+    </span>
+  </div>
+  <fieldset id="task-list" data-many="{{ '1' if many else '0' }}">
     {% for task in tasks %}
-    <label class="check"><input type="checkbox" class="task-check" value="{{ task.name }}" checked disabled> {{ task.name }} <small>({{ task.reasoning_type }})</small></label>
+    <label class="check"><input type="checkbox" class="task-check" value="{{ task.name }}" {% if not many %}checked disabled{% endif %}> {{ task.name }} <small>({{ task.reasoning_type }})</small></label>
     {% endfor %}
   </fieldset>
 
