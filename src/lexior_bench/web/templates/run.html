@@ -35,7 +35,7 @@
   </div>
   <fieldset id="task-list" data-many="{{ '1' if many else '0' }}">
     {% for task in tasks %}
-    <label class="check"><input type="checkbox" class="task-check" value="{{ task.name }}" {% if not many %}checked disabled{% endif %}> {{ task.name }} <small>({{ task.reasoning_type }})</small></label>
+    <label class="check"><input type="checkbox" class="task-check" value="{{ task.name }}" data-count="{{ task.test | length }}" {% if not many %}checked disabled{% endif %}> {{ task.name }} <small>({{ task.reasoning_type }} · {{ task.test | length }})</small></label>
     {% endfor %}
   </fieldset>
 
@@ -43,6 +43,14 @@
     <label>{{ t('run.limit') }} <input type="number" id="limit" min="1"></label>
     <label>{{ t('run.max_tokens') }} <input type="number" id="max-tokens" value="512" min="16"></label>
   </div>
+  <p id="run-estimate"
+     data-msg-tasks="{{ t('run.estimate.tasks') }}"
+     data-msg-models="{{ t('run.estimate.models') }}"
+     data-msg-long="{{ t('run.estimate.long') }}">
+    {{ t('run.estimate') }} : <strong id="estimate-total">0</strong>
+    <span id="estimate-detail"></span>
+    <span id="estimate-warning" class="warn" hidden></span>
+  </p>
   <p><button id="start-run" class="primary"
        data-msg-no-models="{{ t('run.no_models') }}"
        data-msg-no-tasks="{{ t('run.no_tasks') }}"

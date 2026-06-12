@@ -81,6 +81,29 @@ function pollRunStatus() {
   }).catch(() => setTimeout(pollRunStatus, 2000));
 }
 
+function updateRunEstimate() {
+  const estimate = document.getElementById("run-estimate");
+  if (!estimate) return;
+  const limitValue = parseInt(document.getElementById("limit").value, 10);
+  const limit = Number.isFinite(limitValue) && limitValue > 0 ? limitValue : null;
+  const taskBoxes = [...document.querySelectorAll(".task-check:checked")];
+  const itemsPerModel = taskBoxes.reduce((sum, box) => {
+    const count = parseInt(box.dataset.count, 10) || 0;
+    return sum + (limit ? Math.min(count, limit) : count);
+  }, 0);
+  let models = document.querySelectorAll(".model-check:checked").length;
+  models += document.getElementById("extra-models").value
+    .split("\n").map(s => s.trim()).filter(Boolean).length;
+  const total = itemsPerModel * Math.max(1, models);
+
+  document.getElementById("estimate-total").textContent = total.toLocaleString();
+  document.getElementById("estimate-detail").textContent =
+    `(${taskBoxes.length} ${estimate.dataset.msgTasks} × ${Math.max(1, models)} ${estimate.dataset.msgModels})`;
+  const warning = document.getElementById("estimate-warning");
+  warning.hidden = total <= 1000;
+  warning.textContent = total > 1000 ? estimate.dataset.msgLong : "";
+}
+
 function selectTaskSubset(mode) {
   const allTasks = document.getElementById("all-tasks");
   const boxes = [...document.querySelectorAll(".task-check")];
@@ -106,6 +129,7 @@ function selectTaskSubset(mode) {
     box.disabled = false;
     box.checked = picked.has(i);
   });
+  updateRunEstimate();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -116,7 +140,14 @@ document.addEventListener("DOMContentLoaded", () => {
         box.disabled = allTasks.checked;
         if (allTasks.checked) box.checked = true;
       });
+      updateRunEstimate();
     });
+    document.addEventListener("change", event => {
+      if (event.target.matches(".task-check, .model-check")) updateRunEstimate();
+    });
+    document.getElementById("limit").addEventListener("input", updateRunEstimate);
+    document.getElementById("extra-models").addEventListener("input", updateRunEstimate);
+    updateRunEstimate();
   }
   const selectRandom = document.getElementById("select-random");
   if (selectRandom) {
