@@ -113,7 +113,7 @@ def import_task(
     no_hf: bool = typer.Option(False, "--no-hf", help="Don't fetch the test split from Hugging Face."),
 ):
     """Import a task from a LegalBench-style GitHub repository."""
-    from .legalbench_import import build_draft, imported_readme
+    from .legalbench_import import build_draft, imported_readme, sanitize_name
     from .tasks import TaskError
     from .web.taskforms import create_task
 
@@ -125,7 +125,7 @@ def import_task(
                 "could not detect the reasoning type from the README — "
                 "pass it explicitly with --reasoning-type"
             )
-        task_name = name or draft.name
+        task_name = name or sanitize_name(draft.name)
         typer.echo(f"Importing {draft.name!r} as {task_name!r}")
         typer.echo(f"  labels: {', '.join(draft.labels)}")
         typer.echo(
@@ -158,8 +158,104 @@ def import_task(
     typer.echo(f"Created {task.path} — try: lexior-bench run --model ollama:lexiorgpt --tasks {task.name} --limit 2")
 
 
-@app.command()
-def web(
+@app.command("import-all")
+def import_all(
+    url: str = typer.Argument(..., help="GitHub URL of a LegalBench-style tasks/ directory."),
+    legal_domain: str = typer.Option("public", help="Applied to every imported task (edit task.yaml later)."),
+    metric: str = typer.Option("balanced_accuracy", help="Applied to every imported task."),
+    language: str = typer.Option("en", help="Content language tag (informational)."),
+):
+    """Bulk-import every classification task from a LegalBench-style repo.
+
+    Non-classification tasks (extraction/generation), tasks with undetectable
+    metadata, and tasks that already exist locally are skipped and reported.
+    """
+    from .legalbench_import import (
+        build_draft,
+        classification_blocker,
+        imported_readme,
+        list_task_folders,
+        sanitize_name,
+    )
+    from .tasks import TaskError
+    from .web.taskforms import create_task
+
+    tasks_dir = default_tasks_dir()
+    try:
+        folders = list_task_folders(url)
+    except (TaskError, Exception) as e:
+        typer.secho(f"Could not list task folders: {e}", fg="red")
+        raise typer.Exit(1)
+    typer.echo(f"Found {len(folders)} task folders.")
+
+    imported: list[str] = []
+    skipped: list[tuple[str, str]] = []
+    failed: list[tuple[str, str]] = []
+    for position, (folder_name, folder_url) in enumerate(folders, start=1):
+        prefix = f"[{position}/{len(folders)}] {folder_name}"
+        local_name = sanitize_name(folder_name)
+        if (tasks_dir / local_name).exists():
+            skipped.append((folder_name, "already exists locally"))
+            typer.echo(f"{prefix}: skipped (already exists)")
+            continue
+        try:
+            draft = build_draft(folder_url)
+            blocker = classification_blocker(draft)
+            if blocker:
+                skipped.append((folder_name, blocker))
+                typer.echo(f"{prefix}: skipped ({blocker})")
+                continue
+            create_task(
+                tasks_dir,
+                name=local_name,
+                reasoning_type=draft.suggested_reasoning_type,
+                legal_domain=legal_domain,
+                metric=metric,
+                description=draft.description,
+                labels=draft.labels,
+                base_prompt=draft.base_prompt,
+                train=draft.train,
+                test=draft.test,
+                language=language,
+                extra_meta={
+                    "source": draft.source,
+                    "license": draft.license,
+                    "imported_from": draft.url,
+                },
+                readme=imported_readme(
+                    draft,
+                    reasoning_type=draft.suggested_reasoning_type,
+                    legal_domain=legal_domain,
+                    language=language,
+                ),
+            )
+            imported.append(local_name)
+            typer.echo(
+                f"{prefix}: imported ({len(draft.train)} train + {len(draft.test)} test"
+                + (", HF" if draft.test_from_hf else "")
+                + ")"
+            )
+        except Exception as e:
+            failed.append((folder_name, f"{type(e).__name__}: {e}"))
+            typer.secho(f"{prefix}: FAILED ({e})", fg="red")
+
+    typer.echo("\n=== Summary ===")
+    typer.echo(f"imported: {len(imported)} — skipped: {len(skipped)} — failed: {len(failed)}")
+    if skipped:
+        typer.echo("\nSkipped:")
+        for folder_name, reason in skipped:
+            typer.echo(f"  {folder_name}: {reason}")
+    if failed:
+        typer.secho("\nFailed:", fg="red")
+        for folder_name, reason in failed:
+            typer.secho(f"  {folder_name}: {reason}", fg="red")
+    if imported:
+        typer.secho(
+            f"\nNote: --tasks all and the web UI's « All » now cover {len(imported)} more tasks "
+            "(thousands of items) — select subsets for quick runs. Licenses vary per imported "
+            "task (see each README); imported folders are left for you to commit or not.",
+            fg="yellow",
+        )
     host: str = typer.Option("127.0.0.1", help="Bind address (local tool — keep it loopback)."),
     port: int = typer.Option(8000, help="HTTP port."),
     no_browser: bool = typer.Option(False, "--no-browser", help="Don't open the browser."),

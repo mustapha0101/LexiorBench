@@ -44,6 +44,59 @@ def test_build_draft_url_validation():
         lb.build_draft("https://example.com/not-github")
 
 
+def test_sanitize_name_handles_legalbench_charset():
+    assert lb.sanitize_name("cuad_affiliate_license-licensee") == "cuad_affiliate_license_licensee"
+    assert lb.sanitize_name("opp115_user_access,_edit_and_deletion") == "opp115_user_access_edit_and_deletion"
+    assert lb.sanitize_name("maud_initial_matching_rights_period_(cor)") == "maud_initial_matching_rights_period_cor"
+    assert lb.sanitize_name("hearsay") == "hearsay"
+
+
+def test_classification_blocker():
+    def draft_with(**overrides):
+        base = dict(
+            name="x", url="u", base_prompt="{{text}}", description="d",
+            source="s", license="l", suggested_reasoning_type="interpretation",
+            labels=["a", "b"], train=[], test=[], task_type="2-way classification",
+        )
+        base.update(overrides)
+        return lb.ImportDraft(**base)
+
+    assert lb.classification_blocker(draft_with()) is None
+    assert "not a classification task" in lb.classification_blocker(
+        draft_with(task_type="extraction")
+    )
+    assert "open-ended" in lb.classification_blocker(
+        draft_with(labels=[str(i) for i in range(30)])
+    )
+    assert "reasoning type" in lb.classification_blocker(
+        draft_with(suggested_reasoning_type=None)
+    )
+
+
+def test_list_task_folders(monkeypatch):
+    class FakeResponse:
+        status_code = 200
+
+        @staticmethod
+        def raise_for_status():
+            pass
+
+        @staticmethod
+        def json():
+            return [
+                {"name": "hearsay", "type": "dir"},
+                {"name": "README.md", "type": "file"},
+                {"name": "abercrombie", "type": "dir"},
+            ]
+
+    monkeypatch.setattr(lb, "_get", lambda url: FakeResponse())
+    folders = lb.list_task_folders("https://github.com/o/r/tree/main/tasks")
+    assert folders == [
+        ("hearsay", "https://github.com/o/r/tree/main/tasks/hearsay"),
+        ("abercrombie", "https://github.com/o/r/tree/main/tasks/abercrombie"),
+    ]
+
+
 @pytest.fixture
 def fake_repo(monkeypatch):
     """Simulate the GitHub raw files and the HF datasets-server."""

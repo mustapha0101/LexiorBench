@@ -76,11 +76,44 @@ class ImportDraft:
     train: list[Example]
     test: list[Example]
     test_from_hf: bool = False
+    task_type: str = ""
     warnings: list[str] = field(default_factory=list)
 
 
 def _get(url: str) -> httpx.Response:
-    return httpx.get(url, timeout=30.0, follow_redirects=True)
+    """GET with a small backoff retry for rate limits and transient errors."""
+    import time
+
+    for attempt in range(4):
+        response = httpx.get(url, timeout=30.0, follow_redirects=True)
+        if response.status_code in (429, 502, 503) and attempt < 3:
+            time.sleep(2 * (attempt + 1))
+            continue
+        return response
+    return response
+
+
+def sanitize_name(name: str) -> str:
+    """Map a LegalBench folder name onto our task-name charset."""
+    sanitized = re.sub(r"[^a-z0-9_]+", "_", name.lower()).strip("_")
+    return re.sub(r"_+", "_", sanitized)
+
+
+def list_task_folders(url: str) -> list[tuple[str, str]]:
+    """List (folder_name, folder_url) under a GitHub tasks/ tree URL."""
+    match = GITHUB_TREE_RE.match(url.strip())
+    if not match:
+        raise TaskError(
+            f"unsupported URL {url!r} (expected https://github.com/<owner>/<repo>/tree/<branch>/<path>)"
+        )
+    owner, repo, branch, path = match.groups()
+    response = _get(f"https://api.github.com/repos/{owner}/{repo}/contents/{path}?ref={branch}")
+    response.raise_for_status()
+    return [
+        (entry["name"], f"https://github.com/{owner}/{repo}/tree/{branch}/{path}/{entry['name']}")
+        for entry in response.json()
+        if entry.get("type") == "dir"
+    ]
 
 
 def _fetch_text(url: str) -> str | None:
@@ -130,6 +163,7 @@ def parse_readme(readme: str) -> dict:
         "source": grab("Source") or "inconnu / unknown",
         "license": grab("License") or "non précisée / unspecified",
         "reasoning_type": REASONING_TYPE_MAP.get(reasoning_raw),
+        "task_type": grab("Task type"),
     }
 
 
@@ -217,8 +251,21 @@ def build_draft(url: str, include_hf: bool = True) -> ImportDraft:
         train=train,
         test=test,
         test_from_hf=test_from_hf,
+        task_type=readme_meta["task_type"],
         warnings=warnings,
     )
+
+
+def classification_blocker(draft: ImportDraft) -> str | None:
+    """Reason this draft can't be imported as a v1 classification task, or None."""
+    task_type = draft.task_type.lower()
+    if task_type and "classification" not in task_type:
+        return f"not a classification task ({draft.task_type})"
+    if len(draft.labels) > 25:
+        return f"{len(draft.labels)} distinct answers — looks open-ended, not classification"
+    if draft.suggested_reasoning_type is None:
+        return "reasoning type not detected (import individually with --reasoning-type)"
+    return None
 
 
 def imported_readme(
