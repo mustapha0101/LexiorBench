@@ -19,6 +19,8 @@ dependencies = [
 openai = ["openai>=1.40"]
 anthropic = ["anthropic>=0.40"]
 hf = ["transformers>=4.44", "torch>=2.2", "accelerate>=0.30"]
+
+[dependency-groups]
 dev = ["pytest>=8"]
 
 [project.scripts]

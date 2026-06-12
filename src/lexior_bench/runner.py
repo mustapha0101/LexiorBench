@@ -38,9 +38,10 @@ def run_benchmark(
                         prompt, temperature=temperature, max_tokens=max_tokens
                     )
                     response_text, latency_s = result.text, result.latency_s
+                    print(f"  {ex.index}: {latency_s}s", flush=True)
                 except Exception as e:
                     response_text, latency_s = f"<ERROR: {e}>", 0.0
-                print(f"  {ex.index}: {latency_s}s", flush=True)
+                    print(f"  {ex.index}: ERROR {e}", flush=True)
                 records.append(
                     {
                         "model": backend.spec,
@@ -76,5 +77,12 @@ def run_benchmark(
     (run_dir / "results.json").write_text(
         json.dumps(records, indent=2, ensure_ascii=False), encoding="utf-8"
     )
+    errors = sum(r["response"].startswith("<ERROR:") for r in records)
+    if errors:
+        print(
+            f"WARNING: {errors}/{len(records)} items failed with backend errors "
+            "(scores treat them as wrong) — check the backend is reachable.",
+            flush=True,
+        )
     print(f"Saved {len(records)} responses to {run_dir}", flush=True)
     return run_dir

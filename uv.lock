@@ -968,9 +968,6 @@ dependencies = [
 anthropic = [
     { name = "anthropic" },
 ]
-dev = [
-    { name = "pytest" },
-]
 hf = [
     { name = "accelerate" },
     { name = "torch" },
@@ -978,6 +975,11 @@ hf = [
 ]
 openai = [
     { name = "openai" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
 ]
 
 [package.metadata]
@@ -989,13 +991,15 @@ requires-dist = [
     { name = "label-studio-sdk", specifier = ">=1.0" },
     { name = "openai", marker = "extra == 'openai'", specifier = ">=1.40" },
     { name = "pandas", specifier = ">=2.0" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8" },
     { name = "pyyaml", specifier = ">=6.0" },
     { name = "torch", marker = "extra == 'hf'", specifier = ">=2.2" },
     { name = "transformers", marker = "extra == 'hf'", specifier = ">=4.44" },
     { name = "typer", specifier = ">=0.12" },
 ]
-provides-extras = ["openai", "anthropic", "hf", "dev"]
+provides-extras = ["openai", "anthropic", "hf"]
+
+[package.metadata.requires-dev]
+dev = [{ name = "pytest", specifier = ">=8" }]
 
 [[package]]
 name = "lxml"
