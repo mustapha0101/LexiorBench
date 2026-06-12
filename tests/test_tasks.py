@@ -122,7 +122,8 @@ def test_resolve_task_names_all_and_type_and_list():
     tasks = discover_tasks(TASKS_DIR)
     assert resolve_task_names("all", tasks) == tasks
     by_type = resolve_task_names("type:rule-recall", tasks)
-    assert [t.name for t in by_type] == ["civil_rule_recall_ccq"]
+    assert "civil_rule_recall_ccq" in [t.name for t in by_type]
+    assert all(t.reasoning_type == "rule-recall" for t in by_type)
     pair = resolve_task_names("civil_rule_recall_ccq, public_interpretation_charte", tasks)
     assert [t.name for t in pair] == ["civil_rule_recall_ccq", "public_interpretation_charte"]
     with pytest.raises(TaskError, match="unknown task"):

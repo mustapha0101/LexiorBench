@@ -1,0 +1,17 @@
+name: supply_chain_disclosure_best_practice_verification
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- 'No'
+- 'Yes'
+metric: balanced_accuracy
+description: Given a supply chain disclosure, determine if the statement discloses
+  whether the retail seller or manufacturer engages in verification and auditing as
+  one practice, expresses that it may conduct an audit, or expressess that it is assessing
+  supplier risks through a review of the US Dept. of Labor's List.
+version: 1
+source: Adam Chilton & Galit Sarfaty
+license: '[CC by 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/supply_chain_disclosure_best_practice_verification

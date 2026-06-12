@@ -1,0 +1,17 @@
+name: supply_chain_disclosure_disclosed_audits
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- 'No'
+- 'Yes'
+metric: balanced_accuracy
+description: Given a disclosure, determine whether the statement discloses to what
+  extent, if any, that the retail seller or manufacturer conducts audits of suppliers
+  to evaluate supplier compliance with company standards for trafficking and slavery
+  in supply chains.
+version: 1
+source: Adam Chilton & Galit Sarfaty
+license: '[CC by 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/supply_chain_disclosure_disclosed_audits

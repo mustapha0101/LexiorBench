@@ -1,0 +1,15 @@
+name: legal_reasoning_causality
+reasoning_type: rhetorical-understanding
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- 'No'
+- 'Yes'
+metric: balanced_accuracy
+description: Given an excerpt from a district court opinion, classify if it relies
+  on statistical evidence in its reasoning.
+version: 1
+source: Haggai Porat, Tom Zur
+license: '[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/legal_reasoning_causality

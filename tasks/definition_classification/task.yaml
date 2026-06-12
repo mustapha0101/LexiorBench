@@ -1,0 +1,15 @@
+name: definition_classification
+reasoning_type: rhetorical-understanding
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- 'No'
+- 'Yes'
+metric: balanced_accuracy
+description: Given a sentence from a Supreme Court opinion, classify whether or not
+  that sentence offers a definition of a term.
+version: 1
+source: Kevin Tobia
+license: '[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/definition_classification

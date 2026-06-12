@@ -1,0 +1,15 @@
+name: proa
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- 'No'
+- 'Yes'
+metric: balanced_accuracy
+description: Given a statute, determine if the text contains an explicit private right
+  of action.
+version: 1
+source: Neel Guha, Diego Zambrano
+license: '[CC by 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/proa

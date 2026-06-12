@@ -1,0 +1,17 @@
+name: cuad_uncapped_liability
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- 'No'
+- 'Yes'
+metric: balanced_accuracy
+description: Classify if the clause specifies that a party’s liability is uncapped
+  upon the breach of its obligation in the contract. This also includes uncap liability
+  for a particular type of breach such as IP infringement or breach of confidentiality
+  obligation.
+version: 1
+source: '[Atticus Project](https://www.atticusprojectai.org/cuad>)'
+license: '[CC By 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/cuad_uncapped_liability

@@ -1,0 +1,15 @@
+name: maud_includes_consistent_with_past_practice
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- A
+- B
+metric: balanced_accuracy
+description: 'Read an excerpt from a merger agreement and answer: does the wording
+  of the Efforts Covenant clause include “consistent with past practice”?'
+version: 1
+source: '[Atticus Project](https://www.atticusprojectai.org/maud)'
+license: '[CC By 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/maud_includes_consistent_with_past_practice

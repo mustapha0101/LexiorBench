@@ -1,0 +1,16 @@
+name: cuad_third_party_beneficiary
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- 'No'
+- 'Yes'
+metric: balanced_accuracy
+description: Classify if the clause specifies that that there a non-contracting party
+  who is a beneficiary to some or all of the clauses in the contract and therefore
+  can enforce its rights against a contracting party.
+version: 1
+source: '[Atticus Project](https://www.atticusprojectai.org/cuad>)'
+license: '[CC By 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/cuad_third_party_beneficiary

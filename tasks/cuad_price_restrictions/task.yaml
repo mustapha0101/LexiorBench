@@ -1,0 +1,15 @@
+name: cuad_price_restrictions
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- 'No'
+- 'Yes'
+metric: balanced_accuracy
+description: Classify if the clause places a restriction on the ability of a party
+  to raise or reduce prices of technology, goods, or services provided.
+version: 1
+source: '[Atticus Project](https://www.atticusprojectai.org/cuad>)'
+license: '[CC By 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/cuad_price_restrictions

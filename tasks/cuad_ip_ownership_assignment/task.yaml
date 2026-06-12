@@ -1,0 +1,16 @@
+name: cuad_ip_ownership_assignment
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- 'No'
+- 'Yes'
+metric: balanced_accuracy
+description: Classify if the clause specifies that intellectual property created by
+  one party become the property of the counterparty, either per the terms of the contract
+  or upon the occurrence of certain events.
+version: 1
+source: '[Atticus Project](https://www.atticusprojectai.org/cuad>)'
+license: '[CC By 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/cuad_ip_ownership_assignment

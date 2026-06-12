@@ -1,0 +1,17 @@
+name: maud_definition_contains_knowledge_requirement_answer
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- A
+- B
+- C
+- D
+metric: balanced_accuracy
+description: 'Read an excerpt from a merger agreement and answer: what is the knowledge
+  requirement in the definition of “Intervening Event”?'
+version: 1
+source: '[Atticus Project](https://www.atticusprojectai.org/maud)'
+license: '[CC By 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/maud_definition_contains_knowledge_requirement_-_answer

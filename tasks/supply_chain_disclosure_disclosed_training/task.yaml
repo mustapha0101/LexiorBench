@@ -1,0 +1,18 @@
+name: supply_chain_disclosure_disclosed_training
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- 'No'
+- 'Yes'
+metric: balanced_accuracy
+description: Given a supply chain disclosure, determine if the statement discloses
+  whether the retail seller or manufacturer provides company employees and management,
+  who have direct responsibility for supply chain management, training on human trafficking
+  and slavery, particularly with respect to mitigating risks within the supply chains
+  of products.
+version: 1
+source: Adam Chilton & Galit Sarfaty
+license: '[CC by 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/supply_chain_disclosure_disclosed_training

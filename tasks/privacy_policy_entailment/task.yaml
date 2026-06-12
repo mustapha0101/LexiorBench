@@ -1,0 +1,15 @@
+name: privacy_policy_entailment
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- Correct
+- Incorrect
+metric: balanced_accuracy
+description: Given a privacy policy clause and a description of the clause, determine
+  if the description is correct.
+version: 1
+source: '[APP-350 Corpus](https://github.com/AbhilashaRavichander/PrivacyQA_EMNLP)'
+license: '[CC BY-NC 3.0](https://creativecommons.org/licenses/by-nc/3.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/privacy_policy_entailment

@@ -81,13 +81,22 @@ class ImportDraft:
 
 
 def _get(url: str) -> httpx.Response:
-    """GET with a small backoff retry for rate limits and transient errors."""
+    """GET with exponential backoff for rate limits and transient errors.
+
+    The HF datasets-server throttles bursty clients hard; honor Retry-After
+    and back off up to ~60s before giving up.
+    """
     import time
 
-    for attempt in range(4):
+    for attempt in range(7):
         response = httpx.get(url, timeout=30.0, follow_redirects=True)
-        if response.status_code in (429, 502, 503) and attempt < 3:
-            time.sleep(2 * (attempt + 1))
+        if response.status_code in (429, 502, 503) and attempt < 6:
+            retry_after = response.headers.get("retry-after")
+            try:
+                wait = float(retry_after) if retry_after else 0.0
+            except ValueError:
+                wait = 0.0
+            time.sleep(max(wait, min(2.0 * 2**attempt, 60.0)))
             continue
         return response
     return response
@@ -169,9 +178,13 @@ def parse_readme(readme: str) -> dict:
 
 def fetch_hf_split(task_name: str, split: str) -> list[Example]:
     """Fetch a split from the LegalBench Hugging Face dataset (paginated JSON)."""
+    import time
+
     examples: list[Example] = []
     offset, total = 0, None
     while total is None or offset < total:
+        if offset:
+            time.sleep(0.5)  # politeness between pages — the rows API throttles bursts
         response = _get(
             f"{HF_ROWS_URL}?dataset={HF_DATASET}&config={task_name}"
             f"&split={split}&offset={offset}&length=100"
@@ -217,16 +230,18 @@ def build_draft(url: str, include_hf: bool = True) -> ImportDraft:
     test_tsv = _fetch_text(f"{raw_base}/test.tsv")
     test = parse_legalbench_tsv(test_tsv) if test_tsv else []
     test_from_hf = False
+    hf_error = ""
     if not test and include_hf:
         try:
             test = fetch_hf_split(name, "test")
             test_from_hf = bool(test)
         except Exception as e:
-            warnings.append(f"Hugging Face test split unavailable: {e}")
+            hf_error = f"{type(e).__name__}: {e}"
+            warnings.append(f"Hugging Face test split unavailable: {hf_error}")
     if not test:
         raise TaskError(
-            f"{name}: no evaluation data (no test.tsv in the repo and the "
-            "Hugging Face split could not be fetched)"
+            f"{name}: no evaluation data (no test.tsv in the repo; "
+            f"Hugging Face fetch: {hf_error or 'not attempted'})"
         )
     if not train:
         # our format requires a non-empty train split: borrow a few eval items

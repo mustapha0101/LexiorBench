@@ -1,0 +1,15 @@
+name: contract_nli_sharing_with_employees
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- 'No'
+- 'Yes'
+metric: balanced_accuracy
+description: Identify if the clause provides that the Receiving Party may share some
+  Confidential Information with some of Receiving Party's employees.
+version: 1
+source: '[ContractNLI](https://stanfordnlp.github.io/contract-nli/)'
+license: '[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/contract_nli_sharing_with_employees

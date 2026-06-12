@@ -1,0 +1,15 @@
+name: maud_liability_standard_for_no_shop_breach_by_target_non_do_representatives
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- A
+- B
+metric: balanced_accuracy
+description: 'Read an excerpt from a merger agreement and answer: what is the liability
+  standard for no-shop breach by Target Non-D&O Representatives?'
+version: 1
+source: '[Atticus Project](https://www.atticusprojectai.org/maud)'
+license: '[CC By 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/maud_liability_standard_for_no-shop_breach_by_target_non-do_representatives

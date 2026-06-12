@@ -1,0 +1,14 @@
+name: learned_hands_consumer
+reasoning_type: issue-spotting
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- 'No'
+- 'Yes'
+metric: balanced_accuracy
+description: Classify if a user post implicates legal isssues related to consumer.
+version: 1
+source: '[Learned Hands](https://spot.suffolklitlab.org/data/#learnedhands)'
+license: '[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/learned_hands_consumer

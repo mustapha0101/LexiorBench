@@ -1,0 +1,16 @@
+name: cuad_post_termination_services
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- 'No'
+- 'Yes'
+metric: balanced_accuracy
+description: Classify if the clause subjects a party to obligations after the termination
+  or expiration of a contract, including any post-termination transition, payment,
+  transfer of IP, wind-down, last-buy, or similar commitments.
+version: 1
+source: '[Atticus Project](https://www.atticusprojectai.org/cuad>)'
+license: '[CC By 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/cuad_post-termination_services

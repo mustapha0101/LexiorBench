@@ -1,0 +1,15 @@
+name: maud_fiduciary_exception_board_determination_trigger_no_shop
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- A
+- B
+metric: balanced_accuracy
+description: 'Read an excerpt from a merger agreement and answer: what type of offer
+  could the Board take actions on notwithstanding the no-shop provision?'
+version: 1
+source: '[Atticus Project](https://www.atticusprojectai.org/maud)'
+license: '[CC By 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/maud_fiduciary_exception_board_determination_trigger_(no_shop)

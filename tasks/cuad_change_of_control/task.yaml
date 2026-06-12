@@ -1,0 +1,17 @@
+name: cuad_change_of_control
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- 'No'
+- 'Yes'
+metric: balanced_accuracy
+description: Classify if the clause gives one party the right to terminate or is consent
+  or notice required of the counterparty if such party undergoes a change of control,
+  such as a merger, stock sale, transfer of all or substantially all of its assets
+  or business, or assignment by operation of law.
+version: 1
+source: '[Atticus Project](https://www.atticusprojectai.org/cuad>)'
+license: '[CC By 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/cuad_change_of_control

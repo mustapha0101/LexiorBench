@@ -1,0 +1,15 @@
+name: cuad_unlimited_all_you_can_eat_license
+reasoning_type: interpretation
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+- 'No'
+- 'Yes'
+metric: balanced_accuracy
+description: Classify if the clause grants one party an “enterprise,” “all you can
+  eat” or unlimited usage license.
+version: 1
+source: '[Atticus Project](https://www.atticusprojectai.org/cuad>)'
+license: '[CC By 4.0](https://creativecommons.org/licenses/by/4.0/)'
+imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/cuad_unlimited-all-you-can-eat-license
