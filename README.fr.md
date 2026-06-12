@@ -26,6 +26,9 @@ uv sync --extra hf                                     # optionnel : dorsal tran
 ## Démarrage rapide
 
 ```sh
+# Interface web : tâches, exécutions, résultats et annotation sans commandes shell
+uv run lexior-bench web            # http://127.0.0.1:8000 (FR/EN)
+
 # Lister les tâches du banc d'essai
 uv run lexior-bench list-tasks
 
@@ -75,6 +78,7 @@ voie de production.
 
 ## Documentation
 
+- [docs/web-ui.fr.md](docs/web-ui.fr.md) — l'interface web locale
 - [docs/task-format.fr.md](docs/task-format.fr.md) — format task.yaml, TSV et invites
 - [docs/adding-a-task.fr.md](docs/adding-a-task.fr.md) — ajouter une nouvelle tâche
 - [docs/annotation-workflow.fr.md](docs/annotation-workflow.fr.md) — boucle de validation par juristes

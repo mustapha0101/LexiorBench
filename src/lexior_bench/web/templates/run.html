@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ t('run.title') }}</h1>
+
+<div id="run-form" {% if job and job.status == 'running' %}hidden{% endif %}>
+  <h2>{{ t('run.models') }}</h2>
+  <fieldset>
+    <legend>{{ t('run.models.ollama') }}</legend>
+    {% if ollama_models %}
+      {% for model in ollama_models %}
+      <label class="check"><input type="checkbox" class="model-check" value="ollama:{{ model }}"> ollama:{{ model }}</label>
+      {% endfor %}
+    {% else %}
+      <p class="warn">{{ t('run.models.ollama.none') }}</p>
+    {% endif %}
+  </fieldset>
+  <label>{{ t('run.models.extra') }}
+    <textarea id="extra-models" rows="2" placeholder="anthropic:claude-opus-4-8"></textarea>
+  </label>
+  <p>
+    <small>openai : <span class="{{ 'ok' if openai_key else 'warn' }}">{{ t('run.key.set') if openai_key else t('run.key.missing') }}</span> ·
+    anthropic : <span class="{{ 'ok' if anthropic_key else 'warn' }}">{{ t('run.key.set') if anthropic_key else t('run.key.missing') }}</span></small>
+  </p>
+
+  <h2>{{ t('run.tasks') }}</h2>
+  <fieldset>
+    <label class="check"><input type="checkbox" id="all-tasks" checked> <strong>{{ t('run.tasks.all') }}</strong></label>
+    {% for task in tasks %}
+    <label class="check"><input type="checkbox" class="task-check" value="{{ task.name }}" checked disabled> {{ task.name }} <small>({{ task.reasoning_type }})</small></label>
+    {% endfor %}
+  </fieldset>
+
+  <div class="grid">
+    <label>{{ t('run.limit') }} <input type="number" id="limit" min="1"></label>
+    <label>{{ t('run.max_tokens') }} <input type="number" id="max-tokens" value="512" min="16"></label>
+  </div>
+  <p><button id="start-run" class="primary"
+       data-msg-no-models="{{ t('run.no_models') }}"
+       data-msg-no-tasks="{{ t('run.no_tasks') }}"
+       data-msg-busy="{{ t('run.busy') }}">{{ t('run.start') }}</button></p>
+  <p id="run-error" class="error" hidden></p>
+</div>
+
+<div id="run-progress" {% if not job or job.status != 'running' %}hidden{% endif %}
+     data-running="{{ '1' if job and job.status == 'running' else '0' }}">
+  <h2>{{ t('run.running') }}</h2>
+  <progress id="run-bar" max="100" value="0"></progress>
+  <p><span id="run-count">0 / 0</span> — <span id="run-current"></span></p>
+  <p id="run-errors" class="warn" hidden></p>
+</div>
+
+<div id="run-done" hidden>
+  <h2 id="run-done-title">{{ t('run.done') }}</h2>
+  <p id="run-done-error" class="error" hidden></p>
+  <p id="run-done-warn" class="warn" hidden data-msg="{{ t('run.errors_warning') }}"></p>
+  <p><a id="run-results-link" class="button" href="#">{{ t('run.view_results') }}</a></p>
+  <p data-msg-failed="{{ t('run.failed') }}"></p>
+</div>
+{% endblock %}

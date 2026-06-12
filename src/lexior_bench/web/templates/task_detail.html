@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ task.name }}</h1>
+<p>
+  <span class="tag">{{ task.reasoning_type }}</span>
+  <span class="tag">{{ task.legal_domain }}</span>
+  <span class="tag">{{ task.metric }}</span>
+  <span class="tag">v{{ task.version }}</span>
+</p>
+<p>{{ task.description }}</p>
+<p class="labels"><strong>{{ t('tasks.labels') }} :</strong> {{ task.labels | join(' / ') }}</p>
+
+{% if saved %}<p class="success">{{ t('task.items.saved') }}</p>{% endif %}
+{% if error %}<p class="error">{{ t('common.error') }} : {{ error }}</p>{% endif %}
+
+<details>
+  <summary>{{ t('task.detail.prompt') }}</summary>
+  <pre>{{ task.base_prompt }}</pre>
+</details>
+
+<form method="post" action="/tasks/{{ task.name }}/items">
+  <p><small>{{ t('task.detail.items.edit') }}</small></p>
+  {% for split, items in [('train', task.train), ('test', task.test)] %}
+  <h2>{{ t('tasks.' + split) }}</h2>
+  <table class="items" data-split="{{ split }}"><thead>
+    <tr><th>{{ t('items.index') }}</th><th>{{ t('items.text') }}</th><th>{{ t('items.answer') }}</th><th></th></tr>
+  </thead><tbody>
+    {% for ex in items %}
+    <tr>
+      <td><input name="{{ split }}_index" value="{{ ex.index }}" size="4"></td>
+      <td><textarea name="{{ split }}_text" rows="2">{{ ex.text }}</textarea></td>
+      <td><select name="{{ split }}_answer">
+        {% for label in task.labels %}
+        <option value="{{ label }}" {% if ex.answer == label %}selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+      </select></td>
+      <td><button type="button" class="remove-row">✕</button></td>
+    </tr>
+    {% endfor %}
+  </tbody></table>
+  <button type="button" class="add-row" data-split="{{ split }}" data-labels='{{ task.labels | tojson }}'>+ {{ t('items.add') }}</button>
+  {% endfor %}
+  <p><button type="submit" class="primary">{{ t('task.items.save') }}</button></p>
+</form>
+
+<form method="post" action="/tasks/{{ task.name }}/delete"
+      onsubmit="return confirm({{ t('tasks.delete.confirm') | tojson }})">
+  <button type="submit" class="danger">{{ t('tasks.delete') }}</button>
+</form>
+{% endblock %}

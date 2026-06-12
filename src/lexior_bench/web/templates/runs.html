@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ t('runs.title') }}</h1>
+{% if not runs %}
+<p>{{ t('runs.empty') }}</p>
+{% else %}
+<table>
+  <thead>
+    <tr>
+      <th>{{ t('runs.date') }}</th>
+      <th>{{ t('runs.models') }}</th>
+      <th>{{ t('runs.tasks') }}</th>
+      <th>{{ t('runs.params') }}</th>
+      <th>{{ t('runs.mean') }}</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for run in runs %}
+    <tr>
+      <td><a href="/runs/{{ run.meta.run_id }}">{{ run.meta.created_at }}</a></td>
+      <td>{% for model in run.meta.models %}<code>{{ model }}</code>{% if not loop.last %}<br>{% endif %}{% endfor %}</td>
+      <td>{{ run.meta.tasks | length }}</td>
+      <td><small>limit={{ run.meta.params.limit }} · max_tokens={{ run.meta.params.max_tokens }}</small></td>
+      <td>{% for model in run.meta.models %}{{ '%.1f%%' | format(run.means.get(model) * 100) if run.means.get(model) is not none else '—' }}{% if not loop.last %}<br>{% endif %}{% endfor %}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+{% endblock %}

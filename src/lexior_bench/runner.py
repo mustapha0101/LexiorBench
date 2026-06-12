@@ -5,10 +5,17 @@ from __future__ import annotations
 import json
 import time
 from pathlib import Path
+from typing import Callable
 
 from .backends import create_backend
 from .prompts import render_prompt
 from .tasks import Task
+
+
+def count_items(model_specs: list[str], tasks: list[Task], limit: int | None = None) -> int:
+    """Total generations a run will perform (for progress displays)."""
+    per_model = sum(len(task.test[:limit] if limit else task.test) for task in tasks)
+    return per_model * len(model_specs)
 
 
 def run_benchmark(
@@ -19,12 +26,14 @@ def run_benchmark(
     temperature: float = 0.0,
     max_tokens: int = 512,
     results_dir: Path = Path("results"),
+    on_progress: Callable[[dict], None] | None = None,
 ) -> Path:
     """Run every model on every task's test split; return the run directory."""
     run_id = time.strftime("%Y%m%d-%H%M%S")
     run_dir = results_dir / run_id
     run_dir.mkdir(parents=True, exist_ok=True)
 
+    total = count_items(model_specs, tasks, limit)
     records: list[dict] = []
     for spec in model_specs:
         backend = create_backend(spec)
@@ -42,6 +51,18 @@ def run_benchmark(
                 except Exception as e:
                     response_text, latency_s = f"<ERROR: {e}>", 0.0
                     print(f"  {ex.index}: ERROR {e}", flush=True)
+                if on_progress:
+                    on_progress(
+                        {
+                            "model": backend.spec,
+                            "task": task.name,
+                            "index": ex.index,
+                            "done": len(records) + 1,
+                            "total": total,
+                            "latency_s": latency_s,
+                            "error": response_text.startswith("<ERROR:"),
+                        }
+                    )
                 records.append(
                     {
                         "model": backend.spec,

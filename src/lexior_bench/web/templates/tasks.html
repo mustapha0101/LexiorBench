@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ t('tasks.title') }}</h1>
+<p><a class="button" href="/tasks/new">+ {{ t('tasks.new') }}</a></p>
+<table>
+  <thead>
+    <tr>
+      <th>{{ t('tasks.name') }}</th>
+      <th>{{ t('tasks.type') }}</th>
+      <th>{{ t('tasks.domain') }}</th>
+      <th>{{ t('tasks.labels') }}</th>
+      <th>{{ t('tasks.train') }}</th>
+      <th>{{ t('tasks.test') }}</th>
+      <th>{{ t('tasks.metric') }}</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for task in tasks %}
+    <tr>
+      <td><a href="/tasks/{{ task.name }}">{{ task.name }}</a></td>
+      <td>{{ task.reasoning_type }}</td>
+      <td>{{ task.legal_domain }}</td>
+      <td class="labels">{{ task.labels | join(' / ') }}</td>
+      <td>{{ task.train | length }}</td>
+      <td>{{ task.test | length }}</td>
+      <td>{{ task.metric }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

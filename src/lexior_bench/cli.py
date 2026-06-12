@@ -100,6 +100,37 @@ def report(
     typer.echo(f"Wrote {write_report(run)} and {write_transcript(run)}")
 
 
+@app.command()
+def web(
+    host: str = typer.Option("127.0.0.1", help="Bind address (local tool — keep it loopback)."),
+    port: int = typer.Option(8000, help="HTTP port."),
+    no_browser: bool = typer.Option(False, "--no-browser", help="Don't open the browser."),
+):
+    """Launch the local web interface (tasks, runs, results, annotation)."""
+    import os
+    import threading
+    import webbrowser
+
+    env_file = Path(".env")
+    if env_file.is_file():
+        # Convenience for the web UI only: annotation providers read env vars.
+        for line in env_file.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, _, value = line.partition("=")
+                os.environ.setdefault(key.strip(), value.strip())
+
+    import uvicorn
+
+    from .web.app import app as web_app
+
+    url = f"http://{host}:{port}"
+    typer.echo(f"Lexior Bench web UI: {url}")
+    if not no_browser:
+        threading.Timer(1.0, webbrowser.open, [url]).start()
+    uvicorn.run(web_app, host=host, port=port, log_level="warning")
+
+
 def _annotation_provider(provider: Optional[str]):
     import os
 

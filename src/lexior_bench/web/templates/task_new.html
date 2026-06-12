@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ t('task.new.title') }}</h1>
+{% if error %}<p class="error">{{ t('common.error') }} : {{ error }}</p>{% endif %}
+<form method="post" action="/tasks" id="task-form">
+  <div class="grid">
+    <label>{{ t('tasks.name') }}
+      <input name="name" required pattern="[a-z][a-z0-9_]*" value="{{ form.get('name', '') }}">
+      <small>{{ t('task.new.name.help') }}</small>
+    </label>
+    <label>{{ t('tasks.type') }}
+      <select name="reasoning_type">
+        {% for rt in reasoning_types %}
+        <option value="{{ rt }}" {% if form.get('reasoning_type') == rt %}selected{% endif %}>{{ rt }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>{{ t('tasks.domain') }}
+      <select name="legal_domain">
+        {% for d in legal_domains %}
+        <option value="{{ d }}" {% if form.get('legal_domain') == d %}selected{% endif %}>{{ d }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>{{ t('tasks.metric') }}
+      <select name="metric">
+        {% for m in metrics %}
+        <option value="{{ m }}" {% if form.get('metric') == m %}selected{% endif %}>{{ m }}</option>
+        {% endfor %}
+      </select>
+    </label>
+  </div>
+  <label>{{ t('tasks.description') }}
+    <textarea name="description" rows="2" required>{{ form.get('description', '') }}</textarea>
+  </label>
+  <label>{{ t('tasks.labels') }}
+    <textarea name="labels" id="labels" rows="3" required>{{ form.get('labels', '') }}</textarea>
+    <small>{{ t('task.new.labels.help') }}</small>
+  </label>
+  <label>{{ t('task.detail.prompt') }}
+    <textarea name="base_prompt" rows="9" required>{{ form.get('base_prompt') or default_prompt }}</textarea>
+    <small>{{ t('task.new.prompt.help') }}</small>
+  </label>
+
+  <h2>{{ t('tasks.train') }}</h2>
+  <table class="items" data-split="train"><thead>
+    <tr><th>{{ t('items.index') }}</th><th>{{ t('items.text') }}</th><th>{{ t('items.answer') }}</th><th></th></tr>
+  </thead><tbody></tbody></table>
+  <button type="button" class="add-row" data-split="train">+ {{ t('items.add') }}</button>
+
+  <h2>{{ t('tasks.test') }}</h2>
+  <table class="items" data-split="test"><thead>
+    <tr><th>{{ t('items.index') }}</th><th>{{ t('items.text') }}</th><th>{{ t('items.answer') }}</th><th></th></tr>
+  </thead><tbody></tbody></table>
+  <button type="button" class="add-row" data-split="test">+ {{ t('items.add') }}</button>
+  <p><small>{{ t('task.new.items.help') }}</small></p>
+
+  <p><button type="submit" class="primary">{{ t('task.new.create') }}</button></p>
+</form>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  for (const split of ['train', 'test']) {
+    for (let i = 0; i < (split === 'train' ? 2 : 3); i++) LexiorItems.addRow(split);
+  }
+});
+</script>
+{% endblock %}

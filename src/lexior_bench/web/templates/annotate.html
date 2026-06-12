@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ t('annotate.title') }}</h1>
+<p><small>{{ t('annotate.help') }}</small></p>
+<label>{{ t('annotate.provider') }}
+  <select id="annotate-provider">
+    <option value="argilla" {% if default_provider == 'argilla' %}selected{% endif %}>Argilla</option>
+    <option value="labelstudio" {% if default_provider == 'labelstudio' %}selected{% endif %}>Label Studio</option>
+  </select>
+</label>
+<table>
+  <thead><tr><th>{{ t('tasks.name') }}</th><th>{{ t('common.actions') }}</th></tr></thead>
+  <tbody>
+  {% for task in tasks %}
+    <tr data-task="{{ task.name }}">
+      <td>{{ task.name }}<br><small>{{ task.train | length }} + {{ task.test | length }} items</small></td>
+      <td>
+        <button class="annotate-btn" data-action="push">{{ t('annotate.push') }}</button>
+        <button class="annotate-btn" data-action="preview">{{ t('annotate.preview') }}</button>
+        <button class="annotate-btn danger" data-action="apply"
+                data-confirm="{{ t('annotate.apply.confirm') }}">{{ t('annotate.apply') }}</button>
+        <div class="annotate-result" hidden
+             data-msg-pushed="{{ t('annotate.pushed') }}"
+             data-msg-annotated="{{ t('annotate.annotated') }}"
+             data-msg-validated="{{ t('annotate.validated') }}"
+             data-msg-changes="{{ t('annotate.changes') }}"
+             data-msg-corrected="{{ t('annotate.change.corrected') }}"
+             data-msg-rejected="{{ t('annotate.change.rejected') }}"
+             data-msg-invalid="{{ t('annotate.change.invalid') }}"
+             data-msg-applied="{{ t('annotate.applied') }}"
+             data-msg-nothing="{{ t('annotate.nothing') }}"></div>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ t('app.title') }}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <span class="brand">⚖️ {{ t('app.title') }}</span>
+  <nav>
+    <a href="/tasks" {% if request.url.path.startswith('/tasks') %}class="active"{% endif %}>{{ t('nav.tasks') }}</a>
+    <a href="/run" {% if request.url.path == '/run' %}class="active"{% endif %}>{{ t('nav.run') }}</a>
+    <a href="/runs" {% if request.url.path.startswith('/runs') %}class="active"{% endif %}>{{ t('nav.runs') }}</a>
+    <a href="/annotate" {% if request.url.path.startswith('/annotate') %}class="active"{% endif %}>{{ t('nav.annotate') }}</a>
+  </nav>
+  <a class="lang" href="/lang/{{ t('lang.code') }}?next={{ request.url.path }}">{{ t('lang.switch') }}</a>
+</header>
+<main>
+{% block content %}{% endblock %}
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>

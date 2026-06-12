@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% macro pct(value) -%}
+{%- if value is none %}—{% else %}{{ '%.1f%%' | format(value * 100) }}{% endif -%}
+{%- endmacro %}
+{% block content %}
+<h1>{{ t('run.detail.title') }} <code>{{ meta.run_id }}</code></h1>
+<p><small>{{ meta.created_at }} · limit={{ meta.params.limit }} · max_tokens={{ meta.params.max_tokens }}</small></p>
+
+<h2>{{ t('run.detail.leaderboard') }}</h2>
+<table>
+  <thead><tr><th>{{ t('runs.models') }}</th>{% for name in task_names %}<th class="vert">{{ name }}</th>{% endfor %}<th>{{ t('runs.mean') }}</th></tr></thead>
+  <tbody>
+  {% for model, data in scores.models.items() %}
+    <tr>
+      <td><code>{{ model }}</code></td>
+      {% for name in task_names %}
+      <td>{{ pct(data.tasks.get(name, {}).get('score')) }}{% if data.tasks.get(name, {}).get('errors') %} <span class="warn">({{ data.tasks[name].errors }} {{ t('run.detail.errors') }})</span>{% endif %}</td>
+      {% endfor %}
+      <td><strong>{{ pct(data.mean) }}</strong></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% for title, key in [(t('run.detail.by_type'), 'by_reasoning_type'), (t('run.detail.by_domain'), 'by_legal_domain')] %}
+<h2>{{ title }}</h2>
+{% set groups = [] %}
+{% for model, data in scores.models.items() %}{% for g in data[key] %}{% if g not in groups %}{{ groups.append(g) or '' }}{% endif %}{% endfor %}{% endfor %}
+<table>
+  <thead><tr><th>{{ t('runs.models') }}</th>{% for g in groups | sort %}<th>{{ g }}</th>{% endfor %}</tr></thead>
+  <tbody>
+  {% for model, data in scores.models.items() %}
+    <tr><td><code>{{ model }}</code></td>
+    {% for g in groups | sort %}<td>{{ pct(data[key].get(g)) }}</td>{% endfor %}
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endfor %}
+
+<h2>{{ t('run.detail.unparsed') }}</h2>
+<table>
+  <thead><tr><th>{{ t('runs.models') }}</th>{% for name in task_names %}<th class="vert">{{ name }}</th>{% endfor %}</tr></thead>
+  <tbody>
+  {% for model, data in scores.models.items() %}
+    <tr><td><code>{{ model }}</code></td>
+    {% for name in task_names %}<td>{{ pct(data.tasks.get(name, {}).get('unparsed_rate')) }}</td>{% endfor %}
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<h2>{{ t('run.detail.transcript') }}</h2>
+{% for model, model_tasks in transcript.items() %}
+<h3><code>{{ model }}</code></h3>
+{% for task_name, items in model_tasks.items() %}
+<details>
+  <summary>{{ task_name }} — {{ items | selectattr('ok') | list | length }}/{{ items | length }} ✓</summary>
+  {% for item in items %}
+  <details class="item {{ 'ok' if item.ok else 'ko' }}">
+    <summary>{{ '✓' if item.ok else '✗' }} {{ item.index }} · {{ t('run.detail.expected') }} : {{ item.reference }} · {{ t('run.detail.extracted') }} : {{ t('run.detail.unparsed_label') if item.unparsed else item.predicted }} <small>({{ item.latency_s }}s)</small></summary>
+    <p><small>{{ item.prompt.split('Situation :')[-1] | trim | truncate(300) }}</small></p>
+    <p><strong>{{ t('run.detail.response') }} :</strong></p>
+    <pre>{{ item.response }}</pre>
+  </details>
+  {% endfor %}
+</details>
+{% endfor %}
+{% endfor %}
+{% endblock %}

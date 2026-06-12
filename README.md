@@ -26,6 +26,9 @@ uv sync --extra hf                                     # optional: local transfo
 ## Quick start
 
 ```sh
+# Web interface: tasks, runs, results and annotation without shell commands
+uv run lexior-bench web            # http://127.0.0.1:8000 (FR/EN)
+
 # List the benchmark tasks
 uv run lexior-bench list-tasks
 
@@ -75,6 +78,7 @@ production path.
 
 ## Documentation
 
+- [docs/web-ui.md](docs/web-ui.md) — the local web interface
 - [docs/task-format.md](docs/task-format.md) — task.yaml, TSV and prompt format
 - [docs/adding-a-task.md](docs/adding-a-task.md) — how to add a new task
 - [docs/annotation-workflow.md](docs/annotation-workflow.md) — jurist validation loop
