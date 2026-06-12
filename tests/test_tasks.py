@@ -14,6 +14,11 @@ from lexior_bench.tasks import (
 from conftest import TASKS_DIR, write_task_folder
 
 
+def test_cli_module_imports():
+    """The test suite never exercises the CLI entry point — at least ensure it parses."""
+    import lexior_bench.cli  # noqa: F401
+
+
 SEED_TASKS = [
     "civil_issue_spotting_responsabilite",
     "civil_rule_application_vices_caches",

@@ -256,6 +256,10 @@ def import_all(
             "task (see each README); imported folders are left for you to commit or not.",
             fg="yellow",
         )
+
+
+@app.command()
+def web(
     host: str = typer.Option("127.0.0.1", help="Bind address (local tool — keep it loopback)."),
     port: int = typer.Option(8000, help="HTTP port."),
     no_browser: bool = typer.Option(False, "--no-browser", help="Don't open the browser."),
