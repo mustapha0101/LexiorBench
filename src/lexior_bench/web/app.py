@@ -37,10 +37,16 @@ app = FastAPI(title="Lexior Bench", docs_url=None, redoc_url=None)
 app.mount("/static", StaticFiles(directory=WEB_DIR / "static"), name="static")
 templates = Jinja2Templates(directory=WEB_DIR / "templates")
 
+# Cache-buster: browsers cache /static aggressively; key the URLs on the
+# newest asset mtime so every code update invalidates stale JS/CSS.
+STATIC_VERSION = str(
+    int(max(f.stat().st_mtime for f in (WEB_DIR / "static").iterdir()))
+)
+
 
 def render(request: Request, template: str, **context) -> HTMLResponse:
     lang = resolve_lang(request.cookies.get("lang"))
-    context.update(request=request, t=translator(lang), lang=lang)
+    context.update(request=request, t=translator(lang), lang=lang, static_v=STATIC_VERSION)
     return templates.TemplateResponse(request, template, context)
 
 

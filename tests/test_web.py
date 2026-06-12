@@ -41,6 +41,12 @@ def test_pages_render_in_both_languages():
     client.cookies.delete("lang")
 
 
+def test_static_urls_are_cache_busted():
+    response = client.get("/runs")
+    assert "/static/app.js?v=" in response.text
+    assert "/static/style.css?v=" in response.text
+
+
 def test_run_page_task_selection_tools():
     """With the large imported registry, the run page must not default to All."""
     response = client.get("/run")
