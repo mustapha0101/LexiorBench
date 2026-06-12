@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ t('import.title') }}</h1>
+{% if error %}<p class="error">{{ t('common.error') }} : {{ error }}</p>{% endif %}
+
+<form method="post" action="/tasks/import">
+  <label>{{ t('import.url') }}
+    <input name="url" required placeholder="https://github.com/HazyResearch/legalbench/tree/main/tasks/hearsay"
+           value="{{ form.get('url', '') }}">
+    <small>{{ t('import.hint') }}</small>
+  </label>
+  <p><button type="submit" class="primary">{{ t('import.fetch') }}</button></p>
+</form>
+
+{% if draft %}
+<hr>
+<h2>{{ t('import.review') }} — <code>{{ draft.name }}</code></h2>
+{% for warning in draft.warnings %}<p class="warn">⚠ {{ warning }}</p>{% endfor %}
+<p>{{ draft.description }}</p>
+<ul>
+  <li><strong>{{ t('import.counts') }} :</strong> {{ t('tasks.train') | lower }} {{ draft.train | length }} ·
+      {{ t('tasks.test') | lower }} {{ draft.test | length }}{% if draft.test_from_hf %} ({{ t('import.from_hf') }}){% endif %}</li>
+  <li><strong>{{ t('tasks.labels') }} :</strong> {{ draft.labels | join(' / ') }}</li>
+  <li><strong>{{ t('import.source') }} :</strong> {{ draft.source }}</li>
+  <li><strong>{{ t('import.license') }} :</strong> {{ draft.license }} — <span class="warn">{{ t('import.license.note') }}</span></li>
+</ul>
+<details>
+  <summary>{{ t('task.detail.prompt') }}</summary>
+  <pre>{{ draft.base_prompt }}</pre>
+</details>
+<details>
+  <summary>{{ t('import.samples') }}</summary>
+  <table>
+    <thead><tr><th>{{ t('items.index') }}</th><th>{{ t('items.text') }}</th><th>{{ t('items.answer') }}</th></tr></thead>
+    <tbody>
+    {% for ex in draft.test[:3] %}
+      <tr><td>{{ ex.index }}</td><td><small>{{ ex.text | truncate(220) }}</small></td><td>{{ ex.answer }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</details>
+
+<form method="post" action="/tasks/import/confirm">
+  <input type="hidden" name="url" value="{{ draft.url }}">
+  <div class="grid">
+    <label>{{ t('tasks.name') }}
+      <input name="name" pattern="[a-z][a-z0-9_]*" value="{{ draft.name }}">
+    </label>
+    <label>{{ t('tasks.type') }}
+      <select name="reasoning_type">
+        {% for rt in reasoning_types %}
+        <option value="{{ rt }}" {% if draft.suggested_reasoning_type == rt %}selected{% endif %}>{{ rt }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>{{ t('tasks.domain') }}
+      <select name="legal_domain">
+        {% for d in legal_domains %}
+        <option value="{{ d }}" {% if d == 'public' %}selected{% endif %}>{{ d }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>{{ t('tasks.metric') }}
+      <select name="metric">
+        {% for m in metrics %}<option value="{{ m }}">{{ m }}</option>{% endfor %}
+      </select>
+    </label>
+    <label>{{ t('import.language') }}
+      <input name="language" value="en">
+    </label>
+  </div>
+  <p><button type="submit" class="primary">{{ t('import.confirm') }}</button></p>
+</form>
+{% endif %}
+{% endblock %}

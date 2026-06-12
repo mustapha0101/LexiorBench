@@ -22,7 +22,10 @@ existe à la racine du dépôt, la commande `web` le charge dans l'environnement
 - **Tâches** — lister, inspecter, créer (formulaire complet avec validation :
   nom, type, étiquettes, gabarit d'invite, éléments train/test), modifier les
   éléments d'une tâche existante (réécrit les TSV — git tient l'historique),
-  supprimer une tâche.
+  supprimer une tâche, ou **importer une tâche LegalBench** depuis une URL
+  GitHub (écran de vérification avec étiquettes détectées, décomptes,
+  source/licence d'origine; jeu d'évaluation récupéré depuis Hugging Face au
+  besoin).
 - **Exécuter** — choisir les modèles (les modèles Ollama installés sont
   détectés en direct; autres dorsaux via des lignes `openai:…` /
   `anthropic:…` / `hf:…`, avec indicateurs de clés API), choisir les tâches,

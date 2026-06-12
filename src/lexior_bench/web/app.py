@@ -113,6 +113,69 @@ async def task_create(request: Request):
     return RedirectResponse(f"/tasks/{task.name}", status_code=303)
 
 
+# NOTE: fixed /tasks/import routes must be registered before /tasks/{name}
+
+
+@app.get("/tasks/import", response_class=HTMLResponse)
+def task_import_page(request: Request):
+    return render(request, "task_import.html", draft=None, form={}, error=None,
+                  reasoning_types=REASONING_TYPES, legal_domains=LEGAL_DOMAINS,
+                  metrics=[m for m in METRICS if m != "manual"])
+
+
+@app.post("/tasks/import", response_class=HTMLResponse)
+async def task_import_preview(request: Request):
+    from ..legalbench_import import build_draft
+
+    form = await request.form()
+    try:
+        draft = build_draft(form.get("url", ""))
+        error = None
+    except Exception as e:
+        draft, error = None, str(e)
+    return render(request, "task_import.html", draft=draft, form=form, error=error,
+                  reasoning_types=REASONING_TYPES, legal_domains=LEGAL_DOMAINS,
+                  metrics=[m for m in METRICS if m != "manual"])
+
+
+@app.post("/tasks/import/confirm", response_class=HTMLResponse)
+async def task_import_confirm(request: Request):
+    from ..legalbench_import import build_draft, imported_readme
+
+    form = await request.form()
+    try:
+        draft = build_draft(form.get("url", ""))
+        reasoning_type = form.get("reasoning_type", "")
+        legal_domain = form.get("legal_domain", "")
+        language = form.get("language", "en").strip() or "en"
+        task = taskforms.create_task(
+            default_tasks_dir(),
+            name=form.get("name", "").strip() or draft.name,
+            reasoning_type=reasoning_type,
+            legal_domain=legal_domain,
+            metric=form.get("metric", ""),
+            description=draft.description,
+            labels=draft.labels,
+            base_prompt=draft.base_prompt,
+            train=draft.train,
+            test=draft.test,
+            language=language,
+            extra_meta={
+                "source": draft.source,
+                "license": draft.license,
+                "imported_from": draft.url,
+            },
+            readme=imported_readme(
+                draft, reasoning_type=reasoning_type, legal_domain=legal_domain, language=language
+            ),
+        )
+    except Exception as e:
+        return render(request, "task_import.html", draft=None, form=form, error=str(e),
+                      reasoning_types=REASONING_TYPES, legal_domains=LEGAL_DOMAINS,
+                      metrics=[m for m in METRICS if m != "manual"])
+    return RedirectResponse(f"/tasks/{task.name}", status_code=303)
+
+
 @app.get("/tasks/{name}", response_class=HTMLResponse)
 def task_detail(request: Request, name: str, saved: int = 0):
     task = load_task(default_tasks_dir() / name)

@@ -14,16 +14,30 @@ from lexior_bench.tasks import (
 from conftest import TASKS_DIR, write_task_folder
 
 
+SEED_TASKS = [
+    "civil_issue_spotting_responsabilite",
+    "civil_rule_application_vices_caches",
+    "civil_rule_conclusion_contrats",
+    "civil_rule_recall_ccq",
+    "public_interpretation_charte",
+    "public_rhetorical_jugement",
+]
+
+
 def test_discover_real_seed_tasks():
-    """Loading every real seed task doubles as data validation."""
+    """Loading every real task doubles as data validation; locally imported
+    tasks may exist alongside the seeds, so assertions target the seeds."""
     tasks = discover_tasks(TASKS_DIR)
-    assert len(tasks) == 6
-    assert {t.reasoning_type for t in tasks} == set(REASONING_TYPES)
-    assert {t.legal_domain for t in tasks} == {"civil", "public"}
-    for task in tasks:
+    by_name = {t.name: t for t in tasks}
+    assert set(SEED_TASKS) <= set(by_name)
+    seeds = [by_name[name] for name in SEED_TASKS]
+    assert {t.reasoning_type for t in seeds} == set(REASONING_TYPES)
+    assert {t.legal_domain for t in seeds} == {"civil", "public"}
+    for task in seeds:
         assert task.language == "fr"
         assert len(task.train) >= 4
         assert len(task.test) >= 8
+    for task in tasks:  # imported tasks included
         assert "{{text}}" in task.base_prompt
 
 

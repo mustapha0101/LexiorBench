@@ -21,7 +21,10 @@ don't expose it on a network. If a `.env` file exists at the repo root, the
 
 - **Tasks** — list, inspect, create (full form with validation: name, type,
   labels, prompt template, train/test items), edit items of existing tasks
-  (rewrites the TSVs — git keeps the history), delete a task.
+  (rewrites the TSVs — git keeps the history), delete a task, or **import a
+  LegalBench task** from a GitHub URL (review screen with detected labels,
+  counts, original source/license; evaluation split fetched from Hugging Face
+  when needed).
 - **Run** — pick models (installed Ollama models are detected live; other
   backends via `openai:…` / `anthropic:…` / `hf:…` lines, with API-key
   indicators), pick tasks, set limit/max_tokens, then watch the progress bar.

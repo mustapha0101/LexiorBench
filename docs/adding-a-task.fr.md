@@ -38,3 +38,21 @@
 8. **Faire valider** : `uv run lexior-bench annotate push --tasks <nom>`,
    faire réviser chaque élément par un juriste, puis `annotate pull` et
    committer le diff.
+
+## Importer une tâche LegalBench
+
+Les tâches de [LegalBench](https://github.com/HazyResearch/legalbench) (ou de
+tout fork conservant sa structure) peuvent être importées au lieu d'être
+rédigées à la main — depuis l'interface web (Tâches → Importer) ou le CLI :
+
+```sh
+uv run lexior-bench import-task https://github.com/HazyResearch/legalbench/tree/main/tasks/canada_tax_court_outcomes
+```
+
+L'importateur convertit leurs TSV multilignes entre guillemets vers notre
+format strict, suggère le type de raisonnement d'après le README, récupère le
+jeu d'évaluation complet depuis Hugging Face lorsque le dépôt ne contient que
+les exemples few-shot, et inscrit la **source et la licence d'origine** dans
+le README et le task.yaml de la tâche importée. Attention à la licence :
+plusieurs tâches LegalBench sont en CC BY-NC (non commercial) — différent du
+CC BY 4.0 de ce dépôt — vérifiez avant toute redistribution.

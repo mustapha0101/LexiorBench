@@ -8,7 +8,7 @@ from typing import List, Optional
 
 import typer
 
-from .tasks import discover_tasks, resolve_task_names
+from .tasks import default_tasks_dir, discover_tasks, resolve_task_names
 
 app = typer.Typer(
     help="Lexior Bench - LLM evaluation benchmark for Quebec law.",
@@ -98,6 +98,64 @@ def report(
     if not (Path(run) / "scores.json").exists():
         evaluate_run(run)
     typer.echo(f"Wrote {write_report(run)} and {write_transcript(run)}")
+
+
+@app.command("import-task")
+def import_task(
+    url: str = typer.Argument(..., help="GitHub URL of a LegalBench-style task folder."),
+    name: Optional[str] = typer.Option(None, help="Local task name (default: folder name)."),
+    reasoning_type: Optional[str] = typer.Option(
+        None, help="One of the 6 types (default: detected from the README)."
+    ),
+    legal_domain: str = typer.Option("public", help="civil | public."),
+    metric: str = typer.Option("balanced_accuracy", help="exact_match | balanced_accuracy."),
+    language: str = typer.Option("en", help="Content language tag (informational)."),
+    no_hf: bool = typer.Option(False, "--no-hf", help="Don't fetch the test split from Hugging Face."),
+):
+    """Import a task from a LegalBench-style GitHub repository."""
+    from .legalbench_import import build_draft, imported_readme
+    from .tasks import TaskError
+    from .web.taskforms import create_task
+
+    try:
+        draft = build_draft(url, include_hf=not no_hf)
+        chosen_type = reasoning_type or draft.suggested_reasoning_type
+        if not chosen_type:
+            raise TaskError(
+                "could not detect the reasoning type from the README — "
+                "pass it explicitly with --reasoning-type"
+            )
+        task_name = name or draft.name
+        typer.echo(f"Importing {draft.name!r} as {task_name!r}")
+        typer.echo(f"  labels: {', '.join(draft.labels)}")
+        typer.echo(
+            f"  train: {len(draft.train)} items — test: {len(draft.test)} items"
+            + (" (from Hugging Face)" if draft.test_from_hf else "")
+        )
+        typer.echo(f"  source: {draft.source} — license: {draft.license}")
+        for warning in draft.warnings:
+            typer.secho(f"  warning: {warning}", fg="yellow")
+        task = create_task(
+            default_tasks_dir(),
+            name=task_name,
+            reasoning_type=chosen_type,
+            legal_domain=legal_domain,
+            metric=metric,
+            description=draft.description,
+            labels=draft.labels,
+            base_prompt=draft.base_prompt,
+            train=draft.train,
+            test=draft.test,
+            language=language,
+            extra_meta={"source": draft.source, "license": draft.license, "imported_from": draft.url},
+            readme=imported_readme(
+                draft, reasoning_type=chosen_type, legal_domain=legal_domain, language=language
+            ),
+        )
+    except TaskError as e:
+        typer.secho(f"Import failed: {e}", fg="red")
+        raise typer.Exit(1)
+    typer.echo(f"Created {task.path} — try: lexior-bench run --model ollama:lexiorgpt --tasks {task.name} --limit 2")
 
 
 @app.command()

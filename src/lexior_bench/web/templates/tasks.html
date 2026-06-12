@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>{{ t('tasks.title') }}</h1>
-<p><a class="button" href="/tasks/new">+ {{ t('tasks.new') }}</a></p>
+<p>
+  <a class="button" href="/tasks/new">+ {{ t('tasks.new') }}</a>
+  <a class="button" href="/tasks/import">⤓ {{ t('tasks.import') }}</a>
+</p>
 <table>
   <thead>
     <tr>

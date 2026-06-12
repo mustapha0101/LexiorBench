@@ -64,6 +64,9 @@ def create_task(
     base_prompt: str,
     train: list[Example],
     test: list[Example],
+    language: str = "fr",
+    extra_meta: dict | None = None,
+    readme: str | None = None,
 ) -> Task:
     """Materialize a new task folder; raises TaskError on any validation failure."""
     if not NAME_RE.match(name):
@@ -78,12 +81,13 @@ def create_task(
         "name": name,
         "reasoning_type": reasoning_type,
         "legal_domain": legal_domain,
-        "language": "fr",
+        "language": language,
         "answer_type": "classification",
         "labels": labels,
         "metric": metric,
         "description": description.strip(),
         "version": 1,
+        **(extra_meta or {}),
     }
     with tempfile.TemporaryDirectory() as tmp:
         folder = Path(tmp) / name
@@ -95,7 +99,8 @@ def create_task(
         write_tsv(folder / "train.tsv", train)
         write_tsv(folder / "test.tsv", test)
         (folder / "README.md").write_text(
-            README_TEMPLATE.format(
+            readme
+            or README_TEMPLATE.format(
                 name=name,
                 reasoning_type=reasoning_type,
                 domain_fr="civil" if legal_domain == "civil" else "public",
