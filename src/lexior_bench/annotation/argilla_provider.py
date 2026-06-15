@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+import warnings
 
 from ..tasks import Task
 from .base import (
@@ -83,7 +84,9 @@ class ArgillaProvider(AnnotationProvider):
         rg = self.rg
         self._ensure_workspace()
         name = self.dataset_name(task)
-        dataset = self.client.datasets(name, workspace=WORKSPACE)
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", UserWarning)
+            dataset = self.client.datasets(name, workspace=WORKSPACE)
         if dataset is None:
             dataset = rg.Dataset(
                 name=name, workspace=WORKSPACE, settings=self._settings(task), client=self.client
@@ -104,7 +107,9 @@ class ArgillaProvider(AnnotationProvider):
         print(f"[argilla] {task.name}: pushed {len(records)} records to dataset {name!r}")
 
     def fetch_annotations(self, task: Task) -> list[AnnotatedItem]:
-        dataset = self.client.datasets(self.dataset_name(task), workspace=WORKSPACE)
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", UserWarning)
+            dataset = self.client.datasets(self.dataset_name(task), workspace=WORKSPACE)
         if dataset is None:
             print(f"[argilla] {task.name}: dataset not found on server — nothing to pull")
             return []

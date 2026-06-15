@@ -72,7 +72,13 @@ class LabelStudioProvider(AnnotationProvider):
 
     @staticmethod
     def project_title(task: Task) -> str:
-        return f"lexior-bench-{task.name}"
+        import hashlib
+        full = f"lexior-bench-{task.name}"
+        if len(full) <= 50:
+            return full
+        # Label Studio enforces a 50-char title limit; keep a 4-char hash to stay unique.
+        suffix = hashlib.md5(task.name.encode()).hexdigest()[:4]
+        return f"{full[:45]}-{suffix}"
 
     def _find_project(self, task: Task):
         title = self.project_title(task)

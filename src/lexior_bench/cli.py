@@ -18,9 +18,22 @@ annotate_app = typer.Typer(help="Push tasks to / pull validated answers from an 
 app.add_typer(annotate_app, name="annotate")
 
 
+def _load_dotenv() -> None:
+    import os
+    env_file = Path(".env")
+    if not env_file.is_file():
+        return
+    for line in env_file.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line and not line.startswith("#") and "=" in line:
+            key, _, value = line.partition("=")
+            os.environ.setdefault(key.strip(), value.strip())
+
+
 @app.callback()
 def main():
     """Lexior Bench - LLM evaluation benchmark for Quebec law."""
+    _load_dotenv()
 
 
 @app.command("list-tasks")
@@ -265,18 +278,8 @@ def web(
     no_browser: bool = typer.Option(False, "--no-browser", help="Don't open the browser."),
 ):
     """Launch the local web interface (tasks, runs, results, annotation)."""
-    import os
     import threading
     import webbrowser
-
-    env_file = Path(".env")
-    if env_file.is_file():
-        # Convenience for the web UI only: annotation providers read env vars.
-        for line in env_file.read_text(encoding="utf-8").splitlines():
-            line = line.strip()
-            if line and not line.startswith("#") and "=" in line:
-                key, _, value = line.partition("=")
-                os.environ.setdefault(key.strip(), value.strip())
 
     import uvicorn
 
