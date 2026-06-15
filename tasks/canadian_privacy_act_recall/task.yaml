@@ -1,0 +1,16 @@
+name: canadian_privacy_act_recall
+reasoning_type: rule-recall
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+  - "True"
+  - "False"
+metric: balanced_accuracy
+description: >
+  Rule-recall from the Privacy Act (RSC 1985, c P-21): given a statement about
+  the Act's scope, individual rights of access, collection and disclosure rules,
+  or government obligations, determine whether it is true or false.
+version: 1
+source: a2aj/canadian-laws (HuggingFace)
+license: "[Open Government Licence – Canada](https://open.canada.ca/en/open-government-licence-canada)"
