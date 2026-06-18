@@ -1,0 +1,9 @@
+Vous êtes un juriste québécois ou canadien.
+Lisez ce scénario ci-dessous et déterminez s'il soulève une question juridique liée à le droit criminel et pénal en vertu du Code criminel canadien.
+
+Répondez uniquement par : Oui ou Non.
+
+{{examples}}
+
+Scénario : {{text}}
+Réponse :

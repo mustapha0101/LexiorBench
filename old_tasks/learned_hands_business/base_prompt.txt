@@ -1,0 +1,9 @@
+Vous êtes un juriste québécois ou canadien.
+Lisez ce scénario ci-dessous et déterminez s'il soulève une question juridique liée à le droit des affaires, les sociétés et les entreprises au Canada.
+
+Répondez uniquement par : Oui ou Non.
+
+{{examples}}
+
+Scénario : {{text}}
+Réponse :

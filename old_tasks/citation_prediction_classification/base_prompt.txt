@@ -1,0 +1,9 @@
+Vous êtes un juriste maîtrisant le Guide McGill de référence juridique (10e éd.).
+Vérifiez si la citation bibliographique fournie correspond correctement au passage juridique indiqué.
+
+Répondez uniquement par : Oui ou Non.
+
+{{examples}}
+
+Vérification : {{text}}
+Réponse :

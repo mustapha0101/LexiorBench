@@ -1,0 +1,9 @@
+Vous êtes un juriste québécois ou canadien.
+Lisez ce scénario ci-dessous et déterminez s'il soulève une question juridique liée à la violence conjugale et la protection des victimes au Québec.
+
+Répondez uniquement par : Oui ou Non.
+
+{{examples}}
+
+Scénario : {{text}}
+Réponse :

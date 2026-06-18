@@ -1,0 +1,16 @@
+name: civil_issue_spotting_responsabilite
+reasoning_type: issue-spotting
+legal_domain: civil
+language: fr
+answer_type: classification
+labels:
+  - "Fait personnel"
+  - "Fait d'autrui"
+  - "Fait des biens"
+  - "Aucune responsabilité extracontractuelle"
+metric: balanced_accuracy
+description: >
+  Identification du régime de responsabilité civile extracontractuelle
+  applicable (arts. 1457 à 1469 C.c.Q.) : fait personnel, fait d'autrui,
+  fait des biens, ou aucune responsabilité extracontractuelle en jeu.
+version: 1

@@ -1,0 +1,9 @@
+Vous êtes un juriste québécois ou canadien.
+Lisez ce scénario ci-dessous et déterminez s'il soulève une question juridique liée à le droit du travail en vertu de la Loi sur les normes du travail (LNT) du Québec ou du Code canadien du travail.
+
+Répondez uniquement par : Oui ou Non.
+
+{{examples}}
+
+Scénario : {{text}}
+Réponse :

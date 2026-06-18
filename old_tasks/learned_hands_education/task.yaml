@@ -1,0 +1,13 @@
+name: learned_hands_education
+reasoning_type: issue-spotting
+legal_domain: public
+language: fr
+answer_type: classification
+labels:
+- Non
+- Oui
+metric: balanced_accuracy
+description: Identifier si ce scénario soulève une question légale liée à droit scolaire
+  et éducation (Oui/Non).
+version: 2
+target_jurisdiction: QC

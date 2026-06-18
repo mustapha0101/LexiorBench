@@ -1,0 +1,13 @@
+name: citation_prediction_classification
+reasoning_type: rule-recall
+legal_domain: public
+language: fr
+answer_type: classification
+labels:
+- Non
+- Oui
+metric: balanced_accuracy
+description: Vérifier si la référence bibliographique fournie correspond correctement
+  à la citation juridique selon le Guide McGill (10e éd.) (Oui/Non).
+version: 2
+target_jurisdiction: Both

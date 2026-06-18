@@ -1,0 +1,13 @@
+name: definition_classification
+reasoning_type: rhetorical-understanding
+legal_domain: public
+language: fr
+answer_type: classification
+labels:
+- Non
+- Oui
+metric: balanced_accuracy
+description: Identifier si cette phrase extraite d'une décision judiciaire canadienne
+  définit un terme juridique (Oui/Non).
+version: 2
+target_jurisdiction: Both

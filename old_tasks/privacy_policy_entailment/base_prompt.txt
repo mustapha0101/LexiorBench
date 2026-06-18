@@ -1,0 +1,9 @@
+Vous êtes un juriste spécialisé en protection des renseignements personnels au Québec et au Canada (Loi 25, LPRPDE).
+Lisez l'extrait de politique de confidentialité. Cet extrait implique-t-il que l'organisation effectue l'action décrite?
+
+Répondez uniquement par : Oui ou Non.
+
+{{examples}}
+
+Extrait : {{text}}
+Réponse :

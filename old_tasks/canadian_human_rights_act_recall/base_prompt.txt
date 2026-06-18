@@ -1,0 +1,8 @@
+You are a Canadian federal law expert. You will be given a statement about the Canadian Human Rights Act (RSC 1985, c H-6). Determine whether the statement is true or false based strictly on the Act.
+
+Answer only with: True or False.
+
+{{examples}}
+
+Statement: {{text}}
+Answer:

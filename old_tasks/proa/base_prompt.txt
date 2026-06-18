@@ -1,0 +1,9 @@
+Vous etes un juriste specialise en droit canadien et quebecois.
+Lisez l extrait de loi ci-dessous. Cet extrait cree-t-il explicitement un droit d action prive permettant a un particulier ou a une personne morale d intenter une poursuite en dommages-interets?
+
+Repondez uniquement par : Oui ou Non.
+
+{{examples}}
+
+Extrait : {{text}}
+Reponse :

@@ -1,0 +1,16 @@
+name: canadian_human_rights_act_recall
+reasoning_type: rule-recall
+legal_domain: public
+language: en
+answer_type: classification
+labels:
+  - "True"
+  - "False"
+metric: balanced_accuracy
+description: >
+  Rule-recall from the Canadian Human Rights Act (RSC 1985, c H-6): given a
+  statement about the Act's prohibited grounds of discrimination, scope of
+  application, or discriminatory practices, determine whether it is true or false.
+version: 1
+source: a2aj/canadian-laws (HuggingFace)
+license: "[Open Government Licence – Canada](https://open.canada.ca/en/open-government-licence-canada)"

@@ -1,0 +1,14 @@
+name: proa
+reasoning_type: interpretation
+legal_domain: public
+language: fr
+answer_type: classification
+labels:
+- Non
+- Oui
+metric: balanced_accuracy
+description: Determiner si cet extrait de loi canadienne ou quebecoise cree un droit
+  d action prive explicite permettant a un particulier de poursuivre en dommages-interets
+  (Oui/Non).
+version: 2
+target_jurisdiction: Both
