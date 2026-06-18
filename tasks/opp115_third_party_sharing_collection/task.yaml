@@ -1,15 +1,14 @@
 name: opp115_third_party_sharing_collection
 reasoning_type: interpretation
 legal_domain: public
-language: en
+language: fr
 answer_type: classification
 labels:
-- 'No'
-- 'Yes'
+- Non
+- Oui
 metric: balanced_accuracy
-description: Given a clause from a privacy policy, classify if the clause describe
-  how user information may be shared with or collected by third parties.
-version: 1
-source: '[OPP-115](https://usableprivacy.org/data)'
-license: Creative Commons Attribution-NonCommercial License
-imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/opp115_third_party_sharing_collection
+description: Identifier si cette politique de confidentialité d'une organisation québécoise
+  ou canadienne traite le partage ou la collecte de renseignements par des tiers,
+  conformément à la Loi 25 et à la LPRPDE (Oui/Non).
+version: 2
+target_jurisdiction: Both

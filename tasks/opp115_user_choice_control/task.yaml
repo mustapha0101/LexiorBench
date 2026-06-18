@@ -1,15 +1,14 @@
 name: opp115_user_choice_control
 reasoning_type: interpretation
 legal_domain: public
-language: en
+language: fr
 answer_type: classification
 labels:
-- 'No'
-- 'Yes'
+- Non
+- Oui
 metric: balanced_accuracy
-description: Given a clause fro ma privacy policy, classify if the clause describes
-  the choices and control options available to users.
-version: 1
-source: '[OPP-115](https://usableprivacy.org/data)'
-license: Creative Commons Attribution-NonCommercial License
-imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/opp115_user_choice_control
+description: Identifier si cette politique de confidentialité d'une organisation québécoise
+  ou canadienne traite les options de choix et de contrôle offertes à l'utilisateur
+  sur ses données, conformément à la Loi 25 et à la LPRPDE (Oui/Non).
+version: 2
+target_jurisdiction: Both

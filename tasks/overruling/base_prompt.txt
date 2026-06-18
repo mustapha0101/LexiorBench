@@ -1,22 +1,10 @@
-Does the sentence contain language overruling a previous case?
+Vous êtes un juriste spécialisé en droit judiciaire canadien.
+Lisez la phrase extraite d'un jugement canadien (CSC, Cour d'appel, Cour fédérale ou Cour du Québec).
+Cette phrase constitue-t-elle un revirement jurisprudentiel explicite, c'est-à-dire infirme-t-elle, annule-t-elle ou écarte-t-elle un précédent?
 
-Sentence: "for h0031 ha claims, notwithstanding that """"tcc did not bill these claims to medicaid."
-Label: No
+Répondez uniquement par : Oui ou Non.
 
-Sentence: "davis v. davis, 360 n.c. 518, 523, 631 s.e.2d 114, 118 (2006) (citing sink v. easter, 288 n.c. 183, 198, 217 s.e.2d 532, 541 (1975))."
-Label: No
+{{examples}}
 
-Sentence: "schuler v. schuler, 382 mass. 366, 370-371 (1981)."
-Label: No
-
-Sentence: "we do so, and now hold spears is incorrect insofar as it precludes the possibility of harmless error under any circumstances; and to that extent, it must be overruled."
-Label: Yes
-
-Sentence: "whether or not the court intended to convey this meaning in clark v. barney, and because the ruling in that case has lost much of its applicability under later modifications, our previous holding in clark v. barney is hereby expressly overruled insofar as it conflicts with the following rule, which we deem to be controlling in this case:"
-Label: Yes
-
-Sentence: "we disapprove of this language in l.c."
-Label: Yes
-
-Sentence: {{text}}
-Label:
+Phrase : {{text}}
+Réponse :

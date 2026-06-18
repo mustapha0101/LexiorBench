@@ -1,15 +1,13 @@
 name: citation_prediction_classification
 reasoning_type: rule-recall
 legal_domain: public
-language: en
+language: fr
 answer_type: classification
 labels:
-- 'No'
-- 'Yes'
+- Non
+- Oui
 metric: balanced_accuracy
-description: Given a legal statement and a case citation, determine if the citation
-  is supportive of the legal statement.
-version: 1
-source: Michael Livermore, Daniel N. Rockmore
-license: '[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)'
-imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/citation_prediction_classification
+description: Vérifier si la référence bibliographique fournie correspond correctement
+  à la citation juridique selon le Guide McGill (10e éd.) (Oui/Non).
+version: 2
+target_jurisdiction: Both

@@ -1,15 +1,14 @@
 name: contract_nli_sharing_with_employees
 reasoning_type: interpretation
 legal_domain: public
-language: en
+language: fr
 answer_type: classification
 labels:
-- 'No'
-- 'Yes'
+- Non
+- Oui
 metric: balanced_accuracy
-description: Identify if the clause provides that the Receiving Party may share some
-  Confidential Information with some of Receiving Party's employees.
-version: 1
-source: '[ContractNLI](https://stanfordnlp.github.io/contract-nli/)'
-license: '[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)'
-imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/contract_nli_sharing_with_employees
+description: Identifier si la clause d'un accord de confidentialitÃ© quÃ©bÃ©cois ou
+  canadien traite la permission de partager des informations confidentielles avec
+  les employÃ©s (Oui/Non).
+version: 2
+target_jurisdiction: Both

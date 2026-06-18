@@ -1,15 +1,14 @@
 name: proa
 reasoning_type: interpretation
 legal_domain: public
-language: en
+language: fr
 answer_type: classification
 labels:
-- 'No'
-- 'Yes'
+- Non
+- Oui
 metric: balanced_accuracy
-description: Given a statute, determine if the text contains an explicit private right
-  of action.
-version: 1
-source: Neel Guha, Diego Zambrano
-license: '[CC by 4.0](https://creativecommons.org/licenses/by/4.0/)'
-imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/proa
+description: Determiner si cet extrait de loi canadienne ou quebecoise cree un droit
+  d action prive explicite permettant a un particulier de poursuivre en dommages-interets
+  (Oui/Non).
+version: 2
+target_jurisdiction: Both

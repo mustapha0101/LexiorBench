@@ -1,4 +1,9 @@
-{{text}}
+Vous êtes un juriste spécialisé en droit des affaires et en responsabilité des entreprises au Canada.
+Cette divulgation de chaîne d'approvisionnement indique-t-elle que des mesures concrètes de responsabilisation ont été effectivement mises en œuvre, conformément à la Loi S-211 (Canada, 2023)?
 
-Question: Does the above disclosure meet the following criteria: Does the above statement disclose to what extent, if any, that the retail seller or manufacturer maintains internal accountability standards and procedures for employees or contractors failing to meet company standards regarding slavery and trafficking? Answer yes or no.
-Answer:
+Répondez uniquement par : Oui ou Non.
+
+{{examples}}
+
+Divulgation : {{text}}
+Réponse :

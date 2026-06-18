@@ -1,15 +1,14 @@
 name: privacy_policy_entailment
 reasoning_type: interpretation
 legal_domain: public
-language: en
+language: fr
 answer_type: classification
 labels:
-- Correct
-- Incorrect
+- Non
+- Oui
 metric: balanced_accuracy
-description: Given a privacy policy clause and a description of the clause, determine
-  if the description is correct.
-version: 1
-source: '[APP-350 Corpus](https://github.com/AbhilashaRavichander/PrivacyQA_EMNLP)'
-license: '[CC BY-NC 3.0](https://creativecommons.org/licenses/by-nc/3.0/)'
-imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/privacy_policy_entailment
+description: Identifier si cet extrait de politique de confidentialité implique que
+  l'organisation effectue l'action décrite, conformément à la Loi 25 (QC) et à la
+  LPRPDE (Oui/Non).
+version: 2
+target_jurisdiction: Both

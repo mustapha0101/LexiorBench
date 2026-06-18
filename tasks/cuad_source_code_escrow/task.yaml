@@ -1,16 +1,13 @@
 name: cuad_source_code_escrow
 reasoning_type: interpretation
 legal_domain: public
-language: en
+language: fr
 answer_type: classification
 labels:
-- 'No'
-- 'Yes'
+- Non
+- Oui
 metric: balanced_accuracy
-description: Classify if the clause requires one party to deposit its source code
-  into escrow with a third party, which can be released to the counterparty upon the
-  occurrence of certain events (bankruptcy, insolvency, etc.).
-version: 1
-source: '[Atticus Project](https://www.atticusprojectai.org/cuad>)'
-license: '[CC By 4.0](https://creativecommons.org/licenses/by/4.0/)'
-imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/cuad_source_code_escrow
+description: Identifier si cette clause d'un contrat commercial québécois ou canadien
+  contient un dépôt de code source auprès d'un tiers séquestre (Oui/Non).
+version: 2
+target_jurisdiction: Both

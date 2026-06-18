@@ -1,22 +1,21 @@
 name: unfair_tos
 reasoning_type: interpretation
 legal_domain: public
-language: en
+language: fr
 answer_type: classification
 labels:
-- Arbitration
-- Choice of law
-- Content removal
-- Contract by using
-- Jurisdiction
-- Limitation of liability
-- Other
-- Unilateral change
-- Unilateral termination
+- Arbitrage
+- Droit applicable
+- Suppression de contenu
+- Contrat par utilisation
+- Juridiction exclusive
+- Limitation de responsabilite
+- Autre
+- Modification unilaterale
+- Resiliation unilaterale
 metric: balanced_accuracy
-description: Given a clause from a terms-of-service contract, determine the category
-  the clause belongs to.
-version: 1
-source: '[Claudette](https://arxiv.org/abs/1805.01217)'
-license: '[CC by 4.0](https://creativecommons.org/licenses/by/4.0/)'
-imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/unfair_tos
+description: Classifier cette clause de conditions générales d'utilisation selon les
+  catégories d'abus prévues par la Loi sur la protection du consommateur (LPC) du
+  Québec.
+version: 2
+target_jurisdiction: QC

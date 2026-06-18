@@ -1,4 +1,9 @@
-{{text}}
+Vous êtes un juriste spécialisé en droit des affaires et en responsabilité des entreprises au Canada.
+Cette divulgation de chaîne d'approvisionnement décrit-elle des programmes de formation sur la détection et la prévention du travail forcé, conformément à la Loi S-211 (Canada, 2023)?
 
-Question: Does the above disclosure meet the following criteria: Does the above statement disclose whether the retail seller or manufacturer  provides training to employees on human trafficking and slavery? Broad policies such as ongoing dialogue on mitigating risks of human trafficking and slavery or increasing managers and purchasers knowledge about health, safety and labor practices qualify as training. Providing training to contractors who failed to comply with human trafficking laws counts as training.  Answer yes or no.
-Answer:
+Répondez uniquement par : Oui ou Non.
+
+{{examples}}
+
+Divulgation : {{text}}
+Réponse :

@@ -1,15 +1,14 @@
 name: opp115_do_not_track
 reasoning_type: interpretation
 legal_domain: public
-language: en
+language: fr
 answer_type: classification
 labels:
-- 'No'
-- 'Yes'
+- Non
+- Oui
 metric: balanced_accuracy
-description: Given a clause from a privacy policy, classify if the clause describes
-  if and how Do Not Track signals for online tracking and advertising are honored.
-version: 1
-source: '[OPP-115](https://usableprivacy.org/data)'
-license: Creative Commons Attribution-NonCommercial License
-imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/opp115_do_not_track
+description: Identifier si cette politique de confidentialité d'une organisation québécoise
+  ou canadienne traite le traitement des signaux 'Do Not Track' des navigateurs, conformément
+  à la Loi 25 et à la LPRPDE (Oui/Non).
+version: 2
+target_jurisdiction: Both

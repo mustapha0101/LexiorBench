@@ -1,17 +1,13 @@
 name: cuad_uncapped_liability
 reasoning_type: interpretation
 legal_domain: public
-language: en
+language: fr
 answer_type: classification
 labels:
-- 'No'
-- 'Yes'
+- Non
+- Oui
 metric: balanced_accuracy
-description: Classify if the clause specifies that a party’s liability is uncapped
-  upon the breach of its obligation in the contract. This also includes uncap liability
-  for a particular type of breach such as IP infringement or breach of confidentiality
-  obligation.
-version: 1
-source: '[Atticus Project](https://www.atticusprojectai.org/cuad>)'
-license: '[CC By 4.0](https://creativecommons.org/licenses/by/4.0/)'
-imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/cuad_uncapped_liability
+description: Identifier si cette clause d'un contrat commercial québécois ou canadien
+  contient une responsabilité illimitée ou expressément non plafonnée (Oui/Non).
+version: 2
+target_jurisdiction: Both

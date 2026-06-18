@@ -1,4 +1,9 @@
-{{text}}
+Vous êtes un juriste spécialisé en droit des affaires et en responsabilité des entreprises au Canada.
+Cette divulgation de chaîne d'approvisionnement indique-t-elle que des vérifications ont réellement été effectuées auprès des fournisseurs, conformément à la Loi S-211 (Canada, 2023)?
 
-Question: Does the above disclosure meet the following criteria: Does the above statement disclose to what extent, if any, that the retail seller or manufacturer engages in verification of product supply chains to evaluate and address risks of human trafficking and slavery? If the company conducts verification], the disclosure shall specify if the verification was not conducted by a third party. Answer yes or no.
-Answer:
+Répondez uniquement par : Oui ou Non.
+
+{{examples}}
+
+Divulgation : {{text}}
+Réponse :

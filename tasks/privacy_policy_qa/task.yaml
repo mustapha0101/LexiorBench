@@ -1,15 +1,13 @@
 name: privacy_policy_qa
 reasoning_type: interpretation
 legal_domain: public
-language: en
+language: fr
 answer_type: classification
 labels:
-- Irrelevant
-- Relevant
+- Non pertinent
+- Pertinent
 metric: balanced_accuracy
-description: Given a question and a clause from a privacy policy, determine if the
-  clause contains enough information to answer the question.
-version: 1
-source: '[Privacy Q&A Corpus](https://github.com/AbhilashaRavichander/PrivacyQA_EMNLP)'
-license: '[MIT](https://github.com/AbhilashaRavichander/PrivacyQA_EMNLP/blob/master/LICENSE)'
-imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/privacy_policy_qa
+description: Répondre à une question sur le contenu d'une politique de confidentialité
+  d'une organisation québécoise ou canadienne (Loi 25 / LPRPDE).
+version: 2
+target_jurisdiction: Both

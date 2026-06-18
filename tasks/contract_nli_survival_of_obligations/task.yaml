@@ -1,15 +1,14 @@
 name: contract_nli_survival_of_obligations
 reasoning_type: interpretation
 legal_domain: public
-language: en
+language: fr
 answer_type: classification
 labels:
-- 'No'
-- 'Yes'
+- Non
+- Oui
 metric: balanced_accuracy
-description: Identify if the clause provides that ome obligations of Agreement may
-  survive termination of Agreement.
-version: 1
-source: '[ContractNLI](https://stanfordnlp.github.io/contract-nli/)'
-license: '[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)'
-imported_from: https://github.com/mustapha0101/LexiorBench/tree/main/tasks/contract_nli_survival_of_obligations
+description: Identifier si la clause d'un accord de confidentialitÃ© quÃ©bÃ©cois ou
+  canadien traite la survie des obligations de confidentialitÃ© aprÃ¨s la rÃ©siliation
+  de l'accord (Oui/Non).
+version: 2
+target_jurisdiction: Both
