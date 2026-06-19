@@ -15,6 +15,12 @@ results/
 Thumbs.db
 .DS_Store
 
+# Script output / scratch files
+*_output.txt
+excel_dump.txt
+audit_output.txt
+
 # Secrets
 .env
 .claude/settings.json
+.mcp.json
