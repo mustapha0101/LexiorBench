@@ -1,0 +1,26 @@
+name: ca_criminal_elements
+reasoning_type: rule_application
+answer_type: classification_and_generation
+answer_detail: "Actus reus présent (Oui/Non) + identification de l'élément manquant ou de la défense applicable"
+jurisdiction: federal_ca
+purpose: >
+  Déterminer si les éléments constitutifs d'une infraction criminelle sont réunis
+  (actus reus + mens rea) et identifier les défenses potentielles (Code criminel).
+use_case: Analyse des risques
+state: new
+language: fr
+metric: llm_judge
+sample_size: 10
+source: original
+legal_sources:
+  - "Code criminel LRC 1985 c C-46 art. 265 — voies de fait"
+  - "Code criminel LRC 1985 c C-46 art. 322 — vol"
+  - "Code criminel LRC 1985 c C-46 art. 380 — fraude"
+  - "Code criminel LRC 1985 c C-46 art. 429 — dommages à la propriété"
+  - "Code criminel LRC 1985 c C-46 art. 16 — défense d'aliénation mentale"
+  - "Code criminel LRC 1985 c C-46 art. 34 — légitime défense"
+  - "Code criminel LRC 1985 c C-46 art. 43 — correction par la force"
+notes: >
+  Gap: no Criminal Code element identification tasks currently in benchmark.
+  Binary answer (actus reus présent?) + generation (which element or defence?).
+  Avoid using real criminal case names as scenarios to prevent data leakage.

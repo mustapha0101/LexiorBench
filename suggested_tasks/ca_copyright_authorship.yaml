@@ -1,0 +1,26 @@
+name: ca_copyright_authorship
+reasoning_type: rule_application
+answer_type: classification
+answer_detail: "Auteur (personne physique) / Employeur (oeuvre en emploi) / Propriété conjointe / Domaine public"
+jurisdiction: federal_ca
+purpose: >
+  Déterminer à qui appartient le droit d'auteur sur une oeuvre selon la
+  Loi sur le droit d'auteur (LRC 1985 c C-42) — à l'auteur, à l'employeur
+  (oeuvre créée dans l'exercice de l'emploi), en copropriété, ou dans le
+  domaine public.
+use_case: Analyse des risques
+state: new
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+  - "Loi sur le droit d'auteur LRC 1985 c C-42 art. 13 — propriété du droit d'auteur"
+  - "Loi sur le droit d'auteur LRC 1985 c C-42 art. 13(3) — oeuvre en emploi"
+  - "Loi sur le droit d'auteur LRC 1985 c C-42 art. 14.1 — droits moraux"
+  - "Loi sur le droit d'auteur LRC 1985 c C-42 art. 6 — durée de la protection"
+  - "CCQ art. 2085-2097 — contrat de travail (application des droits)"
+notes: >
+  Gap: CUAD IP tasks detect clauses but no Canadian copyright authorship/ownership
+  analysis task. 4-class (auteur / employeur / conjoint / domaine public).
+  High relevance for software, creative work, AI-generated content.

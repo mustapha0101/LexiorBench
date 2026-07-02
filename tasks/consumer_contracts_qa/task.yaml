@@ -1,0 +1,19 @@
+name: consumer_contracts_qa
+reasoning_type: interpretation
+answer_type: generation
+answer_detail: Rights/obligations QA
+jurisdiction: quebec
+purpose: What rights or obligations does this consumer contract clause impose on the
+  user?
+use_case: Comparaison de contrats / Analyse des risques
+state: active
+language: fr
+metric: llm_judge
+sample_size: 10
+source: original
+legal_sources:
+- Loi sur la protection du consommateur RLRQ c P-40.1 (LPC)
+- CCQ art. 1375-1437 — contrats de consommation
+generated_by:
+- claude
+generation_date: '2026-06-19'

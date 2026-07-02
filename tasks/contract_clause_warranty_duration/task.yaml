@@ -1,0 +1,20 @@
+name: contract_clause_warranty_duration
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause précise la durée d'une garantie contractuelle ou
+  légale sur un bien ou service.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- CCQ art. 1726-1733 — garantie légale contre les vices cachés
+- CCQ art. 1622-1625 — clause pénale et garantie contractuelle
+generated_by:
+- claude
+generation_date: '2026-06-19'

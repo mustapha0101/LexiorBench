@@ -1,0 +1,20 @@
+name: issue_spotting_employment
+reasoning_type: issue_spotting
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si un scénario factuel soulève une question de droit du travail
+  ou de l'emploi (LNT / Code du travail / CCQ, Québec/Canada).
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Loi sur les normes du travail RLRQ c N-1.1 (LNT)
+- Code du travail RLRQ c C-27
+- CCQ art. 2085-2097 — contrat de travail
+generated_by:
+- claude
+generation_date: '2026-06-19'

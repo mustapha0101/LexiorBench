@@ -1,19 +1,20 @@
 name: public_interpretation_charte
 reasoning_type: interpretation
-legal_domain: public
-language: fr
 answer_type: classification
-labels:
-  - "Condition sociale"
-  - "Grossesse"
-  - "Handicap"
-  - "Âge"
-  - "Religion"
-  - "Aucun motif énuméré"
+answer_detail: Binary (Oui/Non)
+jurisdiction: quebec
+purpose: Identifier si un scénario met en jeu un droit protégé par la Charte des droits
+  et libertés de la personne du Québec.
+use_case: Analyse des risques
+state: active
+language: fr
 metric: balanced_accuracy
-description: >
-  Interprétation de l'article 10 de la Charte des droits et libertés de la
-  personne (RLRQ, c. C-12) : identifier le motif de discrimination en cause
-  parmi un sous-ensemble de motifs énumérés, ou conclure qu'aucun motif
-  énuméré ne s'applique.
-version: 1
+sample_size: 10
+source: original
+legal_sources:
+- Charte des droits et libertés de la personne RLRQ c C-12
+- Charte canadienne des droits et libertés — Partie I de la Loi constitutionnelle
+  de 1982
+generated_by:
+- claude
+generation_date: '2026-06-19'

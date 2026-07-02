@@ -1,37 +1,19 @@
 ## Purpose
-Identifier si une phrase extraite d'une décision de justice définit un terme juridique (Oui/Non).
+Classifier un terme juridique selon la catégorie de définition appropriée (statutaire, jurisprudentielle, doctrinale, contractuelle).
 
 ## Question format
-Input: phrase extraite d'un arrêt canadien (CSC, CA-QC, Cour fédérale).
-Output: `Oui` | `Non`
+**Input:** Un terme juridique et son contexte d'utilisation dans un document légal québécois ou canadien.
+**Output:** Statutaire | Jurisprudentielle | Doctrinale | Contractuelle
 
-**Exemple:**
-> "Le terme 'résidence principale' au sens de l'art. 395 CCQ désigne le lieu où une personne a son principal établissement, déterminé par l'intention de s'y établir de façon durable."
-> → Oui
+## Answer type
+classification (4 classes)
 
-## Positif — `Oui`
-- Phrase contient une définition explicite d'un terme: "X désigne/signifie/s'entend de Y"
-- Phrase délimite la portée d'un concept juridique par des critères positifs ou négatifs
-- Phrase établit un test pour identifier quand un terme s'applique
+## Legal sources
+- **CCQ**
+- **Loi d'interprétation, LRC 1985 c I-21**
+- **Jurisprudence CSC**
 
-## Négatif — `Non`
-- Phrase applique une règle sans définir de terme
-- Phrase cite un article de loi sans en dégager une définition
-- Phrase constate des faits
-- Phrase exprime un raisonnement de causalité ou de conclusion
-
-## Sources légales
-- Décisions CanLII: CSC, CA-QC, Cour fédérale (section Jurisprudence)
-- Arrêts de principe définissant des termes: Doré (raisonnabilité), Vavilov (caractère raisonnable), Jordan (délai raisonnable)
-- Dictionnaires juridiques canadiens pour validation
-
-## Diversité
-- Varier: droit civil, droit public, droit criminel, droit fiscal
-- Inclure des définitions implicites (sans le mot "désigne" mais équivalentes)
-- Inclure des phrases qui ressemblent à des définitions mais n'en sont pas (trompe-l'œil)
-- Équilibre Oui/Non: ~50/50
-
-## Ne pas utiliser
-- Décisions SCOTUS ou cours américaines
-- Définitions législatives (lire directement dans la loi — trop facile)
+## Do not use
+- Terminologie juridique américaine sans équivalent québécois
+- a2aj/canadian-laws
 - Données de a2aj/canadian-laws

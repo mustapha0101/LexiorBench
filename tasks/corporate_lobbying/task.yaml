@@ -1,0 +1,20 @@
+name: corporate_lobbying
+reasoning_type: issue_spotting
+answer_type: classification
+answer_detail: Binary (Lobbying / Pas de lobbying)
+jurisdiction: both
+purpose: Identifier si une entreprise est susceptible d'exercer des activités de lobbying
+  au sens de la Loi sur la transparence et l'éthique en matière de lobbyisme (Québec)
+  ou de la Loi sur le lobbying (Canada).
+use_case: Analyse des risques / Comparaison contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Loi sur la transparence et l'éthique en matière de lobbyisme RLRQ c T-11.011
+- Loi sur le lobbying LRC 1985 c 44 (4e suppl.)
+generated_by:
+- claude
+generation_date: '2026-06-19'

@@ -1,0 +1,8 @@
+Vous êtes un fiscaliste canadien. Lisez le scénario ci-dessous et l'affirmation qui suit, puis déterminez si le scénario factuel décrit ouvre droit à une déduction fiscale selon la Loi de l'impôt sur le revenu.
+
+Répondez uniquement par : Vrai ou Faux.
+
+{{examples}}
+
+Scénario et affirmation : {{text}}
+Réponse :

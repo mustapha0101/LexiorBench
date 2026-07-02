@@ -1,0 +1,20 @@
+name: contract_clause_governing_law
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause précise la loi applicable au contrat et la juridiction
+  compétente en cas de litige.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- CCQ art. 3111-3113 — choix de la loi applicable aux contrats
+- CCQ art. 3148-3154 — compétence internationale des tribunaux québécois
+generated_by:
+- claude
+generation_date: '2026-06-19'

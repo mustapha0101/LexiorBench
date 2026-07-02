@@ -1,16 +1,19 @@
 name: civil_issue_spotting_responsabilite
-reasoning_type: issue-spotting
-legal_domain: civil
-language: fr
+reasoning_type: issue_spotting
 answer_type: classification
-labels:
-  - "Fait personnel"
-  - "Fait d'autrui"
-  - "Fait des biens"
-  - "Aucune responsabilité extracontractuelle"
+answer_detail: Binary (Oui/Non)
+jurisdiction: quebec
+purpose: Identifier si un scénario soulève une question de responsabilité civile extracontractuelle
+  (art. 1457 CCQ).
+use_case: Analyse des risques
+state: active
+language: fr
 metric: balanced_accuracy
-description: >
-  Identification du régime de responsabilité civile extracontractuelle
-  applicable (arts. 1457 à 1469 C.c.Q.) : fait personnel, fait d'autrui,
-  fait des biens, ou aucune responsabilité extracontractuelle en jeu.
-version: 1
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1457-1481 — responsabilité civile extracontractuelle
+- CCQ art. 1607-1621 — évaluation des dommages-intérêts
+generated_by:
+- claude
+generation_date: '2026-06-19'

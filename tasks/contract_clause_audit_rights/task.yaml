@@ -1,0 +1,20 @@
+name: contract_clause_audit_rights
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause accorde à une partie le droit d'auditer les livres
+  comptables ou les locaux de l'autre partie.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- CCQ art. 1375 — bonne foi dans les obligations contractuelles
+- CCQ art. 1435-1437 — clauses illisibles, incompréhensibles ou abusives
+generated_by:
+- claude
+generation_date: '2026-06-19'

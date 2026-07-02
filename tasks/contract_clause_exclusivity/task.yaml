@@ -1,0 +1,20 @@
+name: contract_clause_exclusivity
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause impose une obligation d'exclusivité, empêchant une
+  partie de travailler avec des concurrents.
+use_case: Comparaison de contrats / Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- CCQ art. 2089 — exclusivité et obligations de non-concurrence
+- Loi sur la concurrence LRC 1985 c C-34 art. 76-79 — accords d'exclusivité
+generated_by:
+- claude
+generation_date: '2026-06-19'

@@ -1,0 +1,25 @@
+name: ca_administrative_review_standard
+reasoning_type: rule_application
+answer_type: classification
+answer_detail: "Décision correcte / Raisonnable / Non raisonnable"
+jurisdiction: federal_ca
+purpose: >
+  Identifier la norme de contrôle judiciaire applicable (décision correcte ou
+  raisonnabilité) et évaluer si la décision administrative y satisfait, selon
+  le cadre établi dans Canada (Ministre de la Citoyenneté et de l'Immigration)
+  c Vavilov [2019] 4 RCS 653.
+use_case: Analyse des risques / Raisonnement juridique
+state: new
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+  - "Canada (Ministre de la Citoyenneté et de l'Immigration) c Vavilov [2019] 4 RCS 653"
+  - "Dunsmuir c Nouveau-Brunswick [2008] 1 RCS 190"
+  - "Loi sur les Cours fédérales LRC 1985 c F-7 art. 18.1"
+  - "Charte canadienne des droits et libertés art. 7 — due process"
+notes: >
+  Gap: no judicial review / administrative law tasks. Vavilov (2019) is the
+  landmark that restructured Canadian admin law. 3-class: correcte / raisonnable
+  / non-raisonnable tests different skills. High value for practitioners.

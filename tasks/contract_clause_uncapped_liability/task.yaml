@@ -1,0 +1,20 @@
+name: contract_clause_uncapped_liability
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause prévoit une responsabilité illimitée, sans plafond
+  maximal de dommages-intérêts.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- CCQ art. 1474 — absence de plafonnement de la responsabilité
+- CCQ art. 1613 — étendue des dommages-intérêts contractuels
+generated_by:
+- claude
+generation_date: '2026-06-19'

@@ -1,13 +1,22 @@
 name: legal_reasoning_causality
-reasoning_type: rhetorical-understanding
-legal_domain: public
-language: fr
+reasoning_type: rhetorical
 answer_type: classification
-labels:
-- Non
-- Oui
+answer_detail: Multi-class (Causalité directe / Causalité contributive / Absence de
+  lien causal)
+jurisdiction: quebec
+purpose: Identifier si un extrait de jugement repose sur un raisonnement causal de
+  type probabiliste ou épidémiologique pour établir le lien de causalité en responsabilité
+  civile (CCQ art. 1607).
+use_case: Analyse des risques
+state: active
+language: fr
 metric: balanced_accuracy
-description: Identifier si cet extrait d'une décision judiciaire canadienne s'appuie
-  sur des preuves statistiques ou épidémiologiques pour établir la causalité (Oui/Non).
-version: 2
-target_jurisdiction: Federal CA
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1457-1481 — responsabilité civile extracontractuelle
+- CCQ art. 1607 — préjudice direct et immédiat; causalité
+- CCQ art. 1478 — partage de responsabilité
+generated_by:
+- claude
+generation_date: '2026-06-19'

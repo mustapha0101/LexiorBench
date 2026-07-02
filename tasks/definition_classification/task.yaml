@@ -1,13 +1,20 @@
 name: definition_classification
-reasoning_type: rhetorical-understanding
-legal_domain: public
-language: fr
+reasoning_type: rhetorical
 answer_type: classification
-labels:
-- Non
-- Oui
+answer_detail: Multi-class (Statutaire / Jurisprudentielle / Contractuelle / Doctrinale)
+jurisdiction: both
+purpose: Identifier si une phrase extraite d'un jugement ou d'un texte juridique contient
+  une définition d'un terme de droit québécois ou canadien.
+use_case: Raisonnement juridique / Résumé
+state: active
+language: fr
 metric: balanced_accuracy
-description: Identifier si cette phrase extraite d'une décision judiciaire canadienne
-  définit un terme juridique (Oui/Non).
-version: 2
-target_jurisdiction: Both
+sample_size: 10
+source: original
+legal_sources:
+- Loi d'interprétation RLRQ c I-16
+- CCQ art. 1-3168 — Code civil du Québec
+- Manuel canadien de la référence juridique (McGill Guide, 10e éd.)
+generated_by:
+- claude
+generation_date: '2026-06-19'

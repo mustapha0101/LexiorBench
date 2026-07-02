@@ -1,0 +1,20 @@
+name: ca_clause_comparison
+reasoning_type: interpretation
+answer_type: generation
+answer_detail: Free text
+jurisdiction: both
+purpose: Given two clauses on the same topic, which is more favorable for party X?
+  Explain.
+use_case: Comparaison de contrats
+state: new
+language: fr
+metric: llm_judge
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1625 — droit commun des contrats
+- CCQ art. 1425-1432 — interprétation des clauses contractuelles
+- CCQ art. 1474 — clauses limitatives et exclusives de responsabilité
+generated_by:
+- claude
+generation_date: '2026-06-19'

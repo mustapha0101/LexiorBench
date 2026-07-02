@@ -25,7 +25,7 @@ Réponse :
 
 README_TEMPLATE = """# {name}
 
-**Type de raisonnement :** {reasoning_type} · **Domaine :** droit {domain_fr} · **Langue :** français
+**Type de raisonnement :** {reasoning_type} · **Territoire :** {jurisdiction} · **Langue :** français
 
 {description}
 
@@ -80,7 +80,7 @@ def create_task(
     meta = {
         "name": name,
         "reasoning_type": reasoning_type,
-        "legal_domain": legal_domain,
+        "jurisdiction": legal_domain,
         "language": language,
         "answer_type": "classification",
         "labels": labels,
@@ -103,7 +103,7 @@ def create_task(
             or README_TEMPLATE.format(
                 name=name,
                 reasoning_type=reasoning_type,
-                domain_fr="civil" if legal_domain == "civil" else "public",
+                jurisdiction=legal_domain,
                 description=description.strip(),
                 labels=" / ".join(labels),
             ),

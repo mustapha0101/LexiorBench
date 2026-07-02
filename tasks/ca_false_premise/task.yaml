@@ -1,0 +1,21 @@
+name: ca_false_premise
+reasoning_type: rule_recall
+answer_type: classification_and_generation
+answer_detail: Refusal + explain
+jurisdiction: both
+purpose: This question contains a false legal premise — identify it and explain why
+  it is wrong
+use_case: Tous les use cases — sécurité du modèle
+state: new
+language: fr
+metric: llm_judge
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1371-1384 — règles générales des obligations
+- Charte des droits et libertés de la personne RLRQ c C-12
+- Charte canadienne des droits et libertés — Partie I de la Loi constitutionnelle
+  de 1982
+generated_by:
+- claude
+generation_date: '2026-06-19'

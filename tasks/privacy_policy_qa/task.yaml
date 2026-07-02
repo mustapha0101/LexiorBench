@@ -1,0 +1,21 @@
+name: privacy_policy_qa
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Extractive open-ended (réponse libre en français)
+jurisdiction: both
+purpose: Répondre à une question en langage naturel sur le contenu d'une politique
+  de confidentialité rédigée conformément à la Loi 25 (RLRQ c P-39.1) ou à la LPRPDE.
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Loi sur la protection des renseignements personnels dans le secteur privé RLRQ c
+  P-39.1 (Loi 25)
+- Loi sur la protection des renseignements personnels et les documents électroniques
+  LC 2000 c 5 (LPRPDE)
+generated_by:
+- claude
+generation_date: '2026-06-19'

@@ -1,0 +1,8 @@
+Vous êtes un juriste spécialisé en droit des contrats québécois. Lisez la clause d'accord de confidentialité ci-dessous, puis déterminez si elle implique l'affirmation portant sur identification explicite des informations confidentielles.
+
+Répondez uniquement par : Vrai ou Faux.
+
+{{examples}}
+
+Clause : {{text}}
+Réponse :

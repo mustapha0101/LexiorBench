@@ -1,0 +1,22 @@
+name: supply_chain_disclosure_best_practice_accountability
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: federal_ca
+purpose: Identifier si une divulgation au titre de la Loi S-211 aborde les mécanismes
+  de reddition de comptes en matière de travail forcé.
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Loi sur la lutte contre le travail forcé et le travail des enfants dans les chaînes
+  d'approvisionnement LC 2023 c 9 (Loi S-211)
+- Loi sur les douanes LRC 1985 c 1 (2e suppl.) — importation de marchandises produites
+  par le travail forcé
+- Guide de déclaration — Sécurité publique Canada (2024)
+generated_by:
+- claude
+generation_date: '2026-06-19'

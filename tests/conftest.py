@@ -13,8 +13,8 @@ def toy_task(tmp_path) -> Task:
     """A minimal valid in-memory task for prompt/eval/annotation tests."""
     return Task(
         name="toy_task",
-        reasoning_type="rule-recall",
-        legal_domain="civil",
+        reasoning_type="rule_recall",
+        legal_domain="quebec",
         language="fr",
         answer_type="classification",
         labels=["Vrai", "Faux"],
@@ -25,6 +25,7 @@ def toy_task(tmp_path) -> Task:
         base_prompt=(
             "Répondez par Vrai ou Faux.\n\n{{examples}}\n\nSituation : {{text}}\nRéponse :\n"
         ),
+        sample=[],
         train=[
             Example(index="0", text="Le ciel est bleu.", answer="Vrai"),
             Example(index="1", text="La mer est rose.", answer="Faux"),
@@ -42,8 +43,8 @@ def write_task_folder(root: Path, name: str = "toy_task", **overrides) -> Path:
     folder.mkdir(parents=True)
     meta = {
         "name": name,
-        "reasoning_type": "rule-recall",
-        "legal_domain": "civil",
+        "reasoning_type": "rule_recall",
+        "jurisdiction": "quebec",
         "language": "fr",
         "answer_type": "classification",
         "labels": ["Vrai", "Faux"],

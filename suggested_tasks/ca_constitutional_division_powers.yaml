@@ -1,0 +1,25 @@
+name: ca_constitutional_division_powers
+reasoning_type: rule_conclusion
+answer_type: classification
+answer_detail: "Compétence fédérale (art. 91) / Compétence provinciale (art. 92) / Double aspect / Ultra vires"
+jurisdiction: both
+purpose: >
+  Déterminer si une loi ou mesure législative relève de la compétence fédérale
+  (art. 91 Loi constitutionnelle de 1867) ou provinciale (art. 92), ou si elle
+  est invalide pour excès de pouvoir (ultra vires).
+use_case: Raisonnement juridique
+state: new
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+  - "Loi constitutionnelle de 1867 art. 91 — compétences fédérales"
+  - "Loi constitutionnelle de 1867 art. 92 — compétences provinciales"
+  - "Loi constitutionnelle de 1867 art. 92A — ressources naturelles"
+  - "Charte canadienne des droits et libertés art. 1 — limites raisonnables"
+  - "Renvoi relatif à la Loi sur la procréation assistée [2010] 3 RCS 457"
+notes: >
+  Gap: public_interpretation_charte covers Charter rights but no division-of-powers
+  task. 4-class: fédérale / provinciale / double aspect / ultra vires.
+  Tests constitutional reasoning rarely covered in existing tasks.

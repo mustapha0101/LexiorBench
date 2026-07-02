@@ -1,0 +1,21 @@
+name: issue_spotting_benefits
+reasoning_type: issue_spotting
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: quebec
+purpose: Identifier si un scénario factuel soulève une question juridique relative
+  aux prestations sociales ou à l'aide au revenu (Québec/Canada).
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Loi sur le soutien du revenu et favorisant l'emploi et la solidarité sociale RLRQ
+  c S-32.001
+- Loi sur l'aide aux personnes et aux familles RLRQ c A-13.1.1
+- Loi sur la sécurité de la vieillesse LRC 1985 c O-9
+generated_by:
+- claude
+generation_date: '2026-06-19'

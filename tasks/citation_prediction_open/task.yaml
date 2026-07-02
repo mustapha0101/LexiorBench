@@ -1,0 +1,20 @@
+name: citation_prediction_open
+reasoning_type: rule_recall
+answer_type: generation
+answer_detail: Free text
+jurisdiction: both
+purpose: Generate the correct citation for this legal quote
+use_case: Raisonnement juridique
+state: active
+language: fr
+metric: llm_judge
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1-3168 — Code civil du Québec (général)
+- Code criminel LRC 1985 c C-46
+- Loi sur les tribunaux judiciaires RLRQ c T-16
+- Manuel canadien de la référence juridique (McGill Guide, 10e éd.)
+generated_by:
+- claude
+generation_date: '2026-06-19'

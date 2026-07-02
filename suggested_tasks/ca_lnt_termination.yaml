@@ -1,0 +1,25 @@
+name: ca_lnt_termination
+reasoning_type: rule_conclusion
+answer_type: classification
+answer_detail: "Congédiement sans cause juste / Congédiement justifié / Mise à pied légale"
+jurisdiction: quebec
+purpose: >
+  Déterminer si une terminaison d'emploi constitue un congédiement sans cause
+  juste (art. 124 LNT), un congédiement disciplinaire justifié, ou une mise à
+  pied légale, selon la Loi sur les normes du travail du Québec.
+use_case: Analyse des risques
+state: new
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+  - "LNT RLRQ c N-1.1 art. 82-83 — préavis de licenciement"
+  - "LNT RLRQ c N-1.1 art. 124 — plainte pour congédiement sans cause juste"
+  - "LNT RLRQ c N-1.1 art. 82.1 — indemnité de fin d'emploi"
+  - "CCQ art. 2091 — résiliation du contrat de travail à durée indéterminée"
+  - "CCQ art. 2094 — résiliation pour motif sérieux"
+notes: >
+  Gap: learned_hands_employment covers issue spotting but no task specifically
+  applies LNT termination rules. 3-class: sans cause / justifié / mise à pied.
+  Distinct from federal labour code — Quebec-specific.

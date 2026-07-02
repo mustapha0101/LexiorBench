@@ -6,8 +6,12 @@ __pycache__/
 dist/
 build/
 
-# Benchmark output
+# Benchmark 
 results/
+old_tasks/
+changes/
+archive/
+tracker/
 
 # IDE / OS
 .idea/
@@ -19,6 +23,8 @@ Thumbs.db
 *_output.txt
 excel_dump.txt
 audit_output.txt
+TASK_SAMPLE_QA.txt
+read_excel.py
 
 # Secrets
 .env

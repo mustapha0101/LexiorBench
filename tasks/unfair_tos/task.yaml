@@ -1,0 +1,19 @@
+name: unfair_tos
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Multi-class
+jurisdiction: quebec
+purpose: Classify this terms-of-service clause into an unfairness category
+use_case: Analyse des risques / Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Loi sur la protection du consommateur RLRQ c P-40.1 art. 8-9 — clauses abusives
+- CCQ art. 1437 — clause abusive dans les contrats d'adhésion ou de consommation
+- CCQ art. 1379 — contrats d'adhésion
+generated_by:
+- claude
+generation_date: '2026-06-19'

@@ -1,0 +1,22 @@
+name: private_right_of_action
+reasoning_type: rule_application
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Déterminer si une personne dispose d'un droit d'action privé en vertu de
+  la loi fédérale ou québécoise applicable.
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Loi sur la protection du consommateur RLRQ c P-40.1 art. 271-272 — recours civil
+  du consommateur
+- Loi sur la concurrence LRC 1985 c C-34 art. 36 — droit d'action privé
+- Charte des droits et libertés de la personne RLRQ c C-12 art. 49 — réparation des
+  atteintes
+generated_by:
+- claude
+generation_date: '2026-06-19'

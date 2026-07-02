@@ -1,0 +1,18 @@
+name: cpc_drafting_evaluation
+reasoning_type: rule_application
+answer_type: classification_and_generation
+answer_detail: Multi-class (Conforme / Partiellement conforme / Non conforme)
+jurisdiction: quebec
+purpose: Evaluate if this legal document respects the required form under C.p.c.
+use_case: Rédaction selon C.p.c.
+state: new
+language: fr
+metric: llm_judge
+sample_size: 10
+source: original
+legal_sources:
+- Code de procédure civile RLRQ c C-25.01
+- Règles de procédure de la Cour supérieure du Québec (matières civiles)
+generated_by:
+- claude
+generation_date: '2026-06-19'

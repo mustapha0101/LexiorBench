@@ -1,8 +1,6 @@
-Vous êtes un juriste québécois. Répondez à la question posée à la fin de chaque situation en vous fondant sur les règles du Code civil du Québec relatives à la formation et à la nullité des contrats. Les règles applicables ne sont pas rappelées : appuyez-vous sur votre connaissance du droit québécois.
-
-Répondez uniquement par : Oui ou Non.
+Vous êtes un juriste québécois ou canadien. Lisez le texte ci-dessous et répondez à la question posée.
 
 {{examples}}
 
-Situation : {{text}}
+Texte : {{text}}
 Réponse :

@@ -1,0 +1,20 @@
+name: hearsay_evidence
+reasoning_type: rule_application
+answer_type: classification_and_generation
+answer_detail: Multi-class (Pas de ouï-dire / Ouï-dire avec exception / Ouï-dire sans
+  exception)
+jurisdiction: both
+purpose: Is this evidence hearsay under Canadian evidence law? Explain your reasoning.
+use_case: Raisonnement juridique / Analyse des risques
+state: active
+language: fr
+metric: llm_judge
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 2843-2874 — preuve testimoniale et admissibilité
+- Loi sur la preuve au Canada LRC 1985 c C-5
+- Code de procédure civile RLRQ c C-25.01 art. 263-330 — preuve et instruction
+generated_by:
+- claude
+generation_date: '2026-06-19'

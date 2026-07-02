@@ -1,0 +1,19 @@
+name: competence_territoriale_ccq
+reasoning_type: rule_application_conclusion
+answer_type: classification_and_generation
+answer_detail: Multi-class (district judiciaire — 6 valeurs + absence de compétence)
+jurisdiction: quebec
+purpose: Déterminer le district judiciaire québécois compétent pour un litige selon
+  les règles de compétence territoriale du C.p.c. (art. 41-69)
+use_case: Raisonnement juridique / Analyse des risques
+state: new
+language: fr
+metric: llm_judge
+sample_size: 10
+source: original
+legal_sources:
+- Code de procédure civile RLRQ c C-25.01 art. 41-69 — compétence territoriale
+- CCQ art. 3148-3154 — compétence internationale des autorités québécoises
+generated_by:
+- claude
+generation_date: '2026-06-19'

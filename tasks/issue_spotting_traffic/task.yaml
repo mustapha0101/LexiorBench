@@ -1,0 +1,19 @@
+name: issue_spotting_traffic
+reasoning_type: issue_spotting
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si un scénario factuel soulève une question relative à la sécurité
+  routière ou à la circulation (Code de la sécurité routière, Québec).
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Code de la sécurité routière RLRQ c C-24.2
+- Loi sur l'assurance automobile RLRQ c A-25
+generated_by:
+- claude
+generation_date: '2026-06-19'

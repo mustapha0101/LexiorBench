@@ -1,0 +1,20 @@
+name: territorial_jurisdiction
+reasoning_type: rule_application_conclusion
+answer_type: classification_and_generation
+answer_detail: Multi-class (Compétence établie / Compétence douteuse / Absence de
+  compétence)
+jurisdiction: quebec
+purpose: Do Quebec authorities have personal jurisdiction over this defendant? Explain.
+  (art. 3148 CCQ)
+use_case: Raisonnement juridique
+state: active
+language: fr
+metric: llm_judge
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 3148-3154 — compétence internationale des autorités québécoises
+- Code de procédure civile RLRQ c C-25.01 art. 41-69 — compétence territoriale
+generated_by:
+- claude
+generation_date: '2026-06-19'

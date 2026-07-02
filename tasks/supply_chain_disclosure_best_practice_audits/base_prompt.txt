@@ -1,9 +1,8 @@
-Vous êtes un juriste spécialisé en droit des affaires et en responsabilité des entreprises au Canada.
-Cette divulgation de chaîne d'approvisionnement décrit-elle des pratiques ou politiques d'audit des fournisseurs pour détecter le travail forcé, conformément à la Loi S-211 (Canada, 2023)?
+Vous êtes un expert en conformité réglementaire canadienne. Lisez l'extrait de déclaration sur la chaîne d'approvisionnement ci-dessous et déterminez s'il aborde la question de meilleures pratiques — audits.
 
 Répondez uniquement par : Oui ou Non.
 
 {{examples}}
 
-Divulgation : {{text}}
+Extrait : {{text}}
 Réponse :

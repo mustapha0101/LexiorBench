@@ -1,0 +1,18 @@
+name: contract_qa
+reasoning_type: interpretation
+answer_type: generation
+answer_detail: Provision ID
+jurisdiction: both
+purpose: What type of contractual provision is present in this excerpt?
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: llm_judge
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1625 — droit commun des contrats et des obligations
+- CCQ art. 1425-1432 — interprétation des clauses contractuelles
+generated_by:
+- claude
+generation_date: '2026-06-19'

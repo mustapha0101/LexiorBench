@@ -1,32 +1,25 @@
 ## Purpose
-Déterminer si une divulgation de chaîne d'approvisionnement mentionne des AUDITS EFFECTIVEMENT RÉALISÉS (par opposition à une politique d'audit), conformément à la Loi S-211 (Canada, 2023).
+Identifier si une déclaration de chaîne d'approvisionnement québécoise ou canadienne mentionne des divulgation effective en matière de divulgation effective — audits (Oui/Non).
 
 ## Question format
-Input: extrait d'une divulgation annuelle d'entreprise.
-Output: `Oui` | `Non`
+**Input:** Un extrait de déclaration sur la chaîne d'approvisionnement publiée par une entreprise.
+**Output:** `Oui` | `Non`
 
-**Exemple:**
-> "En 2023, nous avons réalisé 47 audits chez nos fournisseurs de niveau 1 répartis dans 12 pays. Ces audits ont permis d'identifier 8 cas de non-conformité."
-> → Oui
+**Définition opérationnelle :**
+`Oui` — l'extrait contient des informations sur audits effectivement réalisés et divulgués dans la déclaration.
+`Non` — l'extrait ne traite pas de ce sujet ou en parle de manière trop vague pour être qualifié.
 
-## Positif — `Oui`
-- L'extrait rapporte des audits réellement menés (avec chiffres, dates, résultats)
-- L'extrait donne des statistiques sur les audits effectués (nombre, couverture, findings)
+## Legal sources
+- **Loi sur la lutte contre le travail forcé et le travail des enfants dans les chaînes d'approvisionnement, LC 2023 c 9** (Loi S-211)
+- **Lignes directrices du gouvernement fédéral canadien sur la Loi S-211**
 
-## Positif — `Non`
-- L'extrait décrit une politique ou un engagement futur (pas des audits déjà effectués)
-- L'extrait mentionne des audits sans confirmer qu'ils ont eu lieu
-- L'extrait rapporte des indicateurs autres que des audits (formations, certifications)
+## Diversity requirements
+- Varier les secteurs industriels (manufacturier, détail, agroalimentaire, technologie, ressources)
+- Varier la longueur des extraits (1–2 phrases vs 2–3 paragraphes)
+- Inclure des `Non` trompeurs : déclarations générales sans aborder le sujet spécifique
+- Équilibre strict 50 % Oui / 50 % Non (± 1)
 
-## Sources légales (idem best_practice_audits)
-- Loi S-211 (LC 2023 c 9)
-- Rapports de divulgation publics déposés sous S-211
-
-## Diversité
-- Contraster avec best_practice_audits: ici on veut des audits passés, pas de politiques futures
-- Inclure: audits avec et sans résultats publiés, audits internes vs externes
-- Inclure des Non trompeurs: "nous prévoyons d'effectuer des audits l'an prochain"
-
-## Ne pas utiliser
-- California TISCA disclosures
+## Do not use
+- Déclarations soumises à la UK Modern Slavery Act uniquement
+- Déclarations soumises à la loi australienne sur la chaîne d'approvisionnement uniquement
 - Données de a2aj/canadian-laws

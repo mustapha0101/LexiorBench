@@ -56,9 +56,9 @@ def test_run_page_task_selection_tools():
     # 140+ real tasks → many-mode: All unchecked, boxes enabled for JS preselection
     assert 'data-many="1"' in response.text
     assert '<input type="checkbox" id="all-tasks" checked' not in response.text
-    # live item-count estimate: per-task counts + the estimate element
+    # live item-count estimate: validated train/test splits are placeholders for now
     assert 'id="run-estimate"' in response.text
-    assert 'data-count="244"' in response.text  # canada_tax_court_outcomes
+    assert 'data-count="0"' in response.text
 
 
 def test_lang_toggle_sets_cookie():

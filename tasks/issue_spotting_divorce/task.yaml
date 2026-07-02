@@ -1,0 +1,20 @@
+name: issue_spotting_divorce
+reasoning_type: issue_spotting
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si un scénario factuel soulève une question relative au divorce,
+  à la séparation ou à l'union civile (Loi sur le divorce / CCQ).
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Loi sur le divorce LRC 1985 c 3 (2e suppl.) art. 7-17 — divorce, garde et aliments
+- CCQ art. 395-430 — mariage et effets du divorce
+- CCQ art. 521.1-521.19 — union civile
+generated_by:
+- claude
+generation_date: '2026-06-19'

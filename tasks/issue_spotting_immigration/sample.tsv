@@ -1,0 +1,11 @@
+index	text	answer	source_model
+1	Je suis résident permanent au Canada depuis 4 ans. J'ai passé beaucoup de temps à l'étranger pour soigner ma mère malade. J'ai peur que mon statut de résident permanent soit compromis. Quels sont les critères de présence obligatoire et comment savoir si je les respecte ?	Oui	claude
+2	J'ai déposé une demande d'asile au Canada il y a 6 mois parce que je fuis la persécution dans mon pays d'origine. Ma demande a été refusée et je dois quitter le pays dans 30 jours. Quels sont mes recours (appel, demande humanitaire, etc.) ?	Oui	claude
+3	Je veux parrainer mon conjoint étranger pour qu'il vienne s'installer au Canada. Nous sommes mariés depuis 2 ans et nous vivons ensemble à Montréal. Quelles sont les étapes du parrainage conjugal fédéral ?	Oui	claude
+4	Mon permis de travail expire dans 45 jours. J'ai soumis mon renouvellement il y a 3 semaines mais je n'ai aucune réponse. Mon employeur veut savoir si je peux continuer à travailler légalement pendant ce temps. Qu'est-ce que le statut maintenu ?	Oui	claude
+5	J'ai reçu une mesure de renvoi du Canada après une condamnation criminelle mineure. Je vis ici depuis 15 ans avec ma famille. Y a-t-il des exceptions humanitaires pour éviter la déportation dans mon cas ?	Oui	claude
+6	Mon enfant de 9 ans souffre d'une forme rare de leucémie. Notre oncologue recommande un traitement expérimental non couvert par la RAMQ. Notre assurance privée le couvre partiellement. Qui paye le reste ?	Non	claude
+7	Je travaille pour une entreprise depuis 6 ans. Mon employeur veut me faire signer une renonciation à mes droits de harcèlement en échange d'une prime. Est-ce légal et dois-je signer ?	Non	claude
+8	Je veux divorcer de mon conjoint avec qui je suis marié depuis 3 ans. Nous n'avons pas d'enfants et aucun bien commun. Comment faire un divorce simple et peu coûteux au Québec ?	Non	claude
+9	J'ai acheté un véhicule d'occasion dont le kilométrage avait été falsifié. Le concessionnaire savait-il et me l'a-t-il caché ? Je veux poursuivre. Quels sont mes recours en vertu de la Loi sur la protection du consommateur ?	Non	claude
+10	Ma fille de 7 ans a été harcelée et frappée par des camarades à l'école. L'école dit avoir suivi son protocole anti-intimidation. Je veux qu'ils en fassent plus. Quels sont nos droits légaux pour forcer une intervention adéquate ?	Non	claude

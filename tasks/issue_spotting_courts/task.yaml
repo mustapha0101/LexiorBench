@@ -1,0 +1,20 @@
+name: issue_spotting_courts
+reasoning_type: issue_spotting
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si un scénario factuel soulève une question de procédure civile
+  ou de compétence des tribunaux (C.p.c., Québec/Canada).
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Code de procédure civile RLRQ c C-25.01 (C.p.c.)
+- Loi sur les tribunaux judiciaires RLRQ c T-16
+- Loi sur la Cour suprême LRC 1985 c S-26
+generated_by:
+- claude
+generation_date: '2026-06-19'

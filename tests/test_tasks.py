@@ -36,14 +36,23 @@ def test_discover_real_seed_tasks():
     by_name = {t.name: t for t in tasks}
     assert set(SEED_TASKS) <= set(by_name)
     seeds = [by_name[name] for name in SEED_TASKS]
-    assert {t.reasoning_type for t in seeds} == set(REASONING_TYPES)
-    assert {t.legal_domain for t in seeds} == {"civil", "public"}
+    assert {t.reasoning_type for t in seeds} == {
+        "issue_spotting",
+        "rule_application",
+        "rule_conclusion",
+        "rule_recall",
+        "interpretation",
+        "rhetorical",
+    }
+    assert {t.legal_domain for t in seeds} == {"quebec"}
     for task in seeds:
         assert task.language == "fr"
-        assert len(task.train) >= 4
-        assert len(task.test) >= 8
+        assert len(task.sample) >= 10
+        assert len(task.train) == 0
+        assert len(task.test) == 0
     for task in tasks:  # imported tasks included
-        assert "{{text}}" in task.base_prompt
+        if task.answer_type != "cross_task_metric":
+            assert "{{text}}" in task.base_prompt
 
 
 def test_load_valid_toy_task(tmp_path):
@@ -121,9 +130,9 @@ def test_write_tsv_rejects_embedded_tab(tmp_path):
 def test_resolve_task_names_all_and_type_and_list():
     tasks = discover_tasks(TASKS_DIR)
     assert resolve_task_names("all", tasks) == tasks
-    by_type = resolve_task_names("type:rule-recall", tasks)
+    by_type = resolve_task_names("type:rule_recall", tasks)
     assert "civil_rule_recall_ccq" in [t.name for t in by_type]
-    assert all(t.reasoning_type == "rule-recall" for t in by_type)
+    assert all(t.reasoning_type == "rule_recall" for t in by_type)
     pair = resolve_task_names("civil_rule_recall_ccq, public_interpretation_charte", tasks)
     assert [t.name for t in pair] == ["civil_rule_recall_ccq", "public_interpretation_charte"]
     with pytest.raises(TaskError, match="unknown task"):

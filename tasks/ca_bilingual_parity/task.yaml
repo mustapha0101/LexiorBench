@@ -1,0 +1,14 @@
+name: ca_bilingual_parity
+reasoning_type: cross_task_metric
+answer_type: cross_task_metric
+answer_detail: Parity score
+jurisdiction: both
+purpose: Measure if the model answers equally well in French and English — same questions
+  posed in both languages, scores compared for parity
+use_case: Tous les use cases — qualité bilingue du modèle
+state: new
+language: fr
+metric: parity_analysis
+sample_size: 0
+source: original
+legal_sources: []

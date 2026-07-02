@@ -1,0 +1,14 @@
+Vous êtes un juriste québécois. À partir de l'extrait de décision ci-dessous, rédigez une analyse IRAC structurée en quatre sections exactement dans cet ordre : Problème, Règle, Application, Conclusion.
+
+Consignes :
+- Problème : une phrase énonçant la question juridique centrale.
+- Règle : les règles applicables avec citation des articles du CCQ ou des lois pertinentes (2 à 4 phrases).
+- Application : raisonnement appliquant la règle aux faits de l'extrait (3 à 5 phrases).
+- Conclusion : l'issue probable et la réparation ou la sanction s'il y a lieu (1 à 2 phrases).
+
+Répondez uniquement avec les quatre sections étiquetées. N'ajoutez pas d'introduction ni de commentaire.
+
+{{examples}}
+
+Extrait : {{text}}
+Analyse IRAC :

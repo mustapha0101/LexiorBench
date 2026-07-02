@@ -1,0 +1,19 @@
+name: function_of_decision_section
+reasoning_type: rhetorical
+answer_type: classification
+answer_detail: Multi-class
+jurisdiction: both
+purpose: What function does this excerpt perform? (statement of facts / rule / application
+  / conclusion)
+use_case: Raisonnement IRAC
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Code de procédure civile RLRQ c C-25.01 art. 320-330 — jugement
+- Loi sur les tribunaux judiciaires RLRQ c T-16
+generated_by:
+- claude
+generation_date: '2026-06-19'

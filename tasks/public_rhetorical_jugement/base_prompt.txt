@@ -1,8 +1,6 @@
-Vous êtes un juriste québécois. Chaque extrait ci-dessous provient d'un jugement fictif rendu en matière de droit administratif. Identifiez la fonction rhétorique de l'extrait dans le jugement : l'énoncé de la norme de contrôle applicable, l'exposé des prétentions d'une partie, l'application du droit aux faits du dossier, ou la conclusion (le dispositif).
-
-Répondez uniquement par l'une des étiquettes suivantes : Norme de contrôle, Prétentions d'une partie, Application aux faits, Conclusion.
+Vous êtes un juriste québécois ou canadien. Lisez le texte ci-dessous et répondez à la question posée.
 
 {{examples}}
 
-Situation : {{text}}
+Texte : {{text}}
 Réponse :

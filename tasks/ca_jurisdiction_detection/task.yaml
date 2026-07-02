@@ -1,0 +1,20 @@
+name: ca_jurisdiction_detection
+reasoning_type: rule_recall
+answer_type: classification_and_generation
+answer_detail: Multi-class (juridiction compétente + base légale)
+jurisdiction: both
+purpose: Identifier la juridiction compétente (Cour du Québec, Cour supérieure, Cour
+  fédérale, etc.) pour une affaire décrite
+use_case: Analyse des risques / Raisonnement juridique
+state: new
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Code de procédure civile RLRQ c C-25.01 art. 34-38 — compétence matérielle
+- Loi sur les Cours fédérales LRC 1985 c F-7
+- Loi sur les tribunaux judiciaires RLRQ c T-16
+generated_by:
+- claude
+generation_date: '2026-06-19'

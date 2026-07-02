@@ -1,0 +1,8 @@
+Vous êtes un expert en conformité réglementaire canadienne. Lisez l'extrait de déclaration sur la chaîne d'approvisionnement ci-dessous et déterminez s'il aborde la question de divulgation effective — formation.
+
+Répondez uniquement par : Oui ou Non.
+
+{{examples}}
+
+Extrait : {{text}}
+Réponse :

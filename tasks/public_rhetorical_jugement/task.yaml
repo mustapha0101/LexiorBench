@@ -1,17 +1,19 @@
 name: public_rhetorical_jugement
-reasoning_type: rhetorical-understanding
-legal_domain: public
-language: fr
+reasoning_type: rhetorical
 answer_type: classification
-labels:
-  - "Norme de contrôle"
-  - "Prétentions d'une partie"
-  - "Application aux faits"
-  - "Conclusion"
+answer_detail: Multi-class (Faits / Règle / Application / Conclusion / Obiter)
+jurisdiction: quebec
+purpose: Identifier la fonction rhétorique d'un extrait de jugement québécois (exposé
+  des faits, règle, application, conclusion).
+use_case: Raisonnement juridique
+state: active
+language: fr
 metric: balanced_accuracy
-description: >
-  Compréhension rhétorique d'extraits fictifs de jugements en droit
-  administratif québécois : identifier la fonction de l'extrait dans le
-  jugement (énoncé de la norme de contrôle, prétentions d'une partie,
-  application du droit aux faits, ou conclusion/dispositif).
-version: 1
+sample_size: 10
+source: original
+legal_sources:
+- Code de procédure civile RLRQ c C-25.01 art. 320-330 — jugement et motifs
+- Loi sur les tribunaux judiciaires RLRQ c T-16
+generated_by:
+- claude
+generation_date: '2026-06-19'

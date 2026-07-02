@@ -4,5 +4,5 @@ Répondez uniquement par : Vrai ou Faux.
 
 {{examples}}
 
-Situation : {{text}}
+Énoncé : {{text}}
 Réponse :

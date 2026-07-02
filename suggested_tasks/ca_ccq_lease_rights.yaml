@@ -1,0 +1,26 @@
+name: ca_ccq_lease_rights
+reasoning_type: rule_application
+answer_type: classification
+answer_detail: "Droit du locataire reconnu / Obligation du locateur confirmée / Clause abusive / Aucun droit applicable"
+jurisdiction: quebec
+purpose: >
+  Déterminer si un locataire résidentiel dispose d'un droit ou recours en
+  vertu du régime québécois du bail résidentiel (CCQ art. 1851-2000 et
+  Loi sur la Régie du logement RLRQ c T-15.01).
+use_case: Analyse des risques
+state: new
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+  - "CCQ art. 1851-1876 — dispositions générales du bail"
+  - "CCQ art. 1900-1909 — obligations du locateur (état du logement)"
+  - "CCQ art. 1910-1914 — loyer et augmentation"
+  - "CCQ art. 1936-1942 — reprise de logement"
+  - "CCQ art. 1959-1978 — résiliation du bail"
+  - "Loi sur la Régie du logement RLRQ c T-15.01 — recours"
+notes: >
+  Gap: learned_hands_housing covers issue spotting but no CCQ lease-specific
+  task applies specific articles on rights/remedies. Tribunal administratif
+  du logement (TAL) is a high-volume jurisdiction.

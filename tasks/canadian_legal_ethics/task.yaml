@@ -1,0 +1,21 @@
+name: canadian_legal_ethics
+reasoning_type: rule_recall
+answer_type: classification
+answer_detail: Binary (Manquement / Pas de manquement)
+jurisdiction: both
+purpose: Déterminer si un scénario soulève un manquement déontologique d'un juge
+  ou d'un avocat dans un contexte canadien ou québécois.
+use_case: Raisonnement juridique
+state: new
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Loi sur les juges LRC 1985 c J-1
+- Principes de la déontologie judiciaire — Conseil canadien de la magistrature (2021)
+- Charte canadienne des droits et libertés art. 11d — tribunal indépendant et impartial
+- Code de déontologie des avocats RLRQ c B-1, r 3.1
+generated_by:
+- claude
+generation_date: '2026-06-19'

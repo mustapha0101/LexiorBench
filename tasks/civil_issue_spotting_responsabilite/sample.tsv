@@ -1,0 +1,10 @@
+index	text	answer	source_model
+1	Un chauffeur de livraison distraite par son téléphone cellulaire grille un feu rouge et percute un véhicule dont le conducteur subit de graves blessures à la colonne vertébrale, l'immobilisant pendant six mois.	Oui	claude
+2	Une pharmacienne remet à un client un médicament qui n'est pas celui prescrit par le médecin en raison d'une confusion entre deux noms similaires. Le client, qui souffre d'une allergie au médicament remis, est hospitalisé d'urgence.	Oui	claude
+3	Un propriétaire négligent omet de saler son entrée malgré des conditions verglaçantes. Sa voisine, en lui rendant visite, glisse et se fracture le poignet.	Oui	claude
+4	Un médecin omet de divulguer à sa patiente un risque rare mais connu de la chirurgie recommandée. La patiente, après avoir subi ce risque, affirme qu'elle aurait refusé l'intervention si elle en avait été informée.	Oui	claude
+5	Un entrepreneur en construction utilise des matériaux non conformes aux normes parasismiques. L'immeuble subit des dommages structurels lors d'un séisme, causant des pertes financières importantes aux copropriétaires.	Oui	claude
+6	Un passant témoin d'une dispute entre voisins choisit de ne pas intervenir. Les voisins s'insultent verbalement mais personne n'est physiquement blessé. Le passant n'avait aucune obligation légale d'agir.	Non	claude
+7	Un joueur de hockey professionnel met en échec un adversaire dans les règles du jeu. L'adversaire subit une blessure musculaire. Le geste était légal selon les règles du sport et le règlement de la ligue.	Non	claude
+8	Une entreprise décide de cesser ses activités commerciales, entraînant la perte d'emploi de vingt salariés. L'employeur a respecté tous les délais de préavis prévus par la Loi sur les normes du travail et a offert des indemnités conformes à la loi.	Non	claude
+10	Un locataire déménage en laissant des égratignures mineures sur les murs, résultant d'une usure normale conforme à l'utilisation ordinaire de l'appartement. Le propriétaire réclame une compensation pour travaux de peinture.	Non	claude

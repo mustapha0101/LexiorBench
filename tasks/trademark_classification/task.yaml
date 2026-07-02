@@ -1,0 +1,20 @@
+name: trademark_classification
+reasoning_type: rule_application
+answer_type: classification
+answer_detail: 5 classes
+jurisdiction: both
+purpose: Classify this trademark's distinctiveness under the Canadian Trademarks Act
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- 'Loi sur les marques de commerce LRC 1985 c T-13 art. 2 — définitions : marque distinctive,
+  marque descriptive, marque évocatrice'
+- CCQ art. 1457 — responsabilité civile pour concurrence déloyale
+- Loi sur la concurrence LRC 1985 c C-34 art. 7 — indications fausses ou trompeuses
+generated_by:
+- claude
+generation_date: '2026-06-19'

@@ -1,9 +1,0 @@
-Vous êtes un juriste québécois ou canadien.
-Lisez ce scénario ci-dessous et déterminez s'il soulève une question juridique liée à prestations sociales, l'aide sociale et les services gouvernementaux.
-
-Répondez uniquement par : Oui ou Non.
-
-{{examples}}
-
-Scénario : {{text}}
-Réponse :

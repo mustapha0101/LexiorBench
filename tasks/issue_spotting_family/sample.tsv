@@ -1,0 +1,11 @@
+index	text	answer	source_model
+1	Mon ex-conjoint (nous n'étions pas mariés) et moi avons deux enfants de 5 et 8 ans. Il veut que les enfants déménagent avec lui à Vancouver. Je refuse de les laisser partir. Comment protéger mon droit de garde et m'opposer au déménagement ?	Oui	claude
+2	Mon père est âgé et a des problèmes cognitifs. Il prend des décisions financières risquées sous l'influence de sa nouvelle petite amie. Puis-je demander l'ouverture d'un régime de protection (tutelle ou curatelle) pour le protéger ?	Oui	claude
+3	Nous voulons adopter un enfant de 3 ans actuellement en famille d'accueil. Cela fait 18 mois qu'il vit chez nous. La DPJ s'y oppose. Quelles sont les démarches légales pour aller de l'avant avec l'adoption ?	Oui	claude
+4	Je suis le père d'un enfant né hors mariage. La mère refuse de m'inscrire sur le certificat de naissance et de me donner accès à mon fils. Quels sont mes droits parentaux et comment les faire reconnaître ?	Oui	claude
+5	Mon fils de 15 ans veut habiter chez son père au lieu de rester avec moi. Nous avons une ordonnance de garde à mon avantage. Mon ex-conjoint encourage mon fils à refuser de rentrer. Que puis-je faire légalement ?	Oui	claude
+6	Mon conjoint et moi divorçons après 15 ans de mariage. Nous devons liquider le patrimoine familial (maison, RRSPs, pension). Comment se fait le partage dans un divorce au Québec et y a-t-il des impôts à payer ?	Non	claude
+7	Mon employeur a réduit mon salaire de 20 % sans me consulter, prétextant une baisse des revenus de l'entreprise. J'ai un contrat de travail écrit qui fixe mon salaire. Quels sont mes recours face à cette modification unilatérale ?	Non	claude
+8	J'ai été diagnostiqué avec un cancer. Mon assureur vie refuse de couvrir le traitement expérimental recommandé par mon médecin. La police d'assurance exclut-elle vraiment ce type de traitement ou puis-je contester ?	Non	claude
+9	Mon fils de 18 ans a eu un accident de voiture et a subi des blessures graves. L'autre conducteur était fautif. Mon fils veut poursuivre l'autre conducteur et son assureur. Comment l'aider à entamer les démarches ?	Non	claude
+10	Je suis locataire d'un appartement et mon propriétaire veut vendre l'immeuble. L'acheteur veut me demander de partir. Ai-je le droit de rester dans mon appartement après la vente de l'immeuble ?	Non	claude

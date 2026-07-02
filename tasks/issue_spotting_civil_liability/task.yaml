@@ -1,0 +1,19 @@
+name: issue_spotting_civil_liability
+reasoning_type: issue_spotting
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: quebec
+purpose: Identifier si un scénario factuel soulève une question de responsabilité
+  civile extracontractuelle au Québec (CCQ art. 1457).
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1457-1481 — responsabilité civile extracontractuelle
+- CCQ art. 1607-1625 — évaluation des dommages-intérêts
+generated_by:
+- claude
+generation_date: '2026-06-19'

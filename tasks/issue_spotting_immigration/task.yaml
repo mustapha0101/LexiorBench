@@ -1,0 +1,19 @@
+name: issue_spotting_immigration
+reasoning_type: issue_spotting
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: federal_ca
+purpose: Identifier si un scénario factuel soulève une question d'immigration, de
+  statut ou de protection des réfugiés (LIPR, Canada).
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Loi sur l'immigration et la protection des réfugiés LC 2001 c 27 (LIPR)
+- Règlement sur l'immigration et la protection des réfugiés DORS/2002-227
+generated_by:
+- claude
+generation_date: '2026-06-19'

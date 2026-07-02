@@ -1,0 +1,20 @@
+name: contract_clause_non_transferable_license
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause stipule que la licence accordée est non cessible
+  et ne peut être transférée à des tiers.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- Loi sur le droit d'auteur LRC 1985 c C-42 art. 13 — incessibilité de la licence
+- CCQ art. 1641-1650 — interdiction de cession
+generated_by:
+- claude
+generation_date: '2026-06-19'

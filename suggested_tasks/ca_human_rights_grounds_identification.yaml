@@ -1,0 +1,25 @@
+name: ca_human_rights_grounds_identification
+reasoning_type: issue_spotting
+answer_type: classification_and_generation
+answer_detail: "Motif protégé identifié (Oui/Non) + motif(s) : race/sexe/handicap/âge/religion/etc."
+jurisdiction: both
+purpose: >
+  Identifier si une situation factuelle soulève un motif de discrimination
+  protégé sous la Charte des droits et libertés de la personne (RLRQ c C-12)
+  ou la Loi canadienne sur les droits de la personne (LRC 1985 c H-6),
+  et identifier le ou les motifs en cause.
+use_case: Analyse des risques
+state: new
+language: fr
+metric: llm_judge
+sample_size: 10
+source: original
+legal_sources:
+  - "Charte des droits et libertés de la personne RLRQ c C-12 art. 10 — motifs de discrimination"
+  - "Charte des droits et libertés de la personne RLRQ c C-12 art. 16 — emploi"
+  - "Loi canadienne sur les droits de la personne LRC 1985 c H-6 art. 3 — motifs illicites"
+  - "Loi canadienne sur les droits de la personne LRC 1985 c H-6 art. 7 — emploi"
+notes: >
+  Gap: public_interpretation_charte detects if a Charter right is at stake but
+  does not identify specific discrimination grounds. This task requires naming
+  the ground (classification_and_generation). Both federal and provincial scope.

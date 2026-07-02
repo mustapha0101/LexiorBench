@@ -1,0 +1,24 @@
+name: contract_nli_sharing_with_employees
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Vrai/Faux)
+jurisdiction: both
+purpose: Déterminer si une clause soutient, contredit ou ne traite pas l'hypothèse
+  que les informations confidentielles peuvent être partagées avec les employés de
+  la partie réceptrice.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375 — bonne foi dans les obligations contractuelles
+- CCQ art. 1385-1432 — formation et effets des contrats
+- CCQ art. 1375 — bonne foi dans l'exécution des obligations
+- CCQ art. 1434 — obligations implicites découlant du contrat
+- Principes canadiens de protection des renseignements confidentiels et des secrets commerciaux (contrat, équité, responsabilité civile)
+- CCQ art. 2085-2097 — contrat de travail et obligation de confidentialité du salarié
+generated_by:
+- claude
+generation_date: '2026-06-19'

@@ -1,0 +1,8 @@
+Vous êtes un expert en protection des données personnelles au Québec. Lisez l'extrait de politique de confidentialité ci-dessous et déterminez s'il traite de sécurité des données personnelles.
+
+Répondez uniquement par : Oui ou Non.
+
+{{examples}}
+
+Extrait : {{text}}
+Réponse :

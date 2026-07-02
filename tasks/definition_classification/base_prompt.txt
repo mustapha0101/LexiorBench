@@ -1,10 +1,6 @@
-Vous êtes un juriste spécialisé en droit canadien.
-Lisez la phrase extraite d'une décision judiciaire canadienne.
-Cette phrase fournit-elle une définition d'un terme juridique ou d'un concept de droit?
-
-Répondez uniquement par : Oui ou Non.
+Vous êtes un juriste québécois ou canadien. Lisez le texte ci-dessous et répondez à la question posée.
 
 {{examples}}
 
-Phrase : {{text}}
+Texte : {{text}}
 Réponse :

@@ -1,0 +1,20 @@
+name: contract_clause_cap_on_liability
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause plafonne la responsabilité d'une partie à un montant
+  maximal déterminé.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- CCQ art. 1474 — exclusion et limitation de responsabilité
+- CCQ art. 1613 — étendue des dommages-intérêts contractuels
+generated_by:
+- claude
+generation_date: '2026-06-19'

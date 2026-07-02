@@ -1,0 +1,21 @@
+name: issue_spotting_education
+reasoning_type: issue_spotting
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si un scénario factuel soulève une question de droit de l'éducation
+  (Loi sur l'instruction publique, Québec).
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Loi sur l'instruction publique RLRQ c I-13.3
+- Loi sur l'enseignement privé RLRQ c E-9.1
+- Charte des droits et libertés de la personne RLRQ c C-12 art. 40 — droit à l'instruction
+  publique gratuite
+generated_by:
+- claude
+generation_date: '2026-06-19'

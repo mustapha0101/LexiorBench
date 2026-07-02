@@ -1,0 +1,11 @@
+index	text	answer	source_model
+1	Ma mère est décédée il y a deux mois sans laisser de testament. Elle avait une maison (valeur 380 000 $), un compte bancaire et un REER. Mon père était décédé avant elle. Il y a trois enfants adultes. Comment se fait la dévolution légale de ses biens au Québec ?	Oui	claude
+2	Mon père a signé un testament il y a 10 ans dans lequel il me déshérite complètement en faveur de ma sœur. Je pense qu'il n'était pas en pleine possession de ses facultés à ce moment-là. Puis-je contester la validité de ce testament ?	Oui	claude
+3	Je suis le liquidateur de la succession de ma tante. Elle avait des dettes importantes. Les actifs de la succession ne couvrent pas toutes les dettes. Dois-je personnellement payer les créanciers si la succession est insolvable ?	Oui	claude
+4	Mon grand-père a légué son chalet à ma mère dans son testament, mais ma mère est décédée avant lui. Est-ce que le legs tombe ou est-ce que les enfants de ma mère (ses petits-enfants) héritent du chalet à sa place ?	Oui	claude
+5	Je vis en union de fait avec mon conjoint depuis 12 ans. Il est décédé sans testament. Sa famille biologique veut tout hériter. Ai-je des droits sur les biens que nous avons acquis ensemble pendant notre vie commune ?	Oui	claude
+6	Mon conjoint et moi voulons divorcer. Nous avons une maison commune évaluée à 500 000 $ avec une hypothèque de 200 000 $. Comment se fait le partage du patrimoine familial dans un divorce au Québec ?	Non	claude
+7	Je reçois des menaces de mon ex-conjoint depuis notre séparation. Il a dit qu'il va « s'occuper de moi ». J'ai peur pour ma sécurité. Quelles mesures légales puis-je prendre pour me protéger ?	Non	claude
+8	Mon employeur refuse de me payer mes vacances annuelles accumulées depuis deux ans. Il prétend que j'ai renoncé à ces vacances. La Loi sur les normes du travail interdit-elle une telle renonciation ?	Non	claude
+9	Mon propriétaire est entré dans mon appartement sans ma permission pendant mon absence pour faire des réparations. Aucun préavis ne m'a été donné. Est-ce légal et quels sont mes recours ?	Non	claude
+10	J'ai été victime de fraude en ligne. Quelqu'un a utilisé mes informations personnelles pour contracter un prêt de 15 000 $ en mon nom. La banque me tient responsable du remboursement. Comment me défendre contre ce vol d'identité ?	Non	claude

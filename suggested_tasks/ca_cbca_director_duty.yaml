@@ -1,0 +1,25 @@
+name: ca_cbca_director_duty
+reasoning_type: rule_application
+answer_type: classification
+answer_detail: "Manquement au devoir de loyauté / Manquement au devoir de diligence / Conflit d'intérêts / Aucun manquement"
+jurisdiction: federal_ca
+purpose: >
+  Déterminer si le comportement d'un administrateur d'une société par actions
+  fédérale constitue un manquement à son devoir de loyauté, à son devoir de
+  diligence, ou un conflit d'intérêts non divulgué selon la LCSA (LRSC 1985 c C-44).
+use_case: Analyse des risques
+state: new
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+  - "Loi canadienne sur les sociétés par actions LRSC 1985 c C-44 art. 122 — devoirs des administrateurs"
+  - "Loi canadienne sur les sociétés par actions LRSC 1985 c C-44 art. 120 — conflits d'intérêts"
+  - "Loi canadienne sur les sociétés par actions LRSC 1985 c C-44 art. 227 — responsabilité des administrateurs"
+  - "LSAQ RLRQ c S-31.1 art. 119-122 — devoirs des administrateurs (Québec)"
+  - "Magasins à rayons Peoples inc (Syndic de) c Wise [2004] 3 RCS 461"
+notes: >
+  Gap: no corporate governance / director duty tasks. High demand in M&A,
+  insolvency, and shareholder dispute contexts. 4-class. Covers CBCA + LSAQ
+  for both federal and Quebec corporate practitioners.

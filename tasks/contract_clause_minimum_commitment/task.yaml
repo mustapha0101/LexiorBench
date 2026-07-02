@@ -1,0 +1,20 @@
+name: contract_clause_minimum_commitment
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause impose à une partie un engagement minimal d'achat,
+  de volume ou de chiffre d'affaires.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- CCQ art. 1375 — bonne foi et obligation de résultat minimale
+- CCQ art. 1434 — contenu implicite du contrat
+generated_by:
+- claude
+generation_date: '2026-06-19'

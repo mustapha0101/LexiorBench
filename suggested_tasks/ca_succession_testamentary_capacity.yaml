@@ -1,0 +1,25 @@
+name: ca_succession_testamentary_capacity
+reasoning_type: rule_application
+answer_type: classification
+answer_detail: "Capacité testamentaire établie / Douteuse / Absente"
+jurisdiction: quebec
+purpose: >
+  Évaluer si le testateur avait la capacité testamentaire requise au moment
+  de la rédaction du testament (art. 710-730 CCQ) et si le testament risque
+  d'être annulé pour incapacité ou vice du consentement.
+use_case: Analyse des risques
+state: new
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+  - "CCQ art. 710 — conditions de capacité testamentaire"
+  - "CCQ art. 711 — testament du mineur"
+  - "CCQ art. 714 — testament fait dans un état de faiblesse"
+  - "CCQ art. 758-762 — nullité du testament"
+  - "CCQ art. 630 — indignité successorale"
+notes: >
+  Gap: learned_hands_estates covers issue spotting but no CCQ-specific
+  testamentary capacity analysis task. 3-class: établie / douteuse / absente.
+  High practical value — succession disputes common in Quebec notarial practice.

@@ -46,7 +46,7 @@ def test_build_draft_url_validation():
 
 def test_sanitize_name_handles_legalbench_charset():
     assert lb.sanitize_name("cuad_affiliate_license-licensee") == "cuad_affiliate_license_licensee"
-    assert lb.sanitize_name("opp115_user_access,_edit_and_deletion") == "opp115_user_access_edit_and_deletion"
+    assert lb.sanitize_name("privacy_user_access,_edit_and_deletion") == "privacy_user_access_edit_and_deletion"
     assert lb.sanitize_name("maud_initial_matching_rights_period_(cor)") == "maud_initial_matching_rights_period_cor"
     assert lb.sanitize_name("hearsay") == "hearsay"
 

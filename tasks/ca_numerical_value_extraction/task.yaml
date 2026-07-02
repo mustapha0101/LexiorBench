@@ -1,0 +1,21 @@
+name: ca_numerical_value_extraction
+reasoning_type: rule_application
+answer_type: classification_and_generation
+answer_detail: Extraction
+jurisdiction: both
+purpose: Extract and correctly identify all numerical values in a legal text — dates,
+  deadlines, amounts, years, percentages — and their legal significance
+use_case: Tous les use cases — précision factuelle du modèle
+state: new
+language: fr
+metric: llm_judge
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1590-1625 — inexécution, délais et dommages-intérêts
+- CCQ art. 2922-2930 — prescription extinctive
+- Loi sur les normes du travail RLRQ c N-1.1 — délais légaux
+- Loi de l'impôt sur le revenu LRC 1985 c 1 (LIR) — montants et seuils fiscaux
+generated_by:
+- claude
+generation_date: '2026-06-19'

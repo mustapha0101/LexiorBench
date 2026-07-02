@@ -1,0 +1,21 @@
+name: corporate_successor_obligations
+reasoning_type: rule_application_conclusion
+answer_type: classification_and_generation
+answer_detail: Multi-class
+jurisdiction: both
+purpose: Déterminer si une société acquéreuse ou issue d'une opération corporative
+  reprend certaines obligations de l'entreprise cédée selon le droit québécois et
+  canadien des sociétés.
+use_case: Comparaison de contrats / Analyse des risques
+state: active
+language: fr
+metric: llm_judge
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1525-1531 — cession d'entreprise et responsabilité du successeur
+- Loi sur les sociétés par actions RLRQ c S-31.1 art. 286-295 — fusion et acquisition
+- CCQ art. 2097 — maintien du contrat de travail en cas d'aliénation de l'entreprise
+generated_by:
+- claude
+generation_date: '2026-06-19'

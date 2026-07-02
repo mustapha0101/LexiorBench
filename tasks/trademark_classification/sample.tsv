@@ -1,0 +1,11 @@
+index	text	answer	source_model
+1	Marque : LAIT — Produits/services : lait de vache frais	Générique	claude
+2	Marque : AVOCAT — Produits/services : services juridiques de représentation devant les tribunaux	Générique	claude
+3	Marque : FRAÎCHE — Produits/services : eau minérale en bouteille	Descriptif	claude
+4	Marque : RAPIDE LIVRAISON — Produits/services : service de messagerie et de courrier express	Descriptif	claude
+5	Marque : NUAGE — Produits/services : services de stockage de données infonuagiques	Suggestif	claude
+6	Marque : BOUCLIER — Produits/services : logiciels de cybersécurité pour entreprises	Suggestif	claude
+7	Marque : APPLE — Produits/services : logiciels informatiques et applications mobiles	Arbitraire	claude
+8	Marque : AMAZON — Produits/services : services de commerce électronique et de vente au détail en ligne	Arbitraire	claude
+9	Marque : LEXIOR — Produits/services : services juridiques assistés par intelligence artificielle	Fantaisiste	claude
+10	Marque : KODAVOX — Produits/services : appareils d'enregistrement audio professionnels	Fantaisiste	claude

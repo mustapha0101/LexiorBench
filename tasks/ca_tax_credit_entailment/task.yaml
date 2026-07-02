@@ -1,0 +1,20 @@
+name: ca_tax_credit_entailment
+reasoning_type: rule_conclusion
+answer_type: classification
+answer_detail: Binary (Vrai/Faux)
+jurisdiction: both
+purpose: Vérifier si un contribuable remplit les conditions d'admissibilité à un crédit
+  d'impôt selon une règle fiscale donnée (LIR / Loi sur les impôts).
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Loi de l'impôt sur le revenu LRC 1985 c 1 (LIR) — crédits d'impôt fédéraux
+- Loi sur les impôts RLRQ c I-3 — crédits d'impôt du Québec
+- Agence du revenu du Canada — Bulletins d'interprétation
+generated_by:
+- claude
+generation_date: '2026-06-19'

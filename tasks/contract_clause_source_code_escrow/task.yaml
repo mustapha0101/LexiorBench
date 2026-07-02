@@ -1,0 +1,20 @@
+name: contract_clause_source_code_escrow
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause prévoit le dépôt du code source en séquestre au
+  bénéfice d'une partie en cas de défaillance du concédant.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- Loi sur le droit d'auteur LRC 1985 c C-42 — protection du code source
+- CCQ art. 2713-2721 — gage et séquestre conventionnel
+generated_by:
+- claude
+generation_date: '2026-06-19'

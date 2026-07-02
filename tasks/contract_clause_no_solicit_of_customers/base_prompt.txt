@@ -1,0 +1,8 @@
+Vous êtes un juriste spécialisé en droit commercial québécois. Lisez la clause contractuelle ci-dessous et déterminez si elle contient une clause de non-sollicitation des clients.
+
+Répondez uniquement par : Oui ou Non.
+
+{{examples}}
+
+Clause : {{text}}
+Réponse :

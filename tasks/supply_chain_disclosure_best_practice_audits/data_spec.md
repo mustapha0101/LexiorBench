@@ -1,35 +1,25 @@
 ## Purpose
-Déterminer si une divulgation de chaîne d'approvisionnement décrit des pratiques ou politiques d'AUDIT des fournisseurs, conformément à la Loi sur la lutte contre le travail forcé et le travail des enfants (Canada, Loi S-211, 2023).
+Identifier si une déclaration de chaîne d'approvisionnement québécoise ou canadienne mentionne des meilleures pratiques en matière de meilleures pratiques — audits (Oui/Non).
 
 ## Question format
-Input: extrait d'une divulgation annuelle d'entreprise.
-Output: `Oui` | `Non`
+**Input:** Un extrait de déclaration sur la chaîne d'approvisionnement publiée par une entreprise.
+**Output:** `Oui` | `Non`
 
-**Exemple:**
-> "Notre politique de chaîne d'approvisionnement prévoit des audits annuels de nos fournisseurs de niveau 1 afin de détecter toute situation de travail forcé."
-> → Oui
+**Définition opérationnelle :**
+`Oui` — l'extrait contient des informations sur pratiques exemplaires d'audit des fournisseurs pour détecter le travail forcé.
+`Non` — l'extrait ne traite pas de ce sujet ou en parle de manière trop vague pour être qualifié.
 
-## Positif — `Oui`
-- L'extrait mentionne explicitement des audits, vérifications, inspections de fournisseurs
-- L'extrait décrit une politique d'audit (calendrier, portée, méthode)
-- L'extrait signale qu'un tiers effectue des audits pour le compte de l'entreprise
+## Legal sources
+- **Loi sur la lutte contre le travail forcé et le travail des enfants dans les chaînes d'approvisionnement, LC 2023 c 9** (Loi S-211)
+- **Lignes directrices du gouvernement fédéral canadien sur la Loi S-211**
 
-## Positif — `Non`
-- L'extrait discute de formation ou de certification mais pas d'audit
-- L'extrait mentionne des audits financiers (hors périmètre S-211)
-- L'extrait décrit des mesures de diligence raisonnable sans audit formel
+## Diversity requirements
+- Varier les secteurs industriels (manufacturier, détail, agroalimentaire, technologie, ressources)
+- Varier la longueur des extraits (1–2 phrases vs 2–3 paragraphes)
+- Inclure des `Non` trompeurs : déclarations générales sans aborder le sujet spécifique
+- Équilibre strict 50 % Oui / 50 % Non (± 1)
 
-## Sources légales
-- Loi sur la lutte contre le travail forcé et le travail des enfants dans les chaînes d'approvisionnement (Canada, LC 2023 c 9) — Loi S-211
-- Rapports de divulgation déposés auprès du gouvernement du Canada (registre public obligatoire)
-- Lignes directrices du gouvernement canadien sur la Loi S-211
-
-## Diversité
-- Varier les secteurs: manufacturier, ressources naturelles, vêtements, électronique, alimentation
-- Inclure: audits annoncés vs inopinés, audits de premier vs deuxième vs troisième niveau
-- Inclure des Non trompeurs: divulgations qui mentionnent la S-211 mais décrivent autre chose
-
-## Ne pas utiliser
-- California Transparency in Supply Chains Act (US)
-- UK Modern Slavery Act
+## Do not use
+- Déclarations soumises à la UK Modern Slavery Act uniquement
+- Déclarations soumises à la loi australienne sur la chaîne d'approvisionnement uniquement
 - Données de a2aj/canadian-laws

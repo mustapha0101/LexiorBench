@@ -1,13 +1,27 @@
 name: civil_rule_recall_ccq
-reasoning_type: rule-recall
-legal_domain: civil
-language: fr
+reasoning_type: rule_recall
 answer_type: classification
-labels:
-  - "Vrai"
-  - "Faux"
+answer_detail: Binary (True/False)
+jurisdiction: quebec
+purpose: Vérifier si un énoncé portant sur le Code civil du Québec est vrai ou faux.
+use_case: Raisonnement juridique
+state: active
+language: fr
 metric: balanced_accuracy
-description: >
-  Rappel du contenu du Code civil du Québec (obligations, prescription,
-  capacité, régimes matrimoniaux) : l'énoncé proposé est-il vrai ou faux?
-version: 1
+sample_size: 10
+source: original
+legal_sources:
+  - 'CCQ art. 1385 — formation du contrat par consentement'
+  - 'CCQ art. 1386-1392 — offre et acceptation'
+  - 'CCQ art. 1457 — responsabilité civile extracontractuelle'
+  - 'CCQ art. 1458 — responsabilité contractuelle; interdiction de cumul'
+  - 'CCQ art. 1470 — exonération par cause étrangère / force majeure'
+  - 'CCQ art. 1726 — garantie contre les vices cachés'
+  - 'CCQ art. 1728-1729 — connaissance du vice; présomption (vendeur professionnel)'
+  - 'CCQ art. 2921-2922 — prescription extinctive; délai de droit commun'
+  - 'CCQ art. 2925 — prescription 3 ans pour droits personnels et réels mobiliers'
+  - 'CCQ art. 2926 — préjudice graduel'
+  - 'CCQ art. 2929 — prescription 1 an pour diffamation'
+generated_by:
+  - claude
+generation_date: '2026-06-19'

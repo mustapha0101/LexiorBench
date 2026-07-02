@@ -1,14 +1,20 @@
 name: civil_rule_application_vices_caches
-reasoning_type: rule-application
-legal_domain: civil
-language: fr
+reasoning_type: rule_application
 answer_type: classification
-labels:
-  - "Oui"
-  - "Non"
+answer_detail: Binary (Oui/Non)
+jurisdiction: quebec
+purpose: Appliquer les conditions du recours en vices cachés (art. 1726 CCQ) à un
+  scénario factuel.
+use_case: Analyse des risques
+state: active
+language: fr
 metric: balanced_accuracy
-description: >
-  Application de la garantie de qualité (art. 1726 C.c.Q.), dont le texte est
-  cité dans le gabarit : l'acheteur peut-il invoquer la garantie contre les
-  vices cachés dans la situation décrite?
-version: 1
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1726-1742 — garantie légale contre les vices cachés
+- CCQ art. 1728 — vendeur de mauvaise foi
+- CCQ art. 1739 — dénonciation du vice par l'acheteur
+generated_by:
+- claude
+generation_date: '2026-06-19'

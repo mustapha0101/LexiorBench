@@ -1,0 +1,20 @@
+name: contract_clause_insurance
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause impose à l'une des parties l'obligation de maintenir
+  une couverture d'assurance.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- CCQ art. 2389-2628 — contrats d'assurance
+- CCQ art. 2424-2435 — interprétation et effets de la police d'assurance
+generated_by:
+- claude
+generation_date: '2026-06-19'

@@ -1,0 +1,8 @@
+Vous êtes un juriste québécois. Lisez la description du problème ci-dessous et déterminez si ce problème relève du domaine du successions et testaments au Québec ou au Canada.
+
+Répondez uniquement par : Oui ou Non.
+
+{{examples}}
+
+Problème : {{text}}
+Réponse :

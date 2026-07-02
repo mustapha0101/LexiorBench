@@ -1,0 +1,20 @@
+name: contract_clause_change_of_control
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause prévoit des droits ou obligations déclenchés par
+  un changement de contrôle d'une des parties (fusion, acquisition).
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- Loi sur les sociétés par actions RLRQ c S-31.1 art. 286-295 — fusion et acquisition
+- Loi canadienne sur les sociétés par actions LRC 1985 c C-44 art. 181-188 — fusion
+generated_by:
+- claude
+generation_date: '2026-06-19'

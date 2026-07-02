@@ -1,0 +1,20 @@
+name: ca_summary_precision
+reasoning_type: rhetorical
+answer_type: classification_and_generation
+answer_detail: Multi-class (Précis / Incomplet / Inexact)
+jurisdiction: both
+purpose: Évaluer la précision juridique d'un résumé de décision judiciaire québécoise
+  ou canadienne (Précis / Incomplet / Inexact)
+use_case: Résumé de décisions
+state: new
+language: fr
+metric: llm_judge
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1-3168 — Code civil du Québec (général)
+- Code de procédure civile RLRQ c C-25.01 — règles générales
+- Loi sur les tribunaux judiciaires RLRQ c T-16
+generated_by:
+- claude
+generation_date: '2026-06-19'

@@ -1,0 +1,20 @@
+name: contract_clause_volume_restriction
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause impose des restrictions de volume sur la production,
+  la vente ou la distribution.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- Loi sur la concurrence LRC 1985 c C-34 art. 77 — exclusivité et restriction de vente
+- CCQ art. 1375 — bonne foi et restrictions de volume
+generated_by:
+- claude
+generation_date: '2026-06-19'

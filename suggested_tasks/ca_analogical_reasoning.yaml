@@ -1,0 +1,26 @@
+name: ca_analogical_reasoning
+reasoning_type: rule_application
+answer_type: classification
+answer_detail: "Analogie applicable / Analogie inapplicable / Distinction justifiée"
+jurisdiction: both
+purpose: >
+  Étant donné le ratio decidendi d'une décision de référence et un nouveau
+  scénario factuel, déterminer si le précédent s'applique par analogie, est
+  inapplicable, ou peut être distingué — tâche d'analogie jurisprudentielle.
+use_case: Raisonnement juridique
+state: new
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+  - "CCQ art. 8 — doctrine des droits et obligations par analogie"
+  - "Arrêt Donoghue v Stevenson [1932] UKHL 100 — duty of care (common law)"
+  - "Arrêt Anns/Cooper test — négligence et nouveau dommage"
+  - "Arrêt Salomon v Salomon [1897] AC 22 — personnalité morale distincte"
+  - "Arrêt Bazley v Curry [1999] 2 RCS 534 — responsabilité du commettant"
+notes: >
+  Gap: no analogical_reasoning tasks in benchmark. This is a core legal skill
+  (IRAC 'A' step). 3-class: applicable / inapplicable / distinction.
+  Scenarios pair a mini ratio-decidendi with a new fact pattern.
+  Avoids real case name leakage by paraphrasing the ratio without naming the case.

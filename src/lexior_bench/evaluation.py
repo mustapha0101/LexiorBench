@@ -68,6 +68,7 @@ METRIC_FUNCS = {
     "exact_match": exact_match,
     "balanced_accuracy": balanced_accuracy,
 }
+MANUAL_METRICS = {"manual", "llm_judge", "parity_analysis"}
 
 
 def evaluate_run(run_dir: Path) -> dict:
@@ -88,7 +89,7 @@ def evaluate_run(run_dir: Path) -> dict:
             metric = task_meta["metric"]
             score = (
                 None
-                if metric == "manual"
+                if metric in MANUAL_METRICS
                 else round(METRIC_FUNCS[metric](references, predictions), 4)
             )
             model_tasks[task_name] = {

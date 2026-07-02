@@ -1,14 +1,22 @@
 name: privacy_policy_entailment
 reasoning_type: interpretation
-legal_domain: public
-language: fr
 answer_type: classification
-labels:
-- Non
-- Oui
+answer_detail: Multi-class (Impliquée / Contradictoire / Non impliquée)
+jurisdiction: both
+purpose: Déterminer si un extrait de politique de confidentialité implique, contredit
+  ou ne traite pas une pratique de collecte ou de traitement des données (Loi 25 /
+  LPRPDE).
+use_case: Analyse des risques
+state: active
+language: fr
 metric: balanced_accuracy
-description: Identifier si cet extrait de politique de confidentialité implique que
-  l'organisation effectue l'action décrite, conformément à la Loi 25 (QC) et à la
-  LPRPDE (Oui/Non).
-version: 2
-target_jurisdiction: Both
+sample_size: 10
+source: original
+legal_sources:
+- Loi sur la protection des renseignements personnels dans le secteur privé RLRQ c
+  P-39.1 (Loi 25)
+- Loi sur la protection des renseignements personnels et les documents électroniques
+  LC 2000 c 5 (LPRPDE)
+generated_by:
+- claude
+generation_date: '2026-06-19'

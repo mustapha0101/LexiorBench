@@ -1,0 +1,28 @@
+name: ca_irac_generation
+reasoning_type: rule_application
+answer_type: generation
+answer_detail: IRAC
+jurisdiction: both
+purpose: "Générer une analyse IRAC (Problème-Règle-Application-Conclusion) à partir d'un\
+  \ extrait de décision judiciaire québécoise ou canadienne."
+use_case: Raisonnement juridique
+state: new
+language: fr
+metric: llm_judge
+sample_size: 5
+source: original
+legal_sources:
+  - 'CCQ art. 976 — troubles de voisinage'
+  - 'CCQ art. 1457-1458 — responsabilité civile extra- et contractuelle'
+  - 'CCQ art. 1470 — force majeure'
+  - 'CCQ art. 1478 — partage de responsabilité'
+  - "CCQ art. 1590 — droits du créancier en cas d'inexécution"
+  - 'CCQ art. 1693 — extinction par impossibilité'
+  - 'CCQ art. 1699 — restitution des prestations'
+  - 'CCQ art. 1726-1729 — vices cachés; présomption vendeur professionnel'
+  - 'CCQ art. 2925-2926 — prescription 3 ans; préjudice graduel'
+  - 'LNT RLRQ c N-1.1 art. 82-83 — préavis de licenciement'
+generated_by:
+  - claude
+generation_date: '2026-06-19'
+notes: 'GPT-4o pass pending (target: 10 samples total, 5 per model)'

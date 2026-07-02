@@ -1,0 +1,20 @@
+name: contract_clause_joint_ip_ownership
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause prévoit une copropriété de la propriété intellectuelle
+  entre les parties.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- Loi sur le droit d'auteur LRC 1985 c C-42 art. 13(4) — copropriété du droit d'auteur
+- Loi sur les brevets LRC 1985 c P-4 art. 43 — copropriété de brevet
+generated_by:
+- claude
+generation_date: '2026-06-19'

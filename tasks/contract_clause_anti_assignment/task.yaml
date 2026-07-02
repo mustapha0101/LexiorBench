@@ -1,0 +1,19 @@
+name: contract_clause_anti_assignment
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause contractuelle restreint ou interdit la cession du
+  contrat à un tiers sans consentement préalable.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- CCQ art. 1641-1650 — cession de créance et de contrat
+generated_by:
+- claude
+generation_date: '2026-06-19'

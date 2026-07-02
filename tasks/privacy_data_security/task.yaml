@@ -1,0 +1,23 @@
+name: privacy_data_security
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si un extrait de politique de confidentialité décrit les mesures
+  de sécurité appliquées aux renseignements personnels.
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Loi sur la protection des renseignements personnels dans le secteur privé RLRQ c
+  P-39.1 (Loi 25)
+- Loi sur la protection des renseignements personnels et les documents électroniques
+  LC 2000 c 5 (LPRPDE)
+- Loi 25 art. 20 — mesures de sécurité des renseignements personnels
+- Loi 25 art. 3.5-3.8 — incidents de confidentialité et notification
+generated_by:
+- claude
+generation_date: '2026-06-19'

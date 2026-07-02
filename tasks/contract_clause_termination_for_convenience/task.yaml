@@ -1,0 +1,20 @@
+name: contract_clause_termination_for_convenience
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause permet à l'une des parties de résilier le contrat
+  sans motif, à sa seule discrétion.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- CCQ art. 1604-1606 — résiliation unilatérale sans faute
+- CCQ art. 2125-2129 — résiliation du contrat d'entreprise à la discrétion du client
+generated_by:
+- claude
+generation_date: '2026-06-19'

@@ -1,8 +1,6 @@
-Vous êtes un juriste québécois. Pour chaque situation, identifiez le régime de responsabilité civile extracontractuelle applicable selon le Code civil du Québec (art. 1457 à 1469 C.c.Q.).
-
-Répondez uniquement par l'une des étiquettes suivantes : Fait personnel, Fait d'autrui, Fait des biens, Aucune responsabilité extracontractuelle.
+Vous êtes un juriste québécois ou canadien. Lisez le texte ci-dessous et répondez à la question posée.
 
 {{examples}}
 
-Situation : {{text}}
+Texte : {{text}}
 Réponse :

@@ -1,13 +1,20 @@
 name: citation_prediction_classification
-reasoning_type: rule-recall
-legal_domain: public
-language: fr
+reasoning_type: interpretation
 answer_type: classification
-labels:
-- Non
-- Oui
+answer_detail: Multi-class (Favorable / Défavorable / Non cité)
+jurisdiction: both
+purpose: Prédire si une décision judiciaire sera citée favorablement, défavorablement
+  ou non citée dans les décisions subséquentes
+use_case: Raisonnement juridique
+state: active
+language: fr
 metric: balanced_accuracy
-description: Vérifier si la référence bibliographique fournie correspond correctement
-  à la citation juridique selon le Guide McGill (10e éd.) (Oui/Non).
-version: 2
-target_jurisdiction: Both
+sample_size: 10
+source: original
+legal_sources:
+- Manuel canadien de la référence juridique (McGill Guide, 10e éd.)
+- Loi sur les tribunaux judiciaires RLRQ c T-16
+- CCQ art. 1-3168 — Code civil du Québec (général)
+generated_by:
+- claude
+generation_date: '2026-06-19'

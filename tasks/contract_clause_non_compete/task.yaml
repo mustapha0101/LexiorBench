@@ -1,0 +1,21 @@
+name: contract_clause_non_compete
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause impose une obligation de non-concurrence à une partie
+  après la fin du contrat (art. 2089 CCQ).
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- 'CCQ art. 2089 — clause de non-concurrence : limites de temps, lieu et genre de
+  travail'
+- CCQ art. 2095 — résiliation sans motif sérieux et clause de non-concurrence
+generated_by:
+- claude
+generation_date: '2026-06-19'

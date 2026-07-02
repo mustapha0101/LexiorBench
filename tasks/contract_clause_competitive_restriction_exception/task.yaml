@@ -1,0 +1,20 @@
+name: contract_clause_competitive_restriction_exception
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause prévoit des exceptions aux restrictions de concurrence,
+  autorisant certaines activités concurrentielles déterminées.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- CCQ art. 2089 — clause de non-concurrence et exceptions
+- Loi sur la concurrence LRC 1985 c C-34
+generated_by:
+- claude
+generation_date: '2026-06-19'

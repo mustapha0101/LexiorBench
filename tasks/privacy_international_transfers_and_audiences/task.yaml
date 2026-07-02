@@ -1,0 +1,24 @@
+name: privacy_international_transfers_and_audiences
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si un extrait de politique de confidentialité traite des transferts
+  internationaux de données ou de pratiques visant des publics spécifiques (mineurs,
+  pays ciblés).
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Loi sur la protection des renseignements personnels dans le secteur privé RLRQ c
+  P-39.1 (Loi 25)
+- Loi sur la protection des renseignements personnels et les documents électroniques
+  LC 2000 c 5 (LPRPDE)
+- Loi 25 art. 10-17 — communication de renseignements à l'extérieur du Québec
+- Loi 25 art. 80.1 — protection des renseignements des mineurs
+generated_by:
+- claude
+generation_date: '2026-06-19'

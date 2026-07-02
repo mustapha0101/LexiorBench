@@ -1,0 +1,20 @@
+name: contract_clause_price_restrictions
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause impose des restrictions sur les prix qu'une partie
+  peut pratiquer (maintien des prix, prix plancher ou plafond).
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- Loi sur la concurrence LRC 1985 c C-34 art. 76 — maintien des prix de revente
+- CCQ art. 1375 — bonne foi et restrictions tarifaires
+generated_by:
+- claude
+generation_date: '2026-06-19'

@@ -1,0 +1,20 @@
+name: contract_clause_no_solicit_of_customers
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause interdit à une partie de solliciter les clients
+  de l'autre partie pendant ou après la durée du contrat.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- CCQ art. 2089 — non-sollicitation de clientèle
+- CCQ art. 1375 — bonne foi post-contractuelle
+generated_by:
+- claude
+generation_date: '2026-06-19'

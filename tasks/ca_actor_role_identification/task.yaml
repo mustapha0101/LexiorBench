@@ -1,0 +1,20 @@
+name: ca_actor_role_identification
+reasoning_type: rhetorical
+answer_type: classification_and_generation
+answer_detail: Extraction
+jurisdiction: both
+purpose: Given a court decision excerpt, correctly identify all legal actors and their
+  roles (plaintiff, defendant, judge, expert witness, intervener, appellant, respondent)
+use_case: Résumé de décisions / Raisonnement juridique
+state: new
+language: fr
+metric: llm_judge
+sample_size: 10
+source: original
+legal_sources:
+- Code de procédure civile RLRQ c C-25.01 — rôles procéduraux des parties
+- CCQ — À vérifier (représentation conventionnelle et légale)
+- Loi sur le Barreau RLRQ c B-1 — représentation par avocat
+generated_by:
+- claude
+generation_date: '2026-06-19'

@@ -1,0 +1,20 @@
+name: ca_outdated_law_detection
+reasoning_type: rule_recall
+answer_type: classification_and_generation
+answer_detail: Multi-class (À jour / Partiellement désuet / Désuet)
+jurisdiction: both
+purpose: Detect if a legal question references an outdated or amended law — model
+  must flag the outdated premise and cite the current version
+use_case: Tous les use cases — fiabilité temporelle du modèle
+state: new
+language: fr
+metric: llm_judge
+sample_size: 10
+source: original
+legal_sources:
+- Loi d'interprétation LRC 1985 c I-21 — interprétation des lois fédérales
+- Loi d'interprétation RLRQ c I-16 — interprétation des lois québécoises
+- Recueil des lois et règlements du Québec (LRQ) — codification officielle
+generated_by:
+- claude
+generation_date: '2026-06-19'

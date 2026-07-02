@@ -1,0 +1,19 @@
+name: international_citizenship_questions
+reasoning_type: rule_recall
+answer_type: classification
+answer_detail: Extractive open-ended (réponse libre en français)
+jurisdiction: federal_ca
+purpose: Yes/No questions on Canadian citizenship and immigration rules
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- Loi sur la citoyenneté LRC 1985 c C-29
+- Loi sur l'immigration et la protection des réfugiés LC 2001 c 27 (LIPR)
+- Règlement sur la citoyenneté DORS/93-246
+generated_by:
+- claude
+generation_date: '2026-06-19'

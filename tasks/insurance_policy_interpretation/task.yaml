@@ -1,0 +1,19 @@
+name: insurance_policy_interpretation
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Multi-class (Couvert / Couverture partielle / Non couvert)
+jurisdiction: both
+purpose: Is this insurance claim covered under the policy terms?
+use_case: Analyse des risques / Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 2389-2628 — contrats d'assurance
+- CCQ art. 2424-2435 — interprétation et effets de la police
+- Loi sur les assurances RLRQ c A-32 — cadre réglementaire québécois
+generated_by:
+- claude
+generation_date: '2026-06-19'

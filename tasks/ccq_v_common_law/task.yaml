@@ -1,0 +1,19 @@
+name: ccq_v_common_law
+reasoning_type: rule_conclusion
+answer_type: classification
+answer_detail: Multi-class (Droit civil québécois / Common law canadienne / Les deux)
+jurisdiction: both
+purpose: Is this contract governed by the CCQ (Quebec civil law) or common law?
+use_case: Comparaison de contrats / Rédaction
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1385-1432 — droit civil québécois des contrats (formation)
+- CCQ art. 3111-3113 — choix de la loi applicable et conflits de lois
+- Sale of Goods Act RSO 1990 c S.1 — common law canadienne de la vente de biens
+generated_by:
+- claude
+generation_date: '2026-06-19'

@@ -1,0 +1,20 @@
+name: contract_clause_post_termination_services
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause prévoit des obligations de service ou de transition
+  à la charge d'une partie après la résiliation du contrat.
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — principes généraux des contrats et des obligations
+- CCQ art. 1604-1606 — résiliation et obligations post-contractuelles
+- CCQ art. 1434 — obligations implicites survivant à la résiliation
+generated_by:
+- claude
+generation_date: '2026-06-19'

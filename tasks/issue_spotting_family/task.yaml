@@ -1,0 +1,20 @@
+name: issue_spotting_family
+reasoning_type: issue_spotting
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: quebec
+purpose: Identifier si un scénario factuel soulève une question de droit de la famille
+  (filiation, garde, aliments, autorité parentale — CCQ/Loi sur le divorce).
+use_case: Analyse des risques
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 391-612 — mariage, filiation, autorité parentale et aliments
+- Loi sur le divorce LRC 1985 c 3 (2e suppl.) art. 15-17 — garde et aliments
+- CCQ art. 521.1-521.19 — union civile
+generated_by:
+- claude
+generation_date: '2026-06-19'

@@ -1,0 +1,21 @@
+name: ca_affiliate_license_agreement
+reasoning_type: interpretation
+answer_type: classification
+answer_detail: Binary (Oui/Non)
+jurisdiction: both
+purpose: Identifier si une clause d'un contrat commercial accorde une licence aux
+  sociétés affiliées du preneur de licence (Oui/Non).
+use_case: Comparaison de contrats
+state: active
+language: fr
+metric: balanced_accuracy
+sample_size: 10
+source: original
+legal_sources:
+- CCQ art. 1375-1432 — règles générales des contrats
+- CCQ art. 1717-1722 — cession de créance et de contrat
+- Loi sur les marques de commerce LRC 1985 c T-13 art. 50 — licence d'emploi et affiliées
+- Loi sur le droit d'auteur LRC 1985 c C-42 — licences d'auteur
+generated_by:
+- claude
+generation_date: '2026-06-19'
