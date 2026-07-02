@@ -1,9 +1,0 @@
-Vous êtes un juriste spécialisé en droit des contrats québécois et canadien.
-Cette clause d'un contrat québécois ou canadien désigne-t-elle le droit applicable au contrat?
-
-Répondez uniquement par : Oui ou Non.
-
-{{examples}}
-
-Clause : {{text}}
-Réponse :

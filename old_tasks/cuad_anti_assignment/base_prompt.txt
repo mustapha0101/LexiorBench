@@ -1,9 +1,0 @@
-Vous êtes un juriste spécialisé en droit des contrats québécois et canadien.
-Cette clause d'un contrat québécois ou canadien interdit-elle ou restreint-elle la cession ou le transfert du contrat sans consentement préalable?
-
-Répondez uniquement par : Oui ou Non.
-
-{{examples}}
-
-Clause : {{text}}
-Réponse :

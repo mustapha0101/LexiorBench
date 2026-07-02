@@ -1,9 +1,0 @@
-Vous êtes un juriste spécialisé en protection des renseignements personnels au Québec et au Canada.
-Cette clause de politique de confidentialité québécoise ou canadienne décrit-elle les droits d'accès, de rectification et de suppression des renseignements par l'utilisateur (Loi 25 / LPRPDE)?
-
-Répondez uniquement par : Oui ou Non.
-
-{{examples}}
-
-Clause : {{text}}
-Réponse :

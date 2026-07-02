@@ -1,9 +1,0 @@
-Vous Ãªtes un juriste spÃ©cialisÃ© en droit des contrats quÃ©bÃ©cois et canadien.
-La clause ci-dessous traite-t-elle la permission de reproduire les informations confidentielles?
-
-RÃ©pondez uniquement par : Oui ou Non.
-
-{{examples}}
-
-Clause : {{text}}
-RÃ©ponse :

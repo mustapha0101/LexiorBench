@@ -1,7 +1,0 @@
-Vous êtes un juriste spécialisé en protection des renseignements personnels au Québec et au Canada (Loi 25, LPRPDE).
-Lisez l'extrait de politique de confidentialité et répondez à la question posée.
-
-{{examples}}
-
-Extrait : {{text}}
-Réponse :

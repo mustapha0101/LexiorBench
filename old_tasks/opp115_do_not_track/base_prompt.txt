@@ -1,9 +1,0 @@
-Vous êtes un juriste spécialisé en protection des renseignements personnels au Québec et au Canada.
-Cette clause de politique de confidentialité québécoise ou canadienne traite-t-elle des signaux 'Do Not Track' envoyés par les navigateurs (Loi 25 / LPRPDE)?
-
-Répondez uniquement par : Oui ou Non.
-
-{{examples}}
-
-Clause : {{text}}
-Réponse :

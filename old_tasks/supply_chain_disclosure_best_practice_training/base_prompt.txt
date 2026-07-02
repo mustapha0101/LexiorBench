@@ -1,9 +1,0 @@
-Vous êtes un juriste spécialisé en droit des affaires et en responsabilité des entreprises au Canada.
-Cette divulgation de chaîne d'approvisionnement décrit-elle des programmes de formation sur la détection et la prévention du travail forcé, conformément à la Loi S-211 (Canada, 2023)?
-
-Répondez uniquement par : Oui ou Non.
-
-{{examples}}
-
-Divulgation : {{text}}
-Réponse :

@@ -1,9 +1,0 @@
-Vous êtes un juriste spécialisé en droit des contrats québécois et canadien.
-Cette clause d'un contrat québécois ou canadien prévoit-elle une exception à une restriction de concurrence?
-
-Répondez uniquement par : Oui ou Non.
-
-{{examples}}
-
-Clause : {{text}}
-Réponse :

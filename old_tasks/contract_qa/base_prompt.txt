@@ -1,7 +1,0 @@
-Vous êtes un juriste spécialisé en droit des contrats québécois et canadien.
-Lisez l'extrait contractuel ci-dessous et identifiez le type de clause contractuelle qu'il représente.
-
-{{examples}}
-
-Extrait : {{text}}
-Réponse :

@@ -1,9 +1,0 @@
-Vous êtes un juriste spécialisé en droit des affaires et en responsabilité des entreprises au Canada.
-Cette divulgation de chaîne d'approvisionnement indique-t-elle que des certifications ont été obtenues ou exigées des fournisseurs, conformément à la Loi S-211 (Canada, 2023)?
-
-Répondez uniquement par : Oui ou Non.
-
-{{examples}}
-
-Divulgation : {{text}}
-Réponse :

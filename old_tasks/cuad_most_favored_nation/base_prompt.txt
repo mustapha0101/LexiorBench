@@ -1,9 +1,0 @@
-Vous êtes un juriste spécialisé en droit des contrats québécois et canadien.
-Cette clause d'un contrat québécois ou canadien contient-elle une clause de la nation la plus favorisée ou de traitement préférentiel?
-
-Répondez uniquement par : Oui ou Non.
-
-{{examples}}
-
-Clause : {{text}}
-Réponse :

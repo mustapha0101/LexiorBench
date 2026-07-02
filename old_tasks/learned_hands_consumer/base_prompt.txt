@@ -1,9 +1,0 @@
-Vous êtes un juriste québécois ou canadien.
-Lisez ce scénario ci-dessous et déterminez s'il soulève une question juridique liée à la protection du consommateur en vertu de la Loi sur la protection du consommateur (LPC) du Québec.
-
-Répondez uniquement par : Oui ou Non.
-
-{{examples}}
-
-Scénario : {{text}}
-Réponse :

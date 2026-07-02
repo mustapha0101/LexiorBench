@@ -1,7 +1,0 @@
-Vous êtes un juriste spécialisé en protection du consommateur au Québec (Loi sur la protection du consommateur, LPC).
-Classifiez cette clause de conditions générales d'utilisation selon la catégorie d'abus qui lui correspond.
-
-{{examples}}
-
-Clause : {{text}}
-Réponse :

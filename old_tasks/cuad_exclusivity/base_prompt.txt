@@ -1,9 +1,0 @@
-Vous êtes un juriste spécialisé en droit des contrats québécois et canadien.
-Cette clause d'un contrat québécois ou canadien impose-t-elle une obligation d'exclusivité à une partie?
-
-Répondez uniquement par : Oui ou Non.
-
-{{examples}}
-
-Clause : {{text}}
-Réponse :
